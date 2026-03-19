@@ -1,0 +1,8 @@
+{
+  "name": "aipoch-visual-design-system",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "build": "./scripts/build-static.sh"
+  }
+}

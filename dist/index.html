@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AIPOCH Visual Design System</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap');
+
+        :root {
+            --font-sans: 'Inter', sans-serif;
+            --font-mono: 'Roboto Mono', monospace;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background-color: #ffffff;
+            color: #111827;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .font-mono {
+            font-family: var(--font-mono);
+        }
+
+        .grid-bg {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+            background-size: 30px 30px;
+        }
+
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #d1d5db;
+            border-radius: 3px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #9ca3af;
+        }
+    </style>
+</head>
+
+<body class="min-h-screen bg-white text-gray-900 flex">
+
+    <!-- SIDEBAR -->
+    <aside class="fixed inset-y-0 left-0 w-64 border-r border-gray-200 bg-[#fafafa] flex flex-col z-30">
+        <div class="h-16 flex items-center px-6 border-b border-gray-200 shrink-0 bg-white">
+            <svg viewBox="0 0 32 32" fill="none" class="w-5 h-5 text-black mr-2">
+                <circle cx="16" cy="16" r="15" stroke="currentColor" stroke-opacity="0.4" stroke-width="1"></circle>
+                <circle cx="16" cy="16" r="2" fill="currentColor"></circle>
+            </svg>
+            <span class="text-sm font-semibold tracking-tight">AIPOCH System</span>
+            <span class="ml-auto text-[10px] font-mono bg-gray-200 px-1.5 py-0.5 rounded text-gray-600">v4.0</span>
+        </div>
+
+        <nav class="flex-1 overflow-y-auto px-4 py-8 space-y-8">
+            <div>
+                <h3 class="text-[10px] font-semibold uppercase tracking-widest text-gray-400 mb-2 px-2">Foundation</h3>
+                <ul class="space-y-0.5 text-sm">
+                    <li><a href="#typography"
+                            class="block px-2 py-1.5 text-gray-600 hover:bg-gray-100 rounded-md transition-colors font-medium">Typography</a>
+                    </li>
+                    <li><a href="#colors"
+                            class="block px-2 py-1.5 text-gray-600 hover:bg-gray-100 rounded-md transition-colors font-medium">Color
+                            System</a></li>
+                    <li><a href="#icons"
+                            class="block px-2 py-1.5 text-gray-600 hover:bg-gray-100 rounded-md transition-colors font-medium">Icon
+                            System</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-[10px] font-semibold uppercase tracking-widest text-gray-400 mb-2 px-2">Architecture
+                </h3>
+                <ul class="space-y-0.5 text-sm">
+                    <li><a href="#components"
+                            class="block px-2 py-1.5 text-gray-600 hover:bg-gray-100 rounded-md transition-colors font-medium">Components</a>
+                    </li>
+                    <li><a href="#layout"
+                            class="block px-2 py-1.5 text-gray-600 hover:bg-gray-100 rounded-md transition-colors font-medium">Layout
+                            & Spacing</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-[10px] font-semibold uppercase tracking-widest text-gray-400 mb-2 px-2">Environments
+                </h3>
+                <ul class="space-y-0.5 text-sm">
+                    <li><a href="#social"
+                            class="block px-2 py-1.5 text-gray-600 hover:bg-gray-100 rounded-md transition-colors font-medium">Social
+                            Media</a></li>
+                    <li><a href="#banner"
+                            class="block px-2 py-1.5 text-gray-600 hover:bg-gray-100 rounded-md transition-colors font-medium">Banner
+                            System</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-[10px] font-semibold uppercase tracking-widest text-gray-400 mb-2 px-2">Strategy</h3>
+                <ul class="space-y-0.5 text-sm">
+                    <li><a href="#image"
+                            class="block px-2 py-1.5 text-gray-600 hover:bg-gray-100 rounded-md transition-colors font-medium">Image
+                            Style</a></li>
+                    <li><a href="#copy"
+                            class="block px-2 py-1.5 text-gray-600 hover:bg-gray-100 rounded-md transition-colors font-medium">Copy
+                            Tone</a></li>
+                </ul>
+            </div>
+        </nav>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <div class="ml-64 flex-1 flex flex-col relative w-full bg-white">
+
+        <header
+            class="h-16 border-b border-gray-200 bg-white/95 backdrop-blur-md sticky top-0 z-20 flex items-center px-12 justify-between">
+            <div class="flex items-center gap-2 text-sm text-gray-500">
+                <span>Guideline</span>
+                <span class="text-gray-300">/</span>
+                <span class="text-gray-900 font-medium tracking-tight">Visual Design System</span>
+            </div>
+        </header>
+
+        <main class="flex-1 px-12 py-20 max-w-6xl mx-auto w-full space-y-36">
+
+            <!-- Intro -->
+            <div>
+                <h1 class="text-6xl font-normal tracking-tight text-black mb-6">Visual UI System</h1>
+                <p class="text-lg text-gray-500 leading-relaxed max-w-3xl font-light">
+                    The complete visible representation of AIPOCH components. Every rule is demonstrated strictly via
+                    live HTML components.
+                </p>
+            </div>
+
+            <!-- ==========================================
+                 1. TYPOGRAPHY
+            =========================================== -->
+            <section id="typography" class="scroll-mt-24">
+                <div class="border-b border-gray-200 pb-4 mb-8">
+                    <h2 class="text-3xl font-medium tracking-tight">1. Typography</h2>
+                </div>
+
+                <div class="space-y-8 p-10 bg-gray-50 border border-gray-200 rounded-2xl">
+                    <!-- H1 -->
+                    <div class="pb-8 border-b border-gray-200">
+                        <div class="flex justify-between items-end mb-4">
+                            <span class="text-[10px] font-bold text-gray-400 uppercase tracking-widest">H1 Hero</span>
+                            <code
+                                class="font-mono text-[10px] bg-white border border-gray-200 px-2 py-1 rounded text-gray-500">text-5xl lg:text-7xl font-normal tracking-tight</code>
+                        </div>
+                        <h1 class="text-5xl lg:text-7xl font-normal tracking-tight text-black leading-[1.1]">We create
+                            moments for medical research.</h1>
+                    </div>
+                    <!-- H2 -->
+                    <div class="pb-8 border-b border-gray-200">
+                        <div class="flex justify-between items-end mb-4">
+                            <span class="text-[10px] font-bold text-gray-400 uppercase tracking-widest">H2
+                                Section</span>
+                            <code
+                                class="font-mono text-[10px] bg-white border border-gray-200 px-2 py-1 rounded text-gray-500">text-4xl font-light tracking-tight</code>
+                        </div>
+                        <h2 class="text-4xl font-light tracking-tight text-black leading-[1.2]">Support Your Research
+                            24/7 with Agents.</h2>
+                    </div>
+                    <!-- H3 -->
+                    <div class="pb-8 border-b border-gray-200">
+                        <div class="flex justify-between items-end mb-4">
+                            <span class="text-[10px] font-bold text-gray-400 uppercase tracking-widest">H3 Card
+                                Title</span>
+                            <code
+                                class="font-mono text-[10px] bg-white border border-gray-200 px-2 py-1 rounded text-gray-500">text-xl font-medium</code>
+                        </div>
+                        <h3 class="text-xl font-medium text-black">Connect with OpenClaw</h3>
+                    </div>
+                    <!-- Body -->
+                    <div class="pb-8 border-b border-gray-200">
+                        <div class="flex justify-between items-end mb-4">
+                            <span class="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Body Text</span>
+                            <code
+                                class="font-mono text-[10px] bg-white border border-gray-200 px-2 py-1 rounded text-gray-500">text-sm leading-relaxed text-gray-600</code>
+                        </div>
+                        <p class="text-sm leading-relaxed text-gray-600 max-w-2xl">AIPOCH is an OpenClaw plugin
+                            providing medical research agent skills. Explore structured AI agent skills for evidence
+                            insights, protocol design, data analysis, and academic writing in scientific research
+                            workflows.</p>
+                    </div>
+                    <!-- Specs / Mono -->
+                    <div>
+                        <div class="flex justify-between items-end mb-4">
+                            <span class="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Caption / System
+                                (Mono)</span>
+                            <code
+                                class="font-mono text-[10px] bg-white border border-gray-200 px-2 py-1 rounded text-gray-500">text-[10px] font-mono uppercase tracking-widest</code>
+                        </div>
+                        <span class="text-[10px] font-mono uppercase tracking-widest text-black/40 block">v2.4.1 -
+                            System Initiated successfully</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ==========================================
+                 2. COLOR SYSTEM
+            =========================================== -->
+            <section id="colors" class="scroll-mt-24">
+                <div class="border-b border-gray-200 pb-4 mb-8">
+                    <h2 class="text-3xl font-medium tracking-tight">2. Color System</h2>
+                </div>
+
+                <!-- Swatches -->
+                <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+                    <div class="rounded-xl border border-gray-200 overflow-hidden shadow-sm group">
+                        <div class="h-32 bg-[#ffffff] group-hover:bg-gray-50 transition-colors"></div>
+                        <div class="p-4 bg-white border-t border-gray-100">
+                            <div class="text-sm font-medium mb-1">Canvas Flat</div>
+                            <div class="flex justify-between items-center text-xs text-gray-500 font-mono">
+                                <span>#FFFFFF</span><span>bg-white</span></div>
+                        </div>
+                    </div>
+                    <div class="rounded-xl border border-gray-200 overflow-hidden shadow-sm">
+                        <div class="h-32 bg-[#e8e8e8]"></div>
+                        <div class="p-4 bg-white border-t border-gray-100">
+                            <div class="text-sm font-medium mb-1">Canvas Base</div>
+                            <div class="flex justify-between items-center text-xs text-gray-500 font-mono">
+                                <span>#E8E8E8</span><span>bg-[#e8e8e8]</span></div>
+                        </div>
+                    </div>
+                    <div class="rounded-xl border border-gray-200 overflow-hidden shadow-sm">
+                        <div class="h-32 bg-[#1a1a1a]"></div>
+                        <div class="p-4 bg-white border-t border-gray-100">
+                            <div class="text-sm font-medium mb-1">Dark Surface</div>
+                            <div class="flex justify-between items-center text-xs text-gray-500 font-mono">
+                                <span>#1A1A1A</span><span>bg-[#1a1a1a]</span></div>
+                        </div>
+                    </div>
+                    <div class="rounded-xl border border-black overflow-hidden shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+                        <div
+                            class="h-32 bg-[#ecd44c] border-b border-black flex items-center justify-center relative overflow-hidden">
+                            <div class="absolute inset-0 grid-bg opacity-20"></div>
+                            <div
+                                class="font-mono text-black text-[10px] font-bold bg-white px-2 py-1 border border-black z-10 -rotate-3 uppercase">
+                                Primary Alert</div>
+                        </div>
+                        <div class="p-4 bg-white">
+                            <div class="text-sm font-medium mb-1">Yellow Accent</div>
+                            <div class="flex justify-between items-center text-xs text-gray-500 font-mono">
+                                <span>#ECD44C</span><span>bg-[#ecd44c]</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Usage App -->
+                <h3 class="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-4">Application Examples</h3>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-[#1a1a1a] rounded-xl p-8 flex flex-col gap-6 text-white border border-gray-800">
+                        <div>
+                            <span class="text-[10px] uppercase font-mono tracking-widest text-white/40 mb-2 block">Dark
+                                Theme Component</span>
+                            <h4 class="text-2xl font-light">Medical Analysis Engine</h4>
+                            <p class="text-xs text-white/60 leading-relaxed mt-2 max-w-sm">Use 1A1A1A for critical
+                                system components. Contrast is created entirely through white opacities.</p>
+                        </div>
+                        <div
+                            class="bg-[#242424] border border-gray-700 p-4 rounded-lg flex items-center justify-between">
+                            <code class="text-xs font-mono text-white/50">curl -X POST /api/run</code>
+                            <span
+                                class="bg-[#ecd44c] text-black text-[10px] font-bold px-3 py-1 uppercase tracking-widest rounded-sm border border-black shadow-[2px_2px_0px_0px_rgba(255,255,255,0.2)]">Execute</span>
+                        </div>
+                    </div>
+                    <div class="bg-gray-50 rounded-xl p-8 border border-gray-200 flex flex-col gap-6">
+                        <div>
+                            <span class="text-[10px] uppercase font-mono tracking-widest text-gray-400 mb-2 block">Light
+                                Theme Component</span>
+                            <h4 class="text-2xl font-light text-black">Data Structures</h4>
+                            <p class="text-xs text-gray-500 leading-relaxed mt-2 max-w-sm">Rely on severe black borders
+                                for brutalist interactions on light canvases.</p>
+                        </div>
+                        <div
+                            class="bg-white border-2 border-black p-4 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] flex items-center justify-between">
+                            <span class="text-sm font-medium text-black">AIPOCH Protocol v2</span>
+                            <span class="w-3 h-3 rounded-full bg-green-500 border border-black"></span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ==========================================
+                 3. ICON SYSTEM
+            =========================================== -->
+            <section id="icons" class="scroll-mt-24">
+                <div class="border-b border-gray-200 pb-4 mb-8">
+                    <h2 class="text-3xl font-medium tracking-tight">3. Icon System</h2>
+                </div>
+
+                <div class="bg-gray-50 border border-gray-200 rounded-2xl p-10">
+                    <div
+                        class="flex flex-col sm:flex-row gap-6 items-center justify-between mb-8 border-b border-gray-200 pb-8">
+                        <div>
+                            <h3 class="text-lg font-medium text-gray-900">Lucide Core</h3>
+                            <p class="text-sm text-gray-500">24x24 frame, 2px stroke, outline only.</p>
+                        </div>
+                        <div class="flex gap-4">
+                            <div
+                                class="w-12 h-12 bg-white rounded-lg border border-gray-200 flex items-center justify-center">
+                                <svg class="w-6 h-6 text-black" fill="none" stroke="currentColor" stroke-width="2"
+                                    viewBox="0 0 24 24">
+                                    <path d="M5 12h14"></path>
+                                    <path d="m12 5 7 7-7 7"></path>
+                                </svg></div>
+                            <div
+                                class="w-12 h-12 bg-black rounded-lg border border-black flex items-center justify-center shadow-md">
+                                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2"
+                                    viewBox="0 0 24 24">
+                                    <path d="M12 2v20"></path>
+                                    <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                                </svg></div>
+                        </div>
+                    </div>
+
+                    <!-- Icon Grid -->
+                    <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                        <div
+                            class="bg-white p-4 border border-gray-200 rounded-lg flex flex-col items-center justify-center gap-3 hover:border-black transition-colors">
+                            <svg class="w-6 h-6 text-black" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                                <rect width="18" height="18" x="3" y="3" rx="2"></rect>
+                                <path d="M7 7h.01"></path>
+                                <path d="M17 7h.01"></path>
+                                <path d="M7 17h.01"></path>
+                                <path d="M17 17h.01"></path>
+                            </svg>
+                            <span class="text-[10px] font-mono text-gray-400">Cpu</span>
+                            <a href="#" download="cpu.svg"
+                                class="icon-download text-[10px] font-mono text-gray-500 border border-gray-200 rounded-md px-2 py-1 hover:border-black hover:text-black transition-colors">Download
+                                SVG</a>
+                        </div>
+                        <div
+                            class="bg-white p-4 border border-gray-200 rounded-lg flex flex-col items-center justify-center gap-3 hover:border-black transition-colors">
+                            <svg class="w-6 h-6 text-black" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                                <path d="M12 8V4H8"></path>
+                                <rect width="16" height="12" x="4" y="8" rx="2"></rect>
+                                <path d="M2 14h2"></path>
+                                <path d="M20 14h2"></path>
+                                <path d="M15 13v2"></path>
+                                <path d="M9 13v2"></path>
+                            </svg>
+                            <span class="text-[10px] font-mono text-gray-400">Bot</span>
+                            <a href="#" download="bot.svg"
+                                class="icon-download text-[10px] font-mono text-gray-500 border border-gray-200 rounded-md px-2 py-1 hover:border-black hover:text-black transition-colors">Download
+                                SVG</a>
+                        </div>
+                        <div
+                            class="bg-white p-4 border border-gray-200 rounded-lg flex flex-col items-center justify-center gap-3 hover:border-black transition-colors">
+                            <svg class="w-6 h-6 text-black" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                                <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+                            </svg>
+                            <span class="text-[10px] font-mono text-gray-400">Activity</span>
+                            <a href="#" download="activity.svg"
+                                class="icon-download text-[10px] font-mono text-gray-500 border border-gray-200 rounded-md px-2 py-1 hover:border-black hover:text-black transition-colors">Download
+                                SVG</a>
+                        </div>
+                        <div
+                            class="bg-white p-4 border border-gray-200 rounded-lg flex flex-col items-center justify-center gap-3 hover:border-black transition-colors">
+                            <svg class="w-6 h-6 text-black" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <path d="M12 16v-4"></path>
+                                <path d="M12 8h.01"></path>
+                            </svg>
+                            <span class="text-[10px] font-mono text-gray-400">Info</span>
+                            <a href="#" download="info.svg"
+                                class="icon-download text-[10px] font-mono text-gray-500 border border-gray-200 rounded-md px-2 py-1 hover:border-black hover:text-black transition-colors">Download
+                                SVG</a>
+                        </div>
+                        <div
+                            class="bg-white p-4 border border-gray-200 rounded-lg flex flex-col items-center justify-center gap-3 hover:border-black transition-colors">
+                            <svg class="w-6 h-6 text-black" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                                <path
+                                    d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4">
+                                </path>
+                                <path d="M9 18c-4.51 2-5-2-7-2"></path>
+                            </svg>
+                            <span class="text-[10px] font-mono text-gray-400">Github</span>
+                            <a href="#" download="github.svg"
+                                class="icon-download text-[10px] font-mono text-gray-500 border border-gray-200 rounded-md px-2 py-1 hover:border-black hover:text-black transition-colors">Download
+                                SVG</a>
+                        </div>
+                        <div
+                            class="bg-white p-4 border border-gray-200 rounded-lg flex flex-col items-center justify-center gap-3 hover:border-black transition-colors">
+                            <svg class="w-6 h-6 text-black" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                                <rect width="18" height="18" x="3" y="3" rx="2"></rect>
+                                <path d="M3 9h18"></path>
+                                <path d="M9 21V9"></path>
+                            </svg>
+                            <span class="text-[10px] font-mono text-gray-400">Layout</span>
+                            <a href="#" download="layout.svg"
+                                class="icon-download text-[10px] font-mono text-gray-500 border border-gray-200 rounded-md px-2 py-1 hover:border-black hover:text-black transition-colors">Download
+                                SVG</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ==========================================
+                 4. BUTTONS & COMPONENTS
+            =========================================== -->
+            <section id="components" class="scroll-mt-24">
+                <div class="border-b border-gray-200 pb-4 mb-8">
+                    <h2 class="text-3xl font-medium tracking-tight">4. Buttons & UI Components</h2>
+                </div>
+
+                <div class="grid lg:grid-cols-2 gap-12">
+                    <!-- Buttons -->
+                    <div class="bg-gray-50 border border-gray-200 rounded-2xl p-8">
+                        <h3 class="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-6">Button Styles
+                        </h3>
+                        <div class="space-y-6">
+                            <!-- Primary -->
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm font-medium text-gray-600">Primary Solid</span>
+                                <button
+                                    class="bg-black text-white px-6 py-3 text-xs font-medium uppercase tracking-widest hover:bg-[#ecd44c] hover:text-black transition-colors flex items-center gap-2">
+                                    Continue <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M5 12h14"></path>
+                                        <path d="m12 5 7 7-7 7"></path>
+                                    </svg>
+                                </button>
+                            </div>
+                            <!-- Secondary / Ghost -->
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm font-medium text-gray-600">Secondary Outline</span>
+                                <button
+                                    class="bg-transparent border border-gray-300 text-black px-6 py-3 text-xs font-medium uppercase tracking-widest hover:border-black transition-colors">
+                                    Learn More
+                                </button>
+                            </div>
+                            <!-- Alert / Brutal -->
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm font-medium text-gray-600">Primary Brutal</span>
+                                <button
+                                    class="bg-[#ecd44c] text-black px-6 py-3 text-xs font-bold uppercase tracking-widest border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] active:shadow-none active:translate-y-1 transition-all">
+                                    Execute
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Cards / Chips -->
+                    <div class="bg-gray-50 border border-gray-200 rounded-2xl p-8">
+                        <h3 class="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-6">Structural Cards
+                            & Chips</h3>
+                        <div class="space-y-6">
+                            <!-- Tag / Chip -->
+                            <div class="flex items-center gap-3">
+                                <span
+                                    class="text-[10px] uppercase font-bold tracking-widest bg-gray-200 text-gray-600 px-3 py-1.5 rounded-sm">Neutral
+                                    Tag</span>
+                                <span
+                                    class="text-[10px] uppercase font-bold tracking-widest bg-[#ea580c] text-white px-3 py-1.5 rounded-sm shadow-sm">Warning
+                                    Tag</span>
+                            </div>
+                            <!-- Mini Card -->
+                            <div
+                                class="w-full bg-white border border-gray-200 rounded-lg p-5 shadow-sm flex gap-4 items-center">
+                                <div
+                                    class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center shrink-0">
+                                    <svg class="w-4 h-4 text-black" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M12 2v20"></path>
+                                        <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="text-sm font-semibold text-black">Financial Analysis</h4>
+                                    <p class="text-[11px] text-gray-500 mt-0.5">Automated dataset parsing.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ==========================================
+                 5. LAYOUT / SPACING
+            =========================================== -->
+            <section id="layout" class="scroll-mt-24">
+                <div class="border-b border-gray-200 pb-4 mb-8">
+                    <h2 class="text-3xl font-medium tracking-tight">5. Spacing & Grid Definition</h2>
+                </div>
+
+                <!-- Spacing block -->
+                <div class="bg-white border-dashed border-2 border-gray-300 rounded-2xl p-2 mb-10 relative">
+                    <div class="absolute -top-3 left-6 bg-white px-2 text-[10px] font-mono text-gray-400">Padding: p-8
+                        (32px)</div>
+                    <div class="bg-blue-50/50 p-8 rounded-xl border border-blue-100 relative">
+                        <div class="absolute -top-3 left-6 bg-blue-50 px-2 text-[10px] font-mono text-blue-400">Gap:
+                            gap-12 (48px)</div>
+                        <div class="flex flex-col gap-12 w-full border border-dashed border-blue-200 p-4 relative">
+                            <div
+                                class="h-12 bg-white flex items-center justify-center border border-gray-200 shadow-sm text-xs font-mono text-gray-400">
+                                Element 1</div>
+                            <div
+                                class="h-12 bg-white flex items-center justify-center border border-gray-200 shadow-sm text-xs font-mono text-gray-400">
+                                Element 2</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Grid Visual -->
+                <div class="bg-gray-50 border border-gray-200 rounded-2xl p-10 mt-8">
+                    <h3 class="text-sm font-semibold mb-6 flex items-center justify-between">
+                        12-Column Desktop Grid
+                        <span
+                            class="bg-white border border-gray-200 px-2 py-1 rounded text-xs font-mono text-gray-500">max-w-6xl</span>
+                    </h3>
+
+                    <div class="w-full flex gap-4 h-64 relative z-10 isolated">
+                        <!-- Grid col bg highlights -->
+                        <div class="absolute inset-0 flex gap-4 pointer-events-none z-0">
+                            <div class="flex-1 bg-red-100/30 rounded"></div>
+                            <div class="flex-1 bg-red-100/30 rounded"></div>
+                            <div class="flex-1 bg-red-100/30 rounded"></div>
+                            <div class="flex-1 bg-red-100/30 rounded"></div>
+                            <div class="flex-1 bg-red-100/30 rounded"></div>
+                            <div class="flex-1 bg-red-100/30 rounded"></div>
+                            <div class="flex-1 bg-red-100/30 rounded"></div>
+                            <div class="flex-1 bg-red-100/30 rounded"></div>
+                            <div class="flex-1 bg-red-100/30 rounded"></div>
+                            <div class="flex-1 bg-red-100/30 rounded"></div>
+                            <div class="flex-1 bg-red-100/30 rounded"></div>
+                            <div class="flex-1 bg-red-100/30 rounded"></div>
+                        </div>
+
+                        <!-- Content mock overlay -->
+                        <div class="grid grid-cols-12 gap-4 w-full h-full relative z-10">
+                            <div
+                                class="col-span-4 bg-white border border-blue-300/80 shadow-[0_4px_20px_rgba(0,0,0,0.05)] rounded-lg p-6 flex flex-col justify-center">
+                                <div class="w-1/2 h-4 bg-gray-200 rounded mb-4"></div>
+                                <div class="w-full h-2 bg-gray-100 rounded mb-2"></div>
+                                <div class="w-3/4 h-2 bg-gray-100 rounded"></div>
+                            </div>
+                            <div
+                                class="col-span-8 bg-white border border-blue-300/80 shadow-[0_4px_20px_rgba(0,0,0,0.05)] rounded-lg flex items-center justify-center">
+                                <span class="text-xs font-mono text-blue-400">Visual Hero / col-span-8</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ==========================================
+                 6. SOCIAL MEDIA
+            =========================================== -->
+            <section id="social" class="scroll-mt-24">
+                <div class="border-b border-gray-200 pb-4 mb-8">
+                    <h2 class="text-3xl font-medium tracking-tight">6. Social Media (4:5)</h2>
+                </div>
+
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h3 class="text-xl font-medium mb-4">Post Composition Rules</h3>
+                        <p class="text-sm text-gray-500 mb-6">Designed strictly for vertical feeds (LinkedIn, IG).
+                            Requires absolute typographic centeredness with extreme safe margins.</p>
+                        <div class="space-y-4">
+                            <div
+                                class="flex border border-gray-200 p-4 rounded-lg bg-gray-50 items-center justify-between">
+                                <span class="text-sm font-medium">Safe Padding</span>
+                                <code
+                                    class="text-xs bg-white border px-2 py-1 rounded font-mono text-blue-600">p-12 / p-16</code>
+                            </div>
+                            <div
+                                class="flex border border-gray-200 p-4 rounded-lg bg-gray-50 items-center justify-between">
+                                <span class="text-sm font-medium">Logo / URL Root</span>
+                                <code
+                                    class="text-xs bg-white border px-2 py-1 rounded font-mono text-blue-600">absolute bottom-8</code>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Layout Rendering -->
+                    <div class="w-full flex justify-center bg-gray-100 p-10 rounded-2xl border border-gray-200">
+                        <div class="w-[300px] aspect-[4/5] bg-black shadow-2xl relative overflow-hidden group">
+                            <!-- Background grain/blur simulation -->
+                            <div class="absolute inset-0 bg-[#111]"></div>
+                            <div class="absolute inset-0 opacity-20"
+                                style="background-image: url('data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.85%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22/%3E%3C/svg%3E'); mix-blend-mode: overlay;">
+                            </div>
+
+                            <!-- Safe Zone Display -->
+                            <div
+                                class="absolute inset-10 border border-green-500/40 border-dashed z-0 opacity-0 group-hover:opacity-100 transition-opacity flex items-start p-1">
+                                <span class="text-[8px] font-mono text-green-400 uppercase">Safe Zone</span></div>
+
+                            <!-- Content -->
+                            <div
+                                class="absolute inset-0 flex flex-col items-center justify-center p-10 text-center relative z-10">
+                                <h2 class="text-white text-[42px] font-normal leading-[1.0] tracking-tight mb-4">
+                                    Unlock<br>Medical<br><span
+                                        class="inline-block bg-[#ecd44c] text-black italic px-2 mt-1">Intelligence</span>
+                                </h2>
+                                <p class="text-white/60 text-xs">AIPOCH Protocol v2.4</p>
+                            </div>
+
+                            <!-- Logo Area -->
+                            <div class="absolute bottom-6 left-0 w-full flex justify-center z-10">
+                                <div
+                                    class="bg-white/10 backdrop-blur px-3 py-1.5 rounded-full border border-white/20 text-white text-[10px] font-medium tracking-widest flex items-center gap-2">
+                                    <div class="w-1.5 h-1.5 bg-green-400 rounded-full"></div> AIPOCH
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ==========================================
+                 7. BANNER LAYOUT
+            =========================================== -->
+            <section id="banner" class="scroll-mt-24">
+                <div class="border-b border-gray-200 pb-4 mb-8">
+                    <h2 class="text-3xl font-medium tracking-tight">7. Banner Systems (2:1 / 3:1)</h2>
+                </div>
+
+                <h3 class="text-sm font-semibold mb-6">LinkedIn Cover & Web Heros</h3>
+                <!-- Web Hero Example (Wide format) -->
+                <div class="w-full bg-[#f4f4f5] border border-gray-200 rounded-2xl p-6 mb-8">
+                    <div
+                        class="w-full aspect-[2.6/1] bg-white border border-gray-300 shadow-[0_20px_40px_rgba(0,0,0,0.08)] overflow-hidden flex relative rounded-lg">
+
+                        <!-- Left Layout -->
+                        <div class="w-1/2 md:w-[60%] p-10 lg:p-16 flex flex-col justify-center bg-white z-10 relative">
+                            <span class="text-[10px] font-bold text-gray-400 uppercase tracking-widest block mb-4">Web /
+                                Horizontal</span>
+                            <h2 class="text-4xl lg:text-5xl font-light tracking-tight text-black mb-4 leading-[1.1]">The
+                                new standard for clinical data agents.</h2>
+                            <p class="text-sm text-gray-500 max-w-sm mb-8">Deploy fully verified medical AI skills in
+                                seconds. Completely private.</p>
+                            <button
+                                class="bg-black text-[10px] lg:text-xs text-white px-6 py-3 uppercase tracking-widest font-medium w-max shadow-lg mb-0">Experience
+                                V2</button>
+                        </div>
+
+                        <!-- Right Graphic -->
+                        <div
+                            class="w-1/2 md:w-[40%] bg-[#0f0f0f] relative overflow-hidden flex items-center justify-center border-l-2 border-black">
+                            <div class="absolute inset-0 grid-bg opacity-20"></div>
+                            <div class="absolute inset-0 bg-gradient-to-l from-transparent to-[#0f0f0f]/80"></div>
+                            <!-- Mock UI floating element -->
+                            <div
+                                class="bg-[#1a1a1a] border border-[#333] p-4 text-white w-2/3 shadow-2xl skew-y-3 -rotate-6 transform transition-transform duration-1000 hover:rotate-0 hover:skew-y-0">
+                                <div class="w-20 h-2 bg-white/20 rounded mb-4"></div>
+                                <div class="w-full h-1 bg-white/10 rounded mb-2"></div>
+                                <div class="w-4/5 h-1 bg-white/10 rounded"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ==========================================
+                 8. IMAGE STYLE & CONTEXT
+            =========================================== -->
+            <section id="image" class="scroll-mt-24">
+                <div class="border-b border-gray-200 pb-4 mb-8">
+                    <h2 class="text-3xl font-medium tracking-tight">8. Image Style Definition</h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- Rule 1 -->
+                    <div class="flex flex-col gap-4 group">
+                        <div
+                            class="bg-gray-100 aspect-square rounded-xl overflow-hidden border border-gray-200 relative isolate flex flex-col items-center justify-center p-6 text-center">
+                            <!-- simulating blur/abstract art via css elements -->
+                            <div
+                                class="absolute top-0 right-0 w-32 h-32 bg-blue-200 rounded-full mix-blend-multiply filter blur-2xl opacity-50 z-[-1]">
+                            </div>
+                            <div
+                                class="absolute bottom-0 left-0 w-32 h-32 bg-indigo-200 rounded-full mix-blend-multiply filter blur-2xl opacity-50 z-[-1]">
+                            </div>
+                            <svg class="w-8 h-8 text-indigo-400 mb-2" fill="none" stroke="currentColor"
+                                stroke-width="1.5" viewBox="0 0 24 24">
+                                <path d="M21 12A9 9 0 1 1 3 12a9 9 0 0 1 18 0Z"></path>
+                                <path d="M12 8v4l3 3"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 class="text-sm font-semibold">1. Abstract Over Literal</h4>
+                            <p class="text-xs text-gray-500 mt-1">Use gradients, geometry, and UI mockups instead of
+                                generic stock photos of laboratories.</p>
+                        </div>
+                    </div>
+                    <!-- Rule 2 -->
+                    <div class="flex flex-col gap-4">
+                        <div
+                            class="bg-[#1a1a1a] aspect-square rounded-xl overflow-hidden border border-gray-200 relative isolate flex items-center justify-center p-6 text-center shadow-inner">
+                            <div class="absolute inset-0 bg-[#000] opacity-50"
+                                style="background-image: url('data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noise%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.9%22 numOctaves=%224%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noise)%22/%3E%3C/svg%3E'); mix-blend-mode: overlay;">
+                            </div>
+                            <span
+                                class="text-white font-mono text-xs uppercase tracking-widest bg-black/40 px-3 py-1 border border-white/10 backdrop-blur">Heavy
+                                Noise</span>
+                        </div>
+                        <div>
+                            <h4 class="text-sm font-semibold">2. Cold Textures</h4>
+                            <p class="text-xs text-gray-500 mt-1">Introduce film grain and digital artifacts to ground
+                                the imagery in an authentic software feel.</p>
+                        </div>
+                    </div>
+                    <!-- Rule 3 -->
+                    <div class="flex flex-col gap-4">
+                        <div
+                            class="bg-white aspect-square rounded-xl overflow-hidden border-2 border-dashed border-gray-300 relative isolate flex items-center justify-center p-6 text-center">
+                            <div
+                                class="w-3/4 h-3/4 bg-gray-50 border border-gray-200 shadow-xl rounded flex items-center justify-center -rotate-3">
+                                <div class="w-1/2 h-2 bg-gray-200 rounded"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="text-sm font-semibold">3. Component Floating</h4>
+                            <p class="text-xs text-gray-500 mt-1">Isolate UI components with drop shadows on stark 3D
+                                neutral backgrounds.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ==========================================
+                 9. COPY TONE EXAMPLES
+            =========================================== -->
+            <section id="copy" class="scroll-mt-24 pb-32">
+                <div class="border-b border-gray-200 pb-4 mb-8">
+                    <h2 class="text-3xl font-medium tracking-tight">9. Copy Tone Application</h2>
+                </div>
+
+                <div class="bg-gray-50 border border-gray-200 rounded-2xl p-10 flex flex-col gap-10">
+
+                    <!-- Headlines -->
+                    <div>
+                        <span class="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-3 block">Hero
+                            Headlines</span>
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div class="bg-white p-6 border-l-4 border-l-green-500 shadow-sm">
+                                <h3 class="text-xl font-medium">Deploy Medical AI Models Locally.</h3>
+                                <p class="text-[10px] uppercase text-gray-400 mt-2 font-mono">Calm & Factual</p>
+                            </div>
+                            <div class="bg-white p-6 border-l-4 border-l-red-500 shadow-sm opacity-50">
+                                <h3 class="text-xl font-bold">The ULTIMATE Med-Tech Revolution!</h3>
+                                <p class="text-[10px] uppercase text-gray-400 mt-2 font-mono">Hyped & Desperate</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Micro-copy -->
+                    <div class="border-t border-gray-200 pt-10">
+                        <span class="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-3 block">CTA &
+                            Micro-Copy</span>
+                        <div class="flex flex-wrap gap-4">
+                            <button
+                                class="bg-[#ecd44c] text-black px-6 py-2 text-xs font-semibold uppercase tracking-widest border border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:bg-white transition-colors">Start
+                                Review</button>
+                            <button
+                                class="bg-black text-white px-6 py-2 text-xs font-semibold uppercase tracking-widest hover:bg-gray-800 transition-colors">View
+                                Protocol</button>
+                            <button
+                                class="bg-transparent border border-gray-300 px-6 py-2 text-xs font-semibold uppercase tracking-widest hover:border-black text-gray-500 hover:text-black transition-colors disabled:line-through">Download
+                                Docs</button>
+                        </div>
+                        <p class="text-xs text-gray-500 mt-4 max-w-lg leading-relaxed">Verbs must be action-oriented and
+                            clinical (Start, View, Analyze, Deploy). Avoid casual verbs like "Grab", "Check Out", or
+                            "See".</p>
+                    </div>
+
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const sections = document.querySelectorAll("section[id]");
+            const navLinks = document.querySelectorAll("aside nav a");
+            const svgNamespace = "http://www.w3.org/2000/svg";
+
+            document.querySelectorAll(".icon-download").forEach(link => {
+                const card = link.closest("div");
+                const svg = card ? card.querySelector("svg") : null;
+
+                if (!svg) {
+                    return;
+                }
+
+                const clone = svg.cloneNode(true);
+                clone.setAttribute("xmlns", svgNamespace);
+                clone.setAttribute("width", "24");
+                clone.setAttribute("height", "24");
+                clone.classList.remove("w-6", "h-6", "text-black");
+                clone.setAttribute("stroke", "currentColor");
+                clone.setAttribute("color", "#000000");
+
+                const svgMarkup = `<?xml version="1.0" encoding="UTF-8"?>\n${clone.outerHTML}`;
+                link.href = `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svgMarkup)}`;
+            });
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        navLinks.forEach(link => {
+                            link.classList.remove('text-black', 'bg-gray-200');
+                            link.classList.add('text-gray-600');
+                            if (link.getAttribute('href') === `#${entry.target.id}`) {
+                                link.classList.add('text-black', 'bg-gray-200');
+                                link.classList.remove('text-gray-600');
+                            }
+                        });
+                    }
+                });
+            }, { threshold: 0.2 });
+
+            sections.forEach(sec => observer.observe(sec));
+        });
+    </script>
+</body>
+
+</html>
