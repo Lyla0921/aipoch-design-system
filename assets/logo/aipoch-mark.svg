@@ -1,0 +1,5 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <title>AIPOCH mark</title>
+  <circle cx="32" cy="32" r="30" stroke="#111111" stroke-opacity="0.4" stroke-width="2"/>
+  <circle cx="32" cy="32" r="4" fill="#111111"/>
+</svg>

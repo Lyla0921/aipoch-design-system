@@ -48,6 +48,53 @@
         ::-webkit-scrollbar-thumb:hover {
             background: #9ca3af;
         }
+
+        .icon-card {
+            transition: border-color 280ms ease, background-color 280ms ease, box-shadow 280ms ease, transform 280ms ease;
+        }
+
+        .icon-card:hover {
+            border-color: transparent;
+            background-color: transparent;
+            box-shadow: none;
+            transform: none;
+        }
+
+        .icon-card:hover .icon-frame {
+            color: #000000;
+        }
+
+        .icon-frame {
+            transition: color 280ms ease, transform 280ms ease;
+        }
+
+        .icon-download {
+            transition: background-color 240ms ease, color 240ms ease, border-color 240ms ease, box-shadow 240ms ease;
+        }
+
+        .icon-download:hover {
+            background-color: #fbfaf7;
+            border-color: #d8d3c8;
+            color: #111111;
+            box-shadow: 0 6px 14px rgba(17, 17, 17, 0.04);
+        }
+
+        .icon-download:focus-visible {
+            outline: 1px solid #d8d3c8;
+            outline-offset: 2px;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .icon-card,
+            .icon-frame,
+            .icon-download {
+                transition: none;
+            }
+
+            .icon-card:hover {
+                transform: none;
+            }
+        }
     </style>
 </head>
 
@@ -68,6 +115,9 @@
             <div>
                 <h3 class="text-[10px] font-semibold uppercase tracking-widest text-gray-400 mb-2 px-2">Foundation</h3>
                 <ul class="space-y-0.5 text-sm">
+                    <li><a href="#logo"
+                            class="block px-2 py-1.5 text-gray-600 hover:bg-gray-100 rounded-md transition-colors font-medium">Logo</a>
+                    </li>
                     <li><a href="#typography"
                             class="block px-2 py-1.5 text-gray-600 hover:bg-gray-100 rounded-md transition-colors font-medium">Typography</a>
                     </li>
@@ -141,77 +191,320 @@
             </div>
 
             <!-- ==========================================
-                 1. TYPOGRAPHY
+                 1. LOGO
+            =========================================== -->
+            <section id="logo" class="scroll-mt-24">
+                <div class="border-b border-gray-200 pb-4 mb-8">
+                    <h2 class="text-3xl font-medium tracking-tight">1. Logo</h2>
+                </div>
+
+                <div class="space-y-8">
+                    <div class="bg-gray-50 border border-gray-200 rounded-2xl p-10">
+                        <h3 class="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-4">Overview</h3>
+                        <p class="text-sm text-gray-500 max-w-3xl leading-relaxed">The logo is the primary visual
+                            identifier of the brand and must be used consistently across all digital interfaces.</p>
+                    </div>
+
+                    <div class="bg-gray-50 border border-gray-200 rounded-2xl p-10">
+                        <div class="flex items-end justify-between gap-6 border-b border-gray-200 pb-8 mb-8">
+                            <div>
+                                <h3 class="text-lg font-medium text-black">Logo Variants</h3>
+                                <p class="text-sm text-gray-500 mt-2">Use only the lockups visible on the official
+                                    website. Keep shape, spacing, and color treatment unchanged. Download assets are
+                                    attached to each approved variant.</p>
+                            </div>
+                        </div>
+
+                        <div class="grid md:grid-cols-3 gap-6">
+                            <div class="bg-white border border-gray-200 rounded-xl p-6 flex flex-col gap-4">
+                                <span
+                                    class="text-[10px] font-mono uppercase tracking-[0.18em] text-gray-400 block mb-4">Default</span>
+                                <div class="h-28 border border-[#E7E5DE] rounded-lg bg-white flex items-center justify-center px-6">
+                                    <img src="./assets/logo/aipoch-logo-primary.svg" alt="AIPOCH default logo"
+                                        class="w-full max-w-[176px] h-auto">
+                                </div>
+                                <p class="text-xs text-gray-500 leading-relaxed">Use for headers, navigation, and
+                                    standard light-background interface placements.</p>
+                                <div class="flex items-center justify-between gap-4">
+                                    <h4 class="text-sm font-medium text-black">Primary</h4>
+                                    <span class="text-[10px] font-mono uppercase tracking-[0.18em] text-gray-400">SVG / PNG</span>
+                                </div>
+                                <div class="flex flex-wrap gap-3">
+                                    <a href="./assets/logo/aipoch-logo-primary.svg" download
+                                        class="border border-black bg-black text-white px-4 py-2 text-xs font-medium uppercase tracking-widest">SVG</a>
+                                    <a href="./assets/logo/aipoch-logo-primary.png" download
+                                        class="border border-black bg-white text-black px-4 py-2 text-xs font-medium uppercase tracking-widest">PNG</a>
+                                </div>
+                            </div>
+                            <div class="bg-white border border-gray-200 rounded-xl p-6 flex flex-col gap-4">
+                                <span
+                                    class="text-[10px] font-mono uppercase tracking-[0.18em] text-gray-400 block mb-4">Inverse
+                                    / On-Dark</span>
+                                <div class="h-28 border border-[#1A1A1A] rounded-lg bg-[#1A1A1A] flex items-center justify-center px-6">
+                                    <img src="./assets/logo/aipoch-logo-inverse.svg" alt="AIPOCH inverse logo"
+                                        class="w-full max-w-[176px] h-auto">
+                                </div>
+                                <p class="text-xs text-gray-500 leading-relaxed">Use when the horizontal lockup
+                                    sits on dark surfaces and high contrast is required.</p>
+                                <div class="flex items-center justify-between gap-4">
+                                    <h4 class="text-sm font-medium text-black">Inverse</h4>
+                                    <span class="text-[10px] font-mono uppercase tracking-[0.18em] text-gray-400">SVG / PNG</span>
+                                </div>
+                                <div class="flex flex-wrap gap-3">
+                                    <a href="./assets/logo/aipoch-logo-inverse.svg" download
+                                        class="border border-black bg-black text-white px-4 py-2 text-xs font-medium uppercase tracking-widest">SVG</a>
+                                    <a href="./assets/logo/aipoch-logo-inverse.png" download
+                                        class="border border-black bg-white text-black px-4 py-2 text-xs font-medium uppercase tracking-widest">PNG</a>
+                                </div>
+                            </div>
+                            <div class="bg-white border border-gray-200 rounded-xl p-6 flex flex-col gap-4">
+                                <span
+                                    class="text-[10px] font-mono uppercase tracking-[0.18em] text-gray-400 block mb-4">Stacked</span>
+                                <div class="h-28 border border-[#1A1A1A] rounded-lg bg-[#1A1A1A] flex items-center justify-center px-6">
+                                    <img src="./assets/logo/aipoch-logo-stacked.svg" alt="AIPOCH stacked logo"
+                                        class="h-16 w-auto">
+                                </div>
+                                <p class="text-xs text-gray-500 leading-relaxed">Use for footer-style brand
+                                    signatures where a vertical composition is needed.</p>
+                                <div class="flex items-center justify-between gap-4">
+                                    <h4 class="text-sm font-medium text-black">Stacked</h4>
+                                    <span class="text-[10px] font-mono uppercase tracking-[0.18em] text-gray-400">SVG / PNG</span>
+                                </div>
+                                <div class="flex flex-wrap gap-3">
+                                    <a href="./assets/logo/aipoch-logo-stacked.svg" download
+                                        class="border border-black bg-black text-white px-4 py-2 text-xs font-medium uppercase tracking-widest">SVG</a>
+                                    <a href="./assets/logo/aipoch-logo-stacked.png" download
+                                        class="border border-black bg-white text-black px-4 py-2 text-xs font-medium uppercase tracking-widest">PNG</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid lg:grid-cols-2 gap-8">
+                        <div class="bg-gray-50 border border-gray-200 rounded-2xl p-10">
+                            <h3 class="text-lg font-medium text-black mb-2">Clear Space</h3>
+                            <p class="text-sm text-gray-500 leading-relaxed max-w-xl mb-8">Define `x` as the full
+                                rendered height of the logo. Maintain a minimum clear space of `1x` on all sides, so no
+                                text, image, or UI element enters that area.</p>
+                            <div class="bg-white border border-gray-200 rounded-xl p-8 flex items-center justify-center">
+                                <div class="relative rounded-xl bg-[#F7F7F4] border border-gray-300"
+                                    style="width:192px;height:96px">
+                                    <div class="absolute bg-[#E9E4D8]" style="left:32px;top:0;width:128px;height:32px"></div>
+                                    <div class="absolute bg-[#E9E4D8]" style="left:32px;top:64px;width:128px;height:32px"></div>
+                                    <div class="absolute bg-[#E9E4D8]" style="left:0;top:32px;width:32px;height:32px"></div>
+                                    <div class="absolute bg-[#E9E4D8]" style="left:160px;top:32px;width:32px;height:32px"></div>
+                                    <div class="absolute border border-dashed border-gray-400/70 bg-white"
+                                        style="left:32px;top:32px;width:128px;height:32px"></div>
+                                    <div class="absolute flex items-center justify-center"
+                                        style="left:32px;top:32px;width:128px;height:32px">
+                                        <img src="./assets/logo/aipoch-logo-primary.svg"
+                                            alt="AIPOCH logo clear space diagram" style="height:32px;width:auto;display:block">
+                                    </div>
+                                    <div class="absolute text-center text-[10px] font-mono uppercase tracking-[0.18em] text-gray-500"
+                                        style="left:80px;top:10px;width:32px;line-height:12px">1x</div>
+                                    <div class="absolute text-center text-[10px] font-mono uppercase tracking-[0.18em] text-gray-500"
+                                        style="left:80px;top:74px;width:32px;line-height:12px">1x</div>
+                                    <div class="absolute text-center text-[10px] font-mono uppercase tracking-[0.18em] text-gray-500"
+                                        style="left:4px;top:42px;width:24px;line-height:12px">1x</div>
+                                    <div class="absolute text-center text-[10px] font-mono uppercase tracking-[0.18em] text-gray-500"
+                                        style="left:164px;top:42px;width:24px;line-height:12px">1x</div>
+                                </div>
+                            </div>
+                            <p class="text-xs text-gray-500 leading-relaxed mt-6">In this diagram, the logo is rendered
+                                at `32px` tall, so each clear-space margin is also `32px`. In constrained UI, this may
+                                reduce to `0.5x` only when necessary. The clear space always scales with the logo size.</p>
+                        </div>
+
+                        <div class="bg-gray-50 border border-gray-200 rounded-2xl p-10">
+                            <h3 class="text-lg font-medium text-black mb-2">Minimum Size</h3>
+                            <p class="text-sm text-gray-500 leading-relaxed max-w-xl mb-8">The current website
+                                navigation uses the horizontal logo at approximately `32px` tall. Treat `32px` as both
+                                the minimum and the standard UI size, then scale up for larger interface contexts.</p>
+                            <div class="bg-white border border-gray-200 rounded-xl p-8 space-y-6">
+                                <div class="flex items-center justify-between gap-6">
+                                    <span class="text-xs font-medium text-gray-500">32px minimum / standard UI</span>
+                                    <img src="./assets/logo/aipoch-logo-primary.svg" alt="AIPOCH logo at 32 pixels tall"
+                                        style="height:32px;width:auto">
+                                </div>
+                                <div class="flex items-center justify-between gap-6">
+                                    <span class="text-xs font-medium text-gray-500">48px standard UI / larger interface</span>
+                                    <img src="./assets/logo/aipoch-logo-primary.svg" alt="AIPOCH logo at 48 pixels tall"
+                                        style="height:48px;width:auto">
+                                </div>
+                                <div class="flex items-center justify-between gap-6">
+                                    <span class="text-xs font-medium text-gray-500">64px prominent</span>
+                                    <img src="./assets/logo/aipoch-logo-primary.svg" alt="AIPOCH logo at 64 pixels tall"
+                                        style="height:64px;width:auto">
+                                </div>
+                            </div>
+                            <p class="text-xs text-gray-500 leading-relaxed mt-6">Ensure the logo remains clearly
+                                legible at every approved size.</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 border border-gray-200 rounded-2xl p-10">
+                        <div class="flex items-end justify-between gap-6 border-b border-gray-200 pb-8 mb-8">
+                            <div>
+                                <h3 class="text-lg font-medium text-black">Usage Rules</h3>
+                                <p class="text-sm text-gray-500 mt-2">Keep the logo on clean, high-contrast backgrounds
+                                    and use the inverse lockup on dark surfaces, consistent with the website.</p>
+                            </div>
+                        </div>
+
+                        <div class="grid lg:grid-cols-2 gap-6">
+                            <div class="bg-white border border-gray-200 rounded-xl p-6">
+                                <h4 class="text-sm font-medium text-black mb-4">Do</h4>
+                                <div class="space-y-3 text-sm text-gray-600">
+                                    <div class="flex items-start gap-3">
+                                        <span class="mt-1 w-2 h-2 rounded-full bg-black shrink-0"></span>
+                                        <p>Use the original proportions and spacing of the official lockup.</p>
+                                    </div>
+                                    <div class="flex items-start gap-3">
+                                        <span class="mt-1 w-2 h-2 rounded-full bg-black shrink-0"></span>
+                                        <p>Use the default logo on light backgrounds and the inverse logo on dark backgrounds.</p>
+                                    </div>
+                                    <div class="flex items-start gap-3">
+                                        <span class="mt-1 w-2 h-2 rounded-full bg-black shrink-0"></span>
+                                        <p>Keep placement calm and readable with sufficient contrast around the logo.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bg-white border border-gray-200 rounded-xl p-6">
+                                <h4 class="text-sm font-medium text-black mb-4">Don’t</h4>
+                                <div class="space-y-3 text-sm text-gray-600">
+                                    <div class="flex items-start gap-3">
+                                        <span class="mt-0.5 text-black font-mono">×</span>
+                                        <p>Stretch, distort, rotate, or re-space the logo.</p>
+                                    </div>
+                                    <div class="flex items-start gap-3">
+                                        <span class="mt-0.5 text-black font-mono">×</span>
+                                        <p>Change the logo colors outside the approved light and dark website versions.</p>
+                                    </div>
+                                    <div class="flex items-start gap-3">
+                                        <span class="mt-0.5 text-black font-mono">×</span>
+                                        <p>Add shadows, gradients, outlines, or other visual effects.</p>
+                                    </div>
+                                    <div class="flex items-start gap-3">
+                                        <span class="mt-0.5 text-black font-mono">×</span>
+                                        <p>Place the logo on busy or low-contrast backgrounds.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- ==========================================
+                 2. TYPOGRAPHY
             =========================================== -->
             <section id="typography" class="scroll-mt-24">
                 <div class="border-b border-gray-200 pb-4 mb-8">
-                    <h2 class="text-3xl font-medium tracking-tight">1. Typography</h2>
+                    <h2 class="text-3xl font-medium tracking-tight">2. Typography</h2>
                 </div>
 
                 <div class="space-y-8 p-10 bg-gray-50 border border-gray-200 rounded-2xl">
-                    <!-- H1 -->
                     <div class="pb-8 border-b border-gray-200">
-                        <div class="flex justify-between items-end mb-4">
+                        <div class="flex justify-between items-end mb-4 gap-4">
                             <span class="text-[10px] font-bold text-gray-400 uppercase tracking-widest">H1 Hero</span>
-                            <code
-                                class="font-mono text-[10px] bg-white border border-gray-200 px-2 py-1 rounded text-gray-500">text-5xl lg:text-7xl font-normal tracking-tight</code>
+                            <div class="flex items-center gap-2">
+                                <code
+                                    class="font-mono text-[10px] bg-white border border-gray-200 px-2 py-1 rounded text-gray-500">text-5xl lg:text-7xl font-normal tracking-tight</code>
+                                <code
+                                    class="font-mono text-[10px] bg-white border border-gray-200 px-2 py-1 rounded text-gray-500">Inter</code>
+                            </div>
                         </div>
-                        <h1 class="text-5xl lg:text-7xl font-normal tracking-tight text-black leading-[1.1]">We create
-                            moments for medical research.</h1>
+                        <h1 class="text-5xl lg:text-7xl font-normal tracking-tight text-black leading-[1.1]">Structured
+                            interfaces create research confidence.</h1>
                     </div>
-                    <!-- H2 -->
+
                     <div class="pb-8 border-b border-gray-200">
-                        <div class="flex justify-between items-end mb-4">
+                        <div class="flex justify-between items-end mb-4 gap-4">
                             <span class="text-[10px] font-bold text-gray-400 uppercase tracking-widest">H2
                                 Section</span>
-                            <code
-                                class="font-mono text-[10px] bg-white border border-gray-200 px-2 py-1 rounded text-gray-500">text-4xl font-light tracking-tight</code>
+                            <div class="flex items-center gap-2">
+                                <code
+                                    class="font-mono text-[10px] bg-white border border-gray-200 px-2 py-1 rounded text-gray-500">text-4xl font-light tracking-tight</code>
+                                <code
+                                    class="font-mono text-[10px] bg-white border border-gray-200 px-2 py-1 rounded text-gray-500">Inter</code>
+                            </div>
                         </div>
-                        <h2 class="text-4xl font-light tracking-tight text-black leading-[1.2]">Support Your Research
-                            24/7 with Agents.</h2>
+                        <h2 class="text-4xl font-light tracking-tight text-black leading-[1.2]">Technical modules should
+                            feel calm, precise, and legible.</h2>
                     </div>
-                    <!-- H3 -->
+
                     <div class="pb-8 border-b border-gray-200">
-                        <div class="flex justify-between items-end mb-4">
-                            <span class="text-[10px] font-bold text-gray-400 uppercase tracking-widest">H3 Card
+                        <div class="flex justify-between items-end mb-4 gap-4">
+                            <span class="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Panel
                                 Title</span>
-                            <code
-                                class="font-mono text-[10px] bg-white border border-gray-200 px-2 py-1 rounded text-gray-500">text-xl font-medium</code>
+                            <div class="flex items-center gap-2">
+                                <code
+                                    class="font-mono text-[10px] bg-white border border-gray-200 px-2 py-1 rounded text-gray-500">text-xl font-medium</code>
+                                <code
+                                    class="font-mono text-[10px] bg-white border border-gray-200 px-2 py-1 rounded text-gray-500">Inter</code>
+                            </div>
                         </div>
-                        <h3 class="text-xl font-medium text-black">Connect with OpenClaw</h3>
+                        <h3 class="text-xl font-medium text-black">Technical Panel Title</h3>
                     </div>
-                    <!-- Body -->
+
                     <div class="pb-8 border-b border-gray-200">
-                        <div class="flex justify-between items-end mb-4">
+                        <div class="flex justify-between items-end mb-4 gap-4">
                             <span class="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Body Text</span>
-                            <code
-                                class="font-mono text-[10px] bg-white border border-gray-200 px-2 py-1 rounded text-gray-500">text-sm leading-relaxed text-gray-600</code>
+                            <div class="flex items-center gap-2">
+                                <code
+                                    class="font-mono text-[10px] bg-white border border-gray-200 px-2 py-1 rounded text-gray-500">text-sm leading-[1.65] text-gray-600</code>
+                                <code
+                                    class="font-mono text-[10px] bg-white border border-gray-200 px-2 py-1 rounded text-gray-500">Inter</code>
+                            </div>
                         </div>
-                        <p class="text-sm leading-relaxed text-gray-600 max-w-2xl">AIPOCH is an OpenClaw plugin
-                            providing medical research agent skills. Explore structured AI agent skills for evidence
-                            insights, protocol design, data analysis, and academic writing in scientific research
-                            workflows.</p>
+                        <p class="text-sm leading-[1.65] text-gray-600 max-w-2xl">Use muted body copy for helper text,
+                            operational notes, and panel descriptions. Keep sentences short, factual, and low-drama.</p>
                     </div>
-                    <!-- Specs / Mono -->
-                    <div>
-                        <div class="flex justify-between items-end mb-4">
+
+                    <div class="pb-8 border-b border-gray-200">
+                        <div class="flex justify-between items-end mb-4 gap-4">
                             <span class="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Caption / System
-                                (Mono)</span>
-                            <code
-                                class="font-mono text-[10px] bg-white border border-gray-200 px-2 py-1 rounded text-gray-500">text-[10px] font-mono uppercase tracking-widest</code>
+                                Label</span>
+                            <div class="flex items-center gap-2">
+                                <code
+                                    class="font-mono text-[10px] bg-white border border-gray-200 px-2 py-1 rounded text-gray-500">text-[10px] font-mono uppercase tracking-[0.18em]</code>
+                                <code
+                                    class="font-mono text-[10px] bg-white border border-gray-200 px-2 py-1 rounded text-gray-500">Roboto Mono</code>
+                            </div>
                         </div>
-                        <span class="text-[10px] font-mono uppercase tracking-widest text-black/40 block">v2.4.1 -
-                            System Initiated successfully</span>
+                        <span class="text-[10px] font-mono uppercase tracking-[0.18em] text-[#B4B4AE] block">System
+                            Label / Ready</span>
+                    </div>
+
+                    <div>
+                        <div class="flex justify-between items-end mb-4 gap-4">
+                            <span class="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Inline
+                                Code</span>
+                            <div class="flex items-center gap-2">
+                                <code
+                                    class="font-mono text-[10px] bg-white border border-gray-200 px-2 py-1 rounded text-gray-500">text-[10px] font-mono inline-flex border border-[#E7E5DE] bg-[#F7F7F4]</code>
+                                <code
+                                    class="font-mono text-[10px] bg-white border border-gray-200 px-2 py-1 rounded text-gray-500">Roboto Mono</code>
+                            </div>
+                        </div>
+                        <div class="flex flex-wrap items-center gap-3 text-sm text-gray-600">
+                            <span>Use inline code for flags and paths such as</span>
+                            <span
+                                class="inline-flex items-center border border-[#E7E5DE] bg-[#F7F7F4] px-2 py-1 text-[10px] font-mono text-black">--preview</span>
+                            <span
+                                class="inline-flex items-center border border-[#E7E5DE] bg-[#F7F7F4] px-2 py-1 text-[10px] font-mono text-black">/workspace/skills</span>
+                        </div>
                     </div>
                 </div>
             </section>
 
             <!-- ==========================================
-                 2. COLOR SYSTEM
+                 3. COLOR SYSTEM
             =========================================== -->
             <section id="colors" class="scroll-mt-24">
                 <div class="border-b border-gray-200 pb-4 mb-8">
-                    <h2 class="text-3xl font-medium tracking-tight">2. Color System</h2>
+                    <h2 class="text-3xl font-medium tracking-tight">3. Color System</h2>
                 </div>
 
                 <div class="space-y-12">
@@ -434,7 +727,7 @@
                         </h3>
                         <div class="grid md:grid-cols-2 gap-6">
                             <div class="bg-white border border-gray-200 rounded-xl p-6">
-                                <h4 class="text-sm font-medium text-black mb-4">Backgrounds</h4>
+                                <h4 class="text-sm font-medium text-black mb-4">Technical Surfaces</h4>
                                 <div class="space-y-3">
                                     <div class="flex items-center justify-between gap-4">
                                         <span class="text-xs text-gray-500">Default page canvas</span>
@@ -447,13 +740,18 @@
                                             class="font-mono text-[10px] bg-gray-50 border border-gray-200 px-2 py-1 rounded text-gray-500">#F7F7F4</code>
                                     </div>
                                     <div class="flex items-center justify-between gap-4">
-                                        <span class="text-xs text-gray-500">Dark technical shell / command context</span>
+                                        <span class="text-xs text-gray-500">Command strip or dense technical shell</span>
                                         <code
                                             class="font-mono text-[10px] bg-gray-50 border border-gray-200 px-2 py-1 rounded text-gray-500">#111111</code>
                                     </div>
+                                    <div class="flex items-center justify-between gap-4">
+                                        <span class="text-xs text-gray-500">Low-noise technical border</span>
+                                        <code
+                                            class="font-mono text-[10px] bg-gray-50 border border-gray-200 px-2 py-1 rounded text-gray-500">Ink 10-16%</code>
+                                    </div>
                                 </div>
-                                <p class="text-xs text-gray-500 leading-relaxed mt-4">Keep large surfaces neutral. Use
-                                    yellow only as a focused accent, not as a background system.</p>
+                                <p class="text-xs text-gray-500 leading-relaxed mt-4">Keep large surfaces neutral. Let
+                                    borders, not fills, carry most of the structure in technical modules.</p>
                             </div>
 
                             <div class="bg-white border border-gray-200 rounded-xl p-6">
@@ -480,7 +778,7 @@
                             </div>
 
                             <div class="bg-white border border-gray-200 rounded-xl p-6">
-                                <h4 class="text-sm font-medium text-black mb-4">UI States</h4>
+                                <h4 class="text-sm font-medium text-black mb-4">Interaction Accent</h4>
                                 <div class="space-y-4">
                                     <div class="flex items-center justify-between gap-4">
                                         <span class="text-xs text-gray-500">Hover</span>
@@ -491,8 +789,14 @@
                                     <div class="flex items-center justify-between gap-4">
                                         <span class="text-xs text-gray-500">Active</span>
                                         <span
-                                            class="text-[10px] font-mono uppercase tracking-widest bg-black text-white border border-black px-2.5 py-1 rounded-sm">ink
-                                            + reduced elevation</span>
+                                            class="text-[10px] font-mono uppercase tracking-widest bg-black text-white border border-black px-2.5 py-1 rounded-sm">border
+                                            clarity first</span>
+                                    </div>
+                                    <div class="flex items-center justify-between gap-4">
+                                        <span class="text-xs text-gray-500">Copied / Success</span>
+                                        <span
+                                            class="text-[10px] font-mono uppercase tracking-widest bg-[#F1DD67] text-black border border-black px-2.5 py-1 rounded-sm">highlight
+                                            + label swap</span>
                                     </div>
                                     <div class="flex items-center justify-between gap-4">
                                         <span class="text-xs text-gray-500">Disabled</span>
@@ -501,8 +805,8 @@
                                             neutral</span>
                                     </div>
                                 </div>
-                                <p class="text-xs text-gray-500 leading-relaxed mt-4">Hover may intensify the accent,
-                                    but active and disabled states should still preserve strong contrast and legibility.</p>
+                                <p class="text-xs text-gray-500 leading-relaxed mt-4">Use yellow as a short interaction
+                                    signal. Active states should strengthen borders before increasing fill density.</p>
                             </div>
 
                             <div class="bg-white border border-gray-200 rounded-xl p-6">
@@ -510,8 +814,10 @@
                                 <div class="space-y-3 text-xs text-gray-500 leading-relaxed">
                                     <p>Use the brand yellow for highlighted language, a primary CTA, or one key moment
                                         in a module.</p>
-                                    <p>Keep semantic colors reserved for status, validation, and research-state signals
-                                        rather than decorative emphasis.</p>
+                                    <p>Use highlight on touch surfaces, numbered markers, and split CTAs before using it
+                                        on large fills.</p>
+                                    <p>Keep semantic colors reserved for status, validation, and compact signals rather
+                                        than decorative emphasis.</p>
                                     <p>Favor black, white, and grayscale for structure. The system should feel clinical,
                                         minimal, and calm.</p>
                                 </div>
@@ -528,16 +834,16 @@
                                     <span
                                         class="text-[10px] uppercase font-mono tracking-widest text-white/40 mb-2 block">Dark
                                         Technical Surface</span>
-                                    <h4 class="text-2xl font-light">Medical Analysis Engine</h4>
-                                    <p class="text-xs text-white/60 leading-relaxed mt-2 max-w-sm">Use Ink for focused
-                                        tools, terminal moments, and high-attention environments. Contrast comes from
-                                        white text and a single highlight action.</p>
+                                    <h4 class="text-2xl font-light">Execution Console</h4>
+                                    <p class="text-xs text-white/60 leading-relaxed mt-2 max-w-sm">Use Ink for dense
+                                        utilities, terminal moments, and command review. Contrast comes from white text
+                                        and one compact highlight action.</p>
                                 </div>
                                 <div
                                     class="bg-[#1B1B1B] border border-[#2B2B2B] p-4 rounded-lg flex items-center justify-between">
-                                    <code class="text-xs font-mono text-white/50">curl -X POST /api/run</code>
+                                    <code class="text-xs font-mono text-white/50">sync --preview --target /workspace</code>
                                     <span
-                                        class="bg-[#F1DD67] text-black text-[10px] font-bold px-3 py-1 uppercase tracking-widest rounded-sm border border-black">Execute</span>
+                                        class="bg-[#F1DD67] text-black text-[10px] font-bold px-3 py-1 uppercase tracking-widest rounded-sm border border-black">Run</span>
                                 </div>
                             </div>
 
@@ -546,13 +852,13 @@
                                     <span
                                         class="text-[10px] uppercase font-mono tracking-widest text-gray-400 mb-2 block">Light
                                         Research Surface</span>
-                                    <h4 class="text-2xl font-light text-black">Protocol Summary</h4>
+                                    <h4 class="text-2xl font-light text-black">Verification Summary</h4>
                                     <p class="text-xs text-gray-500 leading-relaxed mt-2 max-w-sm">Light surfaces stay
                                         neutral and readable. Semantic color appears only as a compact status signal.</p>
                                 </div>
                                 <div
                                     class="bg-white border border-[#E7E5DE] p-4 rounded-lg flex items-center justify-between">
-                                    <span class="text-sm font-medium text-black">AIPOCH Protocol v2</span>
+                                    <span class="text-sm font-medium text-black">Status Ready</span>
                                     <span class="w-3 h-3 rounded-full bg-[#3E7A63] border border-black/10"></span>
                                 </div>
                             </div>
@@ -566,7 +872,7 @@
             =========================================== -->
             <section id="icons" class="scroll-mt-24">
                 <div class="border-b border-gray-200 pb-4 mb-8">
-                    <h2 class="text-3xl font-medium tracking-tight">3. Icon System</h2>
+                    <h2 class="text-3xl font-medium tracking-tight">4. Icon System</h2>
                 </div>
 
                 <div class="bg-gray-50 border border-gray-200 rounded-2xl p-10">
@@ -591,7 +897,7 @@
                     </div>
 
                     <!-- Icon Grid -->
-                    <div id="icons-grid" class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4"></div>
+                    <div id="icons-grid" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-3"></div>
                 </div>
             </section>
 
@@ -600,71 +906,124 @@
             =========================================== -->
             <section id="components" class="scroll-mt-24">
                 <div class="border-b border-gray-200 pb-4 mb-8">
-                    <h2 class="text-3xl font-medium tracking-tight">4. Buttons & UI Components</h2>
+                    <h2 class="text-3xl font-medium tracking-tight">5. Buttons & UI Components</h2>
                 </div>
 
-                <div class="grid lg:grid-cols-2 gap-12">
-                    <!-- Buttons -->
-                    <div class="bg-gray-50 border border-gray-200 rounded-2xl p-8">
-                        <h3 class="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-6">Button Styles
-                        </h3>
-                        <div class="space-y-6">
-                            <!-- Primary -->
-                            <div class="flex items-center justify-between">
-                                <span class="text-sm font-medium text-gray-600">Primary Solid</span>
-                                <button
-                                    class="bg-black text-white border border-black px-6 py-3 text-xs font-medium uppercase tracking-widest transition-colors flex items-center gap-2">
-                                    Continue <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2"
-                                        stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"
-                                        data-icon="ArrowRight"></svg>
-                                </button>
+                <div class="space-y-8">
+                    <div class="grid xl:grid-cols-2 gap-8">
+                        <div class="bg-gray-50 border border-gray-200 rounded-2xl p-8">
+                            <h3 class="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-6">Button
+                                Styles</h3>
+                            <div class="space-y-6">
+                                <div class="flex items-center justify-between gap-6">
+                                    <span class="text-sm font-medium text-gray-600">Primary Ink</span>
+                                    <button
+                                        class="bg-black text-white border border-black px-6 py-3 text-xs font-medium uppercase tracking-widest transition-colors flex items-center gap-2">
+                                        View Details <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"
+                                            data-icon="ArrowRight"></svg>
+                                    </button>
+                                </div>
+                                <div class="flex items-center justify-between gap-6">
+                                    <span class="text-sm font-medium text-gray-600">Secondary Outline</span>
+                                    <button
+                                        class="bg-white border border-black text-black px-6 py-3 text-xs font-medium uppercase tracking-widest transition-colors">
+                                        Review Rules
+                                    </button>
+                                </div>
+                                <div class="flex items-center justify-between gap-6">
+                                    <span class="text-sm font-medium text-gray-600">Split Directional</span>
+                                    <button class="inline-flex items-stretch overflow-hidden border border-black">
+                                        <span class="flex items-center justify-center bg-black text-white px-3">
+                                            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"
+                                                data-icon="ArrowRight"></svg>
+                                        </span>
+                                        <span
+                                            class="bg-white px-4 py-3 text-xs font-medium uppercase tracking-widest text-black">Open
+                                            Module</span>
+                                    </button>
+                                </div>
                             </div>
-                            <!-- Secondary / Ghost -->
-                            <div class="flex items-center justify-between">
-                                <span class="text-sm font-medium text-gray-600">Secondary Outline</span>
-                                <button
-                                    class="bg-white border border-black text-black px-6 py-3 text-xs font-medium uppercase tracking-widest transition-colors">
-                                    Learn More
-                                </button>
-                            </div>
-                            <!-- Alert / Brutal -->
-                            <div class="flex items-center justify-between">
-                                <span class="text-sm font-medium text-gray-600">Primary Brutal</span>
-                                <button
-                                    class="bg-[#ecd44c] text-black px-6 py-3 text-xs font-bold uppercase tracking-widest border-2 border-black transition-colors">
-                                    Execute
-                                </button>
+                        </div>
+
+                        <div class="bg-gray-50 border border-gray-200 rounded-2xl p-8">
+                            <h3 class="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-6">Utility
+                                Elements</h3>
+                            <div class="space-y-6">
+                                <div class="flex items-center gap-3 flex-wrap">
+                                    <span
+                                        class="text-[10px] uppercase font-bold tracking-widest bg-white text-gray-600 px-3 py-1.5 rounded-sm border border-gray-300">Neutral
+                                        Tag</span>
+                                    <span
+                                        class="text-[10px] uppercase font-bold tracking-widest bg-[#F1DD67] text-black px-3 py-1.5 rounded-sm border border-black">Active
+                                        Tag</span>
+                                    <span
+                                        class="text-[10px] uppercase font-mono tracking-[0.18em] text-[#B4B4AE]">System
+                                        Label</span>
+                                </div>
+                                <div class="flex items-center gap-3 flex-wrap">
+                                    <span class="text-sm text-gray-600">Inline code tokens:</span>
+                                    <span
+                                        class="inline-flex border border-[#E7E5DE] bg-[#F7F7F4] px-2 py-1 text-[10px] font-mono text-black">--dry-run</span>
+                                    <span
+                                        class="inline-flex border border-[#E7E5DE] bg-[#F7F7F4] px-2 py-1 text-[10px] font-mono text-black">/workspace/config</span>
+                                </div>
+                                <div class="grid sm:grid-cols-2 gap-4">
+                                    <div class="bg-white border border-gray-200 p-4 rounded-lg flex items-center justify-between">
+                                        <span class="text-sm font-medium text-black">Copy Action</span>
+                                        <button
+                                            class="text-[10px] font-mono uppercase tracking-[0.12em] text-gray-500 border border-gray-200 px-3 py-1.5">Copy</button>
+                                    </div>
+                                    <div class="bg-white border border-gray-200 p-4 rounded-lg flex items-center justify-between">
+                                        <span class="text-sm font-medium text-black">Copied State</span>
+                                        <button
+                                            class="text-[10px] font-mono uppercase tracking-[0.12em] text-black border border-black bg-[#F1DD67] px-3 py-1.5">Copied</button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Cards / Chips -->
                     <div class="bg-gray-50 border border-gray-200 rounded-2xl p-8">
-                        <h3 class="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-6">Structural Cards
-                            & Chips</h3>
-                        <div class="space-y-6">
-                            <!-- Tag / Chip -->
-                            <div class="flex items-center gap-3">
-                                <span
-                                    class="text-[10px] uppercase font-bold tracking-widest bg-white text-gray-600 px-3 py-1.5 rounded-sm border border-gray-300">Neutral
-                                    Tag</span>
-                                <span
-                                    class="text-[10px] uppercase font-bold tracking-widest bg-[#ecd44c] text-black px-3 py-1.5 rounded-sm border border-black">Warning
-                                    Tag</span>
-                            </div>
-                            <!-- Mini Card -->
-                            <div
-                                class="w-full bg-white border border-gray-200 rounded-lg p-5 flex gap-4 items-center">
+                        <h3 class="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-6">Interaction States
+                            & Motion</h3>
+                        <div class="grid md:grid-cols-2 xl:grid-cols-4 gap-4">
+                            <div class="bg-white border border-gray-200 rounded-xl p-5 flex flex-col gap-3">
+                                <span class="text-sm font-medium text-black">Hover</span>
                                 <div
-                                    class="w-10 h-10 bg-black rounded-lg flex items-center justify-center shrink-0">
-                                    <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" stroke-width="2"
-                                        stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"
-                                        data-icon="Finance"></svg>
+                                    class="border border-black/15 bg-[#F1DD67] px-4 py-3 text-[10px] font-mono uppercase tracking-[0.12em] text-black">Accent
+                                    the touched surface</div>
+                                <p class="text-xs leading-relaxed text-gray-500">Use highlight to indicate intent while
+                                    preserving structure and text contrast.</p>
+                            </div>
+                            <div class="bg-white border border-gray-200 rounded-xl p-5 flex flex-col gap-3">
+                                <span class="text-sm font-medium text-black">Active / Focus</span>
+                                <div
+                                    class="border border-black px-4 py-3 text-[10px] font-mono uppercase tracking-[0.12em] text-black">1px
+                                    outline / 2px offset</div>
+                                <p class="text-xs leading-relaxed text-gray-500">Clarify borders and focus rings before
+                                    adding heavier fills or shadows.</p>
+                            </div>
+                            <div class="bg-white border border-gray-200 rounded-xl p-5 flex flex-col gap-3">
+                                <span class="text-sm font-medium text-black">Copied / Success</span>
+                                <div
+                                    class="border border-black bg-[#F1DD67] px-4 py-3 text-[10px] font-mono uppercase tracking-[0.12em] text-black">Copied</div>
+                                <p class="text-xs leading-relaxed text-gray-500">Swap to a short confirmation label,
+                                    then reset automatically after a brief delay.</p>
+                            </div>
+                            <div class="bg-white border border-gray-200 rounded-xl p-5 flex flex-col gap-3">
+                                <span class="text-sm font-medium text-black">Motion Timing</span>
+                                <div class="flex flex-wrap gap-2">
+                                    <span
+                                        class="border border-gray-200 bg-[#F7F7F4] px-3 py-2 text-[10px] font-mono uppercase tracking-[0.12em] text-black">300ms
+                                        direct response</span>
+                                    <span
+                                        class="border border-gray-200 bg-[#F7F7F4] px-3 py-2 text-[10px] font-mono uppercase tracking-[0.12em] text-black">1000ms
+                                        ambient settle</span>
                                 </div>
-                                <div>
-                                    <h4 class="text-sm font-semibold text-black">Financial Analysis</h4>
-                                    <p class="text-[11px] text-gray-500 mt-0.5">Structured review and summary output.</p>
-                                </div>
+                                <p class="text-xs leading-relaxed text-gray-500">Reserve slower motion for color
+                                    settling and utility feedback, not for structural shifts.</p>
                             </div>
                         </div>
                     </div>
@@ -676,63 +1035,107 @@
             =========================================== -->
             <section id="layout" class="scroll-mt-24">
                 <div class="border-b border-gray-200 pb-4 mb-8">
-                    <h2 class="text-3xl font-medium tracking-tight">5. Spacing & Grid Definition</h2>
+                    <h2 class="text-3xl font-medium tracking-tight">6. Spacing & Grid Definition</h2>
                 </div>
 
-                <!-- Spacing block -->
-                <div class="bg-white border-dashed border-2 border-gray-300 rounded-2xl p-2 mb-10 relative">
-                    <div class="absolute -top-3 left-6 bg-white px-2 text-[10px] font-mono text-gray-400">Padding: p-8
-                        (32px)</div>
-                    <div class="bg-blue-50/50 p-8 rounded-xl border border-blue-100 relative">
-                        <div class="absolute -top-3 left-6 bg-blue-50 px-2 text-[10px] font-mono text-blue-400">Gap:
-                            gap-12 (48px)</div>
-                        <div class="flex flex-col gap-12 w-full border border-dashed border-blue-200 p-4 relative">
-                            <div
-                                class="h-12 bg-white flex items-center justify-center border border-gray-200 text-xs font-mono text-gray-400">
-                                Element 1</div>
-                            <div
-                                class="h-12 bg-white flex items-center justify-center border border-gray-200 text-xs font-mono text-gray-400">
-                                Element 2</div>
+                <div class="space-y-8">
+                    <div class="grid md:grid-cols-2 xl:grid-cols-4 gap-4">
+                        <div class="bg-gray-50 border border-gray-200 rounded-2xl p-6">
+                            <span class="text-[10px] font-mono uppercase tracking-[0.18em] text-gray-400 block mb-4">Panel
+                                Padding</span>
+                            <div class="border-2 border-dashed border-gray-300 p-2 bg-white rounded-xl relative">
+                                <div
+                                    class="bg-[#F7F7F4] border border-[#E7E5DE] p-8 rounded-lg text-center text-xs font-mono text-gray-500">
+                                    32px</div>
+                            </div>
+                            <p class="text-xs text-gray-500 mt-4 leading-relaxed">Use `32px` as the default internal
+                                spacing for technical panels and divided modules.</p>
+                        </div>
+
+                        <div class="bg-gray-50 border border-gray-200 rounded-2xl p-6">
+                            <span class="text-[10px] font-mono uppercase tracking-[0.18em] text-gray-400 block mb-4">Major
+                                Gap</span>
+                            <div class="flex flex-col gap-12 border border-dashed border-gray-300 rounded-xl bg-white p-4">
+                                <div
+                                    class="h-12 bg-[#F7F7F4] border border-[#E7E5DE] flex items-center justify-center text-xs font-mono text-gray-500">
+                                    Block A</div>
+                                <div
+                                    class="h-12 bg-[#F7F7F4] border border-[#E7E5DE] flex items-center justify-center text-xs font-mono text-gray-500">
+                                    Block B</div>
+                            </div>
+                            <p class="text-xs text-gray-500 mt-4 leading-relaxed">Use `48px` between primary columns or
+                                major content groups inside one technical module.</p>
+                        </div>
+
+                        <div class="bg-gray-50 border border-gray-200 rounded-2xl p-6">
+                            <span class="text-[10px] font-mono uppercase tracking-[0.18em] text-gray-400 block mb-4">Section
+                                Rhythm</span>
+                            <div class="flex flex-col gap-6 border border-dashed border-gray-300 rounded-xl bg-white p-4">
+                                <div
+                                    class="h-10 bg-[#F7F7F4] border border-[#E7E5DE] flex items-center justify-center text-xs font-mono text-gray-500">
+                                    24px</div>
+                                <div
+                                    class="h-10 bg-[#F7F7F4] border border-[#E7E5DE] flex items-center justify-center text-xs font-mono text-gray-500">
+                                    24px</div>
+                            </div>
+                            <p class="text-xs text-gray-500 mt-4 leading-relaxed">Use `24px` to separate stacked content
+                                groups inside a single column.</p>
+                        </div>
+
+                        <div class="bg-gray-50 border border-gray-200 rounded-2xl p-6">
+                            <span class="text-[10px] font-mono uppercase tracking-[0.18em] text-gray-400 block mb-4">Micro
+                                Spacing</span>
+                            <div class="flex flex-col gap-3 border border-dashed border-gray-300 rounded-xl bg-white p-4">
+                                <div
+                                    class="h-8 bg-[#F7F7F4] border border-[#E7E5DE] flex items-center justify-center text-xs font-mono text-gray-500">
+                                    12px</div>
+                                <div
+                                    class="h-8 bg-[#F7F7F4] border border-[#E7E5DE] flex items-center justify-center text-xs font-mono text-gray-500">
+                                    12px</div>
+                                <div
+                                    class="h-6 bg-white border border-dashed border-[#E7E5DE] flex items-center justify-center text-[10px] font-mono text-gray-400">
+                                    Notes 4px</div>
+                            </div>
+                            <p class="text-xs text-gray-500 mt-4 leading-relaxed">Use `12px` for compact stacks and `4px`
+                                for tightly related metadata or note lines.</p>
                         </div>
                     </div>
-                </div>
 
-                <!-- Grid Visual -->
-                <div class="bg-gray-50 border border-gray-200 rounded-2xl p-10 mt-8">
-                    <h3 class="text-sm font-semibold mb-6 flex items-center justify-between">
-                        12-Column Desktop Grid
-                        <span
-                            class="bg-white border border-gray-200 px-2 py-1 rounded text-xs font-mono text-gray-500">max-w-6xl</span>
-                    </h3>
+                    <div class="bg-gray-50 border border-gray-200 rounded-2xl p-10">
+                        <h3 class="text-sm font-semibold mb-6 flex items-center justify-between gap-4">
+                            12-Column Desktop Grid
+                            <span
+                                class="bg-white border border-gray-200 px-2 py-1 rounded text-xs font-mono text-gray-500">max-w-6xl</span>
+                        </h3>
 
-                    <div class="w-full flex gap-4 h-64 relative z-10 isolated">
-                        <!-- Grid col bg highlights -->
-                        <div class="absolute inset-0 flex gap-4 pointer-events-none z-0">
-                            <div class="flex-1 bg-red-100/30 rounded"></div>
-                            <div class="flex-1 bg-red-100/30 rounded"></div>
-                            <div class="flex-1 bg-red-100/30 rounded"></div>
-                            <div class="flex-1 bg-red-100/30 rounded"></div>
-                            <div class="flex-1 bg-red-100/30 rounded"></div>
-                            <div class="flex-1 bg-red-100/30 rounded"></div>
-                            <div class="flex-1 bg-red-100/30 rounded"></div>
-                            <div class="flex-1 bg-red-100/30 rounded"></div>
-                            <div class="flex-1 bg-red-100/30 rounded"></div>
-                            <div class="flex-1 bg-red-100/30 rounded"></div>
-                            <div class="flex-1 bg-red-100/30 rounded"></div>
-                            <div class="flex-1 bg-red-100/30 rounded"></div>
-                        </div>
-
-                        <!-- Content mock overlay -->
-                        <div class="grid grid-cols-12 gap-4 w-full h-full relative z-10">
-                            <div
-                                class="col-span-4 bg-white border border-blue-300/80 rounded-lg p-6 flex flex-col justify-center">
-                                <div class="w-1/2 h-4 bg-gray-200 rounded mb-4"></div>
-                                <div class="w-full h-2 bg-gray-100 rounded mb-2"></div>
-                                <div class="w-3/4 h-2 bg-gray-100 rounded"></div>
+                        <div class="w-full flex gap-4 h-64 relative z-10 isolated">
+                            <div class="absolute inset-0 flex gap-4 pointer-events-none z-0">
+                                <div class="flex-1 bg-red-100/30 rounded"></div>
+                                <div class="flex-1 bg-red-100/30 rounded"></div>
+                                <div class="flex-1 bg-red-100/30 rounded"></div>
+                                <div class="flex-1 bg-red-100/30 rounded"></div>
+                                <div class="flex-1 bg-red-100/30 rounded"></div>
+                                <div class="flex-1 bg-red-100/30 rounded"></div>
+                                <div class="flex-1 bg-red-100/30 rounded"></div>
+                                <div class="flex-1 bg-red-100/30 rounded"></div>
+                                <div class="flex-1 bg-red-100/30 rounded"></div>
+                                <div class="flex-1 bg-red-100/30 rounded"></div>
+                                <div class="flex-1 bg-red-100/30 rounded"></div>
+                                <div class="flex-1 bg-red-100/30 rounded"></div>
                             </div>
-                            <div
-                                class="col-span-8 bg-white border border-blue-300/80 rounded-lg flex items-center justify-center">
-                                <span class="text-xs font-mono text-blue-400">Visual Hero / col-span-8</span>
+
+                            <div class="grid grid-cols-12 gap-4 w-full h-full relative z-10">
+                                <div
+                                    class="col-span-7 bg-white border border-blue-300/80 rounded-lg p-6 flex flex-col justify-center">
+                                    <div class="w-1/3 h-4 bg-gray-200 rounded mb-4"></div>
+                                    <div class="w-full h-2 bg-gray-100 rounded mb-2"></div>
+                                    <div class="w-4/5 h-2 bg-gray-100 rounded mb-6"></div>
+                                    <div class="w-full h-16 border border-[#E7E5DE] bg-[#F7F7F4] rounded"></div>
+                                </div>
+                                <div
+                                    class="col-span-5 bg-white border border-blue-300/80 rounded-lg flex items-center justify-center">
+                                    <span class="text-xs font-mono text-blue-400">Indexed support rail / col-span-5</span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -744,7 +1147,7 @@
             =========================================== -->
             <section id="social" class="scroll-mt-24">
                 <div class="border-b border-gray-200 pb-4 mb-8">
-                    <h2 class="text-3xl font-medium tracking-tight">6. Social Media (4:5)</h2>
+                    <h2 class="text-3xl font-medium tracking-tight">7. Social Media (4:5)</h2>
                 </div>
 
                 <div class="grid lg:grid-cols-2 gap-12 items-center">
@@ -809,7 +1212,7 @@
             =========================================== -->
             <section id="banner" class="scroll-mt-24">
                 <div class="border-b border-gray-200 pb-4 mb-8">
-                    <h2 class="text-3xl font-medium tracking-tight">7. Banner Systems (2:1 / 3:1)</h2>
+                    <h2 class="text-3xl font-medium tracking-tight">8. Banner Systems (2:1 / 3:1)</h2>
                 </div>
 
                 <h3 class="text-sm font-semibold mb-6">LinkedIn Cover & Web Heros</h3>
@@ -853,7 +1256,7 @@
             =========================================== -->
             <section id="image" class="scroll-mt-24">
                 <div class="border-b border-gray-200 pb-4 mb-8">
-                    <h2 class="text-3xl font-medium tracking-tight">8. Image Style Definition</h2>
+                    <h2 class="text-3xl font-medium tracking-tight">9. Image Style Definition</h2>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -920,45 +1323,81 @@
             =========================================== -->
             <section id="copy" class="scroll-mt-24 pb-32">
                 <div class="border-b border-gray-200 pb-4 mb-8">
-                    <h2 class="text-3xl font-medium tracking-tight">9. Copy Tone Application</h2>
+                    <h2 class="text-3xl font-medium tracking-tight">10. Copy Tone Application</h2>
                 </div>
 
                 <div class="bg-gray-50 border border-gray-200 rounded-2xl p-10 flex flex-col gap-10">
 
-                    <!-- Headlines -->
                     <div>
-                        <span class="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-3 block">Hero
-                            Headlines</span>
+                        <span class="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-3 block">Headline
+                            Tone</span>
                         <div class="grid md:grid-cols-2 gap-4">
                             <div class="bg-white p-6 border-l-4 border-l-green-500">
-                                <h3 class="text-xl font-medium">Deploy Medical AI Models Locally.</h3>
+                                <h3 class="text-xl font-medium">Run structured checks with clear visual hierarchy.</h3>
                                 <p class="text-[10px] uppercase text-gray-400 mt-2 font-mono">Calm & Factual</p>
                             </div>
                             <div class="bg-white p-6 border-l-4 border-l-red-500 opacity-50">
-                                <h3 class="text-xl font-bold">The ULTIMATE Med-Tech Revolution!</h3>
+                                <h3 class="text-xl font-bold">Unlock the most powerful workflow ever built!</h3>
                                 <p class="text-[10px] uppercase text-gray-400 mt-2 font-mono">Hyped & Desperate</p>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Micro-copy -->
                     <div class="border-t border-gray-200 pt-10">
-                        <span class="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-3 block">CTA &
-                            Micro-Copy</span>
-                        <div class="flex flex-wrap gap-4">
-                            <button
-                                class="bg-[#ecd44c] text-black px-6 py-2 text-xs font-semibold uppercase tracking-widest border border-black hover:bg-white transition-colors">Start
-                                Review</button>
-                            <button
-                                class="bg-black text-white px-6 py-2 text-xs font-semibold uppercase tracking-widest hover:bg-gray-800 transition-colors">View
-                                Protocol</button>
-                            <button
-                                class="bg-transparent border border-gray-300 px-6 py-2 text-xs font-semibold uppercase tracking-widest hover:border-black text-gray-500 hover:text-black transition-colors disabled:line-through">Download
-                                Docs</button>
+                        <span class="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-3 block">Module
+                            Microcopy</span>
+                        <div class="grid lg:grid-cols-2 gap-6">
+                            <div class="bg-white border border-gray-200 rounded-xl p-6 flex flex-col gap-4">
+                                <div class="flex flex-wrap gap-3">
+                                    <span
+                                        class="border border-black bg-[#F1DD67] px-4 py-2 text-xs font-semibold uppercase tracking-widest text-black">Run
+                                        Check</span>
+                                    <span
+                                        class="border border-black bg-black px-4 py-2 text-xs font-semibold uppercase tracking-widest text-white">View
+                                        Details</span>
+                                    <span
+                                        class="border border-gray-300 px-4 py-2 text-xs font-semibold uppercase tracking-widest text-gray-500">Copy</span>
+                                    <span
+                                        class="border border-black bg-[#F1DD67] px-4 py-2 text-xs font-semibold uppercase tracking-widest text-black">Copied</span>
+                                </div>
+                                <p class="text-xs text-gray-500 leading-relaxed">Use short operational verbs and compact
+                                    confirmations. The interface should sound exact, not promotional.</p>
+                            </div>
+                            <div class="bg-white border border-gray-200 rounded-xl p-6 flex flex-col gap-3">
+                                <div class="flex items-center justify-between gap-4">
+                                    <span class="text-sm font-medium text-black">Preferred labels</span>
+                                    <span class="text-[10px] font-mono uppercase tracking-[0.18em] text-gray-400">copy /
+                                        copied / tip / ready</span>
+                                </div>
+                                <div class="space-y-2 text-xs text-gray-500 leading-relaxed">
+                                    <p>Use direct nouns and verbs: `Run`, `View`, `Copy`, `Ready`, `Unavailable`.</p>
+                                    <p>Prefer one sentence of helper text over multi-step persuasion.</p>
+                                    <p>Avoid playful verbs such as `Grab`, `Explore Now`, or `Magic` in technical UI.</p>
+                                </div>
+                            </div>
                         </div>
-                        <p class="text-xs text-gray-500 mt-4 max-w-lg leading-relaxed">Verbs must be action-oriented and
-                            clinical (Start, View, Analyze, Deploy). Avoid casual verbs like "Grab", "Check Out", or
-                            "See".</p>
+                    </div>
+
+                    <div class="border-t border-gray-200 pt-10">
+                        <span class="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-3 block">Rule
+                            Summary</span>
+                        <div class="grid md:grid-cols-3 gap-4">
+                            <div class="bg-white border border-gray-200 rounded-xl p-5">
+                                <h4 class="text-sm font-medium text-black mb-2">Keep it operational</h4>
+                                <p class="text-xs text-gray-500 leading-relaxed">Microcopy should support the action in
+                                    front of the user, not narrate the entire workflow.</p>
+                            </div>
+                            <div class="bg-white border border-gray-200 rounded-xl p-5">
+                                <h4 class="text-sm font-medium text-black mb-2">Keep it short</h4>
+                                <p class="text-xs text-gray-500 leading-relaxed">Labels work best at one to three words.
+                                    Helper text should usually fit in one sentence.</p>
+                            </div>
+                            <div class="bg-white border border-gray-200 rounded-xl p-5">
+                                <h4 class="text-sm font-medium text-black mb-2">Keep it factual</h4>
+                                <p class="text-xs text-gray-500 leading-relaxed">Success and warning states should read
+                                    as factual system feedback rather than marketing language.</p>
+                            </div>
+                        </div>
                     </div>
 
                 </div>
@@ -1089,19 +1528,23 @@
             });
 
             iconsGrid.innerHTML = iconData.map(item => `
-                <div class="bg-white p-4 border border-gray-200 rounded-lg flex flex-col items-center justify-center gap-3 hover:border-black transition-colors">
-                    <svg class="w-6 h-6 text-black" fill="none" stroke="currentColor" stroke-width="2"
-                        stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-                        ${getIconMarkup(item.name)}
-                    </svg>
-                    <span class="text-[10px] font-mono text-gray-400">${item.name}</span>
-                    <a href="#" download="${item.name.toLowerCase()}.svg"
-                        class="icon-download text-[10px] font-mono text-gray-500 border border-gray-200 rounded-md px-2 py-1 hover:border-black hover:text-black transition-colors">Download SVG</a>
+                <div class="icon-card bg-transparent border border-transparent rounded-none p-3 flex flex-col items-center gap-3" data-icon-card>
+                    <div class="icon-frame h-12 flex items-center justify-center text-black">
+                        <svg class="w-6 h-6 text-current" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                            ${getIconMarkup(item.name)}
+                        </svg>
+                    </div>
+                    <div class="space-y-2 text-center">
+                        <span class="block text-[9px] font-mono text-gray-400 leading-3.5 break-all">${item.name}</span>
+                        <a href="#" download="${item.name.toLowerCase()}.svg"
+                            class="icon-download inline-flex items-center justify-center border border-[#E7E5DE] bg-[#FFFFFF] px-2.5 py-1 text-[9px] font-mono uppercase tracking-[0.16em] text-gray-500">Download SVG</a>
+                    </div>
                 </div>
             `).join("");
 
             document.querySelectorAll(".icon-download").forEach(link => {
-                const card = link.closest("div");
+                const card = link.closest("[data-icon-card]") || link.closest(".icon-card");
                 const svg = card ? card.querySelector("svg") : null;
 
                 if (!svg) {
