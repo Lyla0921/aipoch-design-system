@@ -142,20 +142,30 @@
                 </ul>
             </div>
             <div>
-                <h3 class="text-[10px] font-semibold uppercase tracking-widest text-gray-400 mb-2 px-2">Environments
+                <h3 class="text-[10px] font-semibold uppercase tracking-widest text-gray-400 mb-2 px-2">Social Media
                 </h3>
                 <ul class="space-y-0.5 text-sm">
-                    <li><a href="#social"
-                            class="block px-2 py-1.5 text-gray-600 hover:bg-gray-100 rounded-md transition-colors font-medium">Social
-                            Media</a></li>
+                    <li><a href="#social-overview"
+                            class="block px-2 py-1.5 text-gray-600 hover:bg-gray-100 rounded-md transition-colors font-medium">Overview</a>
+                    </li>
+                    <li><a href="#social-brand-elements"
+                            class="block px-2 py-1.5 text-gray-600 hover:bg-gray-100 rounded-md transition-colors font-medium">Brand
+                            Elements</a></li>
+                    <li><a href="#social-background"
+                            class="block px-2 py-1.5 text-gray-600 hover:bg-gray-100 rounded-md transition-colors font-medium">Background</a>
+                    </li>
+                    <li><a href="#social-layout-options"
+                            class="block px-2 py-1.5 text-gray-600 hover:bg-gray-100 rounded-md transition-colors font-medium">Layout
+                            Options</a></li>
+                    <li><a href="#social-composition-rules"
+                            class="block px-2 py-1.5 text-gray-600 hover:bg-gray-100 rounded-md transition-colors font-medium">Composition
+                            Rules</a></li>
+                    <li><a href="#social-content-examples"
+                            class="block px-2 py-1.5 text-gray-600 hover:bg-gray-100 rounded-md transition-colors font-medium">Content
+                            Examples</a></li>
                     <li><a href="#banner"
                             class="block px-2 py-1.5 text-gray-600 hover:bg-gray-100 rounded-md transition-colors font-medium">Banner
                             System</a></li>
-                </ul>
-            </div>
-            <div>
-                <h3 class="text-[10px] font-semibold uppercase tracking-widest text-gray-400 mb-2 px-2">Strategy</h3>
-                <ul class="space-y-0.5 text-sm">
                     <li><a href="#image"
                             class="block px-2 py-1.5 text-gray-600 hover:bg-gray-100 rounded-md transition-colors font-medium">Image
                             Style</a></li>
@@ -1147,72 +1157,425 @@
             =========================================== -->
             <section id="social" class="scroll-mt-24">
                 <div class="border-b border-gray-200 pb-4 mb-8">
-                    <h2 class="text-3xl font-medium tracking-tight">7. Social Media (4:5)</h2>
+                    <h2 class="text-3xl font-medium tracking-tight">7. Social Media</h2>
                 </div>
 
-                <div class="grid lg:grid-cols-2 gap-12 items-center">
-                    <div>
-                        <h3 class="text-xl font-medium mb-4">Post Composition Rules</h3>
-                        <p class="text-sm text-gray-500 mb-6">Designed strictly for vertical feeds (LinkedIn, IG).
-                            Requires absolute typographic centeredness with extreme safe margins.</p>
-                        <div class="space-y-4">
-                            <div
-                                class="flex border border-gray-200 p-4 rounded-lg bg-gray-50 items-center justify-between">
-                                <span class="text-sm font-medium">Safe Padding</span>
-                                <code
-                                    class="text-xs bg-white border px-2 py-1 rounded font-mono text-blue-600">p-12 / p-16</code>
+                <div class="space-y-8">
+                    <section id="social-overview" class="scroll-mt-24 space-y-8">
+                        <div class="grid xl:grid-cols-[0.92fr_1.08fr] gap-8">
+                            <div class="bg-gray-50 border border-gray-200 rounded-2xl p-10">
+                                <h3 class="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-4">Overview</h3>
+                                <p class="text-sm text-gray-500 leading-relaxed max-w-2xl">Social media is a flexible
+                                    output system, not a single fixed template. Use approved brand elements, approved
+                                    background language, and one clear layout logic per asset so every post remains
+                                    consistent with the AIPOCH visual system.</p>
                             </div>
-                            <div
-                                class="flex border border-gray-200 p-4 rounded-lg bg-gray-50 items-center justify-between">
-                                <span class="text-sm font-medium">Logo / URL Root</span>
-                                <code
-                                    class="text-xs bg-white border px-2 py-1 rounded font-mono text-blue-600">absolute bottom-8</code>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Layout Rendering -->
-                    <div class="w-full flex justify-center bg-gray-100 p-10 rounded-2xl border border-gray-200">
-                        <div class="w-[300px] aspect-[4/5] bg-black border border-black relative overflow-hidden group">
-                            <!-- Background grain/blur simulation -->
-                            <div class="absolute inset-0 bg-[#111]"></div>
-                            <div class="absolute inset-0 opacity-20"
-                                style="background-image: url('data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.85%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22/%3E%3C/svg%3E'); mix-blend-mode: overlay;">
-                            </div>
-
-                            <!-- Safe Zone Display -->
-                            <div
-                                class="absolute inset-10 border border-green-500/40 border-dashed z-0 opacity-0 group-hover:opacity-100 transition-opacity flex items-start p-1">
-                                <span class="text-[8px] font-mono text-green-400 uppercase">Safe Zone</span></div>
-
-                            <!-- Content -->
-                            <div
-                                class="absolute inset-0 flex flex-col items-center justify-center p-10 text-center relative z-10">
-                                <h2 class="text-white text-[42px] font-normal leading-[1.0] tracking-tight mb-4">
-                                    Unlock<br>Medical<br><span
-                                        class="inline-block bg-[#ecd44c] text-black italic px-2 mt-1">Intelligence</span>
-                                </h2>
-                                <p class="text-white/60 text-xs">AIPOCH Protocol v2.4</p>
-                            </div>
-
-                            <!-- Logo Area -->
-                            <div class="absolute bottom-6 left-0 w-full flex justify-center z-10">
-                                <div
-                                    class="bg-white/10 backdrop-blur px-3 py-1.5 rounded-full border border-white/20 text-white text-[10px] font-medium tracking-widest flex items-center gap-2">
-                                    <div class="w-1.5 h-1.5 bg-green-400 rounded-full"></div> AIPOCH
+                            <div class="bg-gray-50 border border-gray-200 rounded-2xl p-10">
+                                <h3 class="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-6">System
+                                    Rules</h3>
+                                <div class="grid md:grid-cols-2 gap-4">
+                                    <div class="bg-white border border-gray-200 rounded-xl p-5">
+                                        <span class="text-sm font-medium text-black block mb-2">Layout Variation</span>
+                                        <p class="text-xs leading-relaxed text-gray-500">Social graphics may use
+                                            multiple layout variations. Choose one layout type per asset and keep it
+                                            consistent.</p>
+                                    </div>
+                                    <div class="bg-white border border-gray-200 rounded-xl p-5">
+                                        <span class="text-sm font-medium text-black block mb-2">Brand Presence</span>
+                                        <p class="text-xs leading-relaxed text-gray-500">Every asset should clearly
+                                            demonstrate core brand elements and approved background usage.</p>
+                                    </div>
+                                    <div class="bg-white border border-gray-200 rounded-xl p-5">
+                                        <span class="text-sm font-medium text-black block mb-2">Element Constraint</span>
+                                        <p class="text-xs leading-relaxed text-gray-500">Use only elements already
+                                            defined in the system, or reasonable combinations of those elements.</p>
+                                    </div>
+                                    <div class="bg-white border border-gray-200 rounded-xl p-5">
+                                        <span class="text-sm font-medium text-black block mb-2">Visual Discipline</span>
+                                        <p class="text-xs leading-relaxed text-gray-500">Do not introduce new visual
+                                            elements or new gradients. Keep output aligned with the existing brand
+                                            language.</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </section>
+                    </section>
+
+                    <section id="social-brand-elements" class="scroll-mt-24 space-y-6">
+                        <div class="bg-gray-50 border border-gray-200 rounded-2xl p-10">
+                            <div class="flex items-end justify-between gap-6 border-b border-gray-200 pb-6 mb-8">
+                                <div>
+                                    <h3 class="text-lg font-medium text-black">Brand Elements</h3>
+                                    <p class="text-sm text-gray-500 mt-2 max-w-2xl">Social graphics should use the same
+                                        elemental vocabulary already established in the system: circular marks, framed
+                                        structure, nodes, line grids, and decisive highlight blocks.</p>
+                                </div>
+                            </div>
+
+                            <div class="grid md:grid-cols-2 xl:grid-cols-4 gap-4">
+                                <div class="bg-white border border-gray-200 rounded-xl p-6 space-y-4">
+                                    <span class="text-[10px] font-mono uppercase tracking-[0.18em] text-gray-400">Lens /
+                                        Orbit</span>
+                                    <div class="h-32 border border-[#E7E5DE] bg-[#F7F7F4] rounded-xl flex items-center justify-center relative overflow-hidden">
+                                        <div class="w-20 h-20 rounded-full border border-black/20 flex items-center justify-center">
+                                            <div class="w-12 h-12 rounded-full border border-black/20 flex items-center justify-center">
+                                                <div class="w-2.5 h-2.5 rounded-full bg-black"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p class="text-xs leading-relaxed text-gray-500">Use as focal anchors, cadence
+                                        markers, or end points inside a composition.</p>
+                                </div>
+
+                                <div class="bg-white border border-gray-200 rounded-xl p-6 space-y-4">
+                                    <span class="text-[10px] font-mono uppercase tracking-[0.18em] text-gray-400">Corner
+                                        Brackets</span>
+                                    <div class="h-32 border border-[#E7E5DE] bg-white rounded-xl relative overflow-hidden">
+                                        <div class="absolute top-4 left-4 w-8 h-8 border-t border-l border-black/25"></div>
+                                        <div class="absolute bottom-4 right-4 w-8 h-8 border-b border-r border-black/25"></div>
+                                    </div>
+                                    <p class="text-xs leading-relaxed text-gray-500">Use to define content zones,
+                                        margins, or internal frames without adding new ornament.</p>
+                                </div>
+
+                                <div class="bg-white border border-gray-200 rounded-xl p-6 space-y-4">
+                                    <span class="text-[10px] font-mono uppercase tracking-[0.18em] text-gray-400">Node /
+                                        Ring Array</span>
+                                    <div class="h-32 border border-[#E7E5DE] bg-[#F7F7F4] rounded-xl relative overflow-hidden">
+                                        <div class="absolute left-4 top-4 w-14 h-14 rounded-full border border-black/15"></div>
+                                        <div class="absolute right-4 top-4 w-14 h-14 rounded-full border border-black/15"></div>
+                                        <div class="absolute left-4 bottom-4 w-14 h-14 rounded-full border border-black/15"></div>
+                                        <div class="absolute right-4 bottom-4 w-14 h-14 rounded-full border border-black/15"></div>
+                                        <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-3 h-3 rounded-full bg-black"></div>
+                                    </div>
+                                    <p class="text-xs leading-relaxed text-gray-500">Use repeated rings and nodes to
+                                        create rhythm and directional structure.</p>
+                                </div>
+
+                                <div class="bg-white border border-gray-200 rounded-xl p-6 space-y-4">
+                                    <span class="text-[10px] font-mono uppercase tracking-[0.18em] text-gray-400">Highlight
+                                        Block</span>
+                                    <div class="h-32 border border-[#E7E5DE] bg-white rounded-xl p-4 flex flex-col justify-end gap-3">
+                                        <div class="w-16 h-1 bg-black"></div>
+                                        <div class="w-24 h-10 bg-[#F1DD67] border border-black"></div>
+                                        <div class="w-20 h-8 bg-black"></div>
+                                    </div>
+                                    <p class="text-xs leading-relaxed text-gray-500">Use one decisive color plane to
+                                        guide emphasis without changing the brand palette.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="social-background" class="scroll-mt-24 space-y-6">
+                        <div class="grid xl:grid-cols-[1.02fr_0.98fr] gap-8">
+                            <div class="bg-gray-50 border border-gray-200 rounded-2xl p-10">
+                                <h3 class="text-lg font-medium text-black mb-6">Background</h3>
+                                <div class="grid gap-4">
+                                    <div class="bg-white border border-gray-200 rounded-xl p-6">
+                                        <span class="text-[10px] font-mono uppercase tracking-[0.18em] text-gray-400 block mb-3">Allowed
+                                            Structures</span>
+                                        <p class="text-sm text-gray-600 leading-relaxed">Build backgrounds from line
+                                            grids, orbit rings, bracket corners, node fields, flat surfaces, and simple
+                                            black or neutral planes.</p>
+                                    </div>
+                                    <div class="bg-white border border-gray-200 rounded-xl p-6">
+                                        <span class="text-[10px] font-mono uppercase tracking-[0.18em] text-gray-400 block mb-3">Usage
+                                            Rule</span>
+                                        <p class="text-sm text-gray-600 leading-relaxed">Backgrounds should support the
+                                            main message, not overpower it. Use opacity only within the approved
+                                            palette. Avoid decorative treatments that sit outside the system.</p>
+                                    </div>
+                                    <div class="bg-white border border-gray-200 rounded-xl p-6">
+                                        <span class="text-[10px] font-mono uppercase tracking-[0.18em] text-gray-400 block mb-3">Hard
+                                            Limits</span>
+                                        <p class="text-sm text-gray-600 leading-relaxed">Do not introduce new visual
+                                            effects. No extra gradients unless already defined in the system. No blur,
+                                            noise, glow, or atmospheric texture.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="bg-gray-50 border border-gray-200 rounded-2xl p-10">
+                                <div class="grid gap-4">
+                                    <div class="aspect-[16/9] rounded-2xl border border-gray-200 bg-[#F7F7F4] relative overflow-hidden">
+                                        <div class="absolute inset-0 grid-bg opacity-80"></div>
+                                        <div class="absolute top-6 left-6 w-10 h-10 border-t border-l border-black/20"></div>
+                                        <div class="absolute bottom-6 right-6 w-10 h-10 border-b border-r border-black/20"></div>
+                                        <div class="absolute right-10 top-8 w-24 h-24 rounded-full border border-black/15 flex items-center justify-center">
+                                            <div class="w-14 h-14 rounded-full border border-black/15 flex items-center justify-center">
+                                                <div class="w-2.5 h-2.5 rounded-full bg-black"></div>
+                                            </div>
+                                        </div>
+                                        <div class="absolute left-10 bottom-8 bg-white/90 border border-gray-200 px-3 py-2 text-[10px] font-mono uppercase tracking-[0.18em] text-gray-500">Light
+                                            structural background</div>
+                                    </div>
+                                    <div class="aspect-[16/9] rounded-2xl border border-black bg-black relative overflow-hidden">
+                                        <div class="absolute inset-0 grid-bg opacity-20"
+                                            style="background-image: linear-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px); background-size: 34px 34px;">
+                                        </div>
+                                        <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-44 h-44 rounded-full border border-white/10"></div>
+                                        <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-28 h-28 rounded-full border border-white/10"></div>
+                                        <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-14 h-14 rounded-full border border-white/10"></div>
+                                        <div class="absolute left-1/2 top-[12%] -translate-x-1/2 h-[32%] w-px bg-white/10"></div>
+                                        <div class="absolute left-[22%] top-1/2 -translate-y-1/2 w-[56%] h-px bg-white/10"></div>
+                                        <div class="absolute top-8 left-8 w-6 h-6">
+                                            <div class="absolute inset-y-0 left-1/2 -translate-x-1/2 w-px bg-white/20"></div>
+                                            <div class="absolute inset-x-0 top-1/2 -translate-y-1/2 h-px bg-white/20"></div>
+                                        </div>
+                                        <div class="absolute bottom-8 right-8 w-6 h-6">
+                                            <div class="absolute inset-y-0 left-1/2 -translate-x-1/2 w-px bg-white/20"></div>
+                                            <div class="absolute inset-x-0 top-1/2 -translate-y-1/2 h-px bg-white/20"></div>
+                                        </div>
+                                        <div class="absolute left-10 bottom-8 bg-white text-black px-3 py-2 text-[10px] font-mono uppercase tracking-[0.18em]">Dark
+                                            radial background</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="social-layout-options" class="scroll-mt-24 space-y-6">
+                        <div class="bg-gray-50 border border-gray-200 rounded-2xl p-10">
+                            <div class="flex items-end justify-between gap-6 border-b border-gray-200 pb-6 mb-8">
+                                <div>
+                                    <h3 class="text-lg font-medium text-black">Layout Options</h3>
+                                    <p class="text-sm text-gray-500 mt-2 max-w-2xl">Use one layout logic per graphic.
+                                        Do not combine multiple layout types in the same composition.</p>
+                                </div>
+                            </div>
+
+                            <div class="grid lg:grid-cols-3 gap-6">
+                                <div class="bg-white border border-gray-200 rounded-xl p-6 flex flex-col gap-5">
+                                    <div class="flex items-center justify-between gap-4">
+                                        <div>
+                                            <h4 class="text-lg font-medium text-black">Hero</h4>
+                                            <p class="text-xs text-gray-500 mt-1">One dominant visual, minimal text, clear focal point.</p>
+                                        </div>
+                                        <span class="text-[10px] font-mono uppercase tracking-[0.18em] text-gray-400">single focus</span>
+                                    </div>
+                                    <div class="aspect-[4/5] border border-black rounded-xl bg-black relative overflow-hidden p-6 flex flex-col justify-between">
+                                        <div class="absolute inset-0 opacity-15 grid-bg"
+                                            style="background-image: linear-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px); background-size: 34px 34px;">
+                                        </div>
+                                        <div class="relative flex justify-between items-start">
+                                            <span class="text-[10px] font-mono uppercase tracking-[0.18em] text-white/45">Hero</span>
+                                            <div class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center">
+                                                <div class="w-5 h-5 rounded-full border border-white/20 flex items-center justify-center">
+                                                    <div class="w-2 h-2 rounded-full bg-white"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="relative space-y-4 max-w-[14ch]">
+                                            <div class="w-20 h-1 bg-[#F1DD67]"></div>
+                                            <h5 class="text-[38px] leading-[0.98] tracking-tight text-white">One field. One signal.</h5>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="bg-white border border-gray-200 rounded-xl p-6 flex flex-col gap-5">
+                                    <div class="flex items-center justify-between gap-4">
+                                        <div>
+                                            <h4 class="text-lg font-medium text-black">Split</h4>
+                                            <p class="text-xs text-gray-500 mt-1">Separate message and visual structure.</p>
+                                        </div>
+                                        <span class="text-[10px] font-mono uppercase tracking-[0.18em] text-gray-400">dual rail</span>
+                                    </div>
+                                    <div class="aspect-[4/5] border border-black rounded-xl overflow-hidden grid grid-cols-[1fr_1fr]">
+                                        <div class="bg-[#F7F7F4] p-5 flex flex-col justify-between border-r border-gray-200">
+                                            <span class="text-[10px] font-mono uppercase tracking-[0.18em] text-gray-400">Text rail</span>
+                                            <div class="space-y-3 max-w-[14ch]">
+                                                <h5 class="text-[30px] leading-[1.02] tracking-tight text-black">Keep proof separate from message.</h5>
+                                                <p class="text-xs text-gray-500 leading-relaxed">Let one side hold structure and the other hold content.</p>
+                                            </div>
+                                        </div>
+                                        <div class="bg-white relative overflow-hidden">
+                                            <div class="absolute inset-0 grid-bg opacity-80"></div>
+                                            <div class="absolute left-4 top-4 w-14 h-14 rounded-full border border-black/15"></div>
+                                            <div class="absolute right-4 top-4 w-14 h-14 rounded-full border border-black/15"></div>
+                                            <div class="absolute left-4 bottom-4 w-14 h-14 rounded-full border border-black/15"></div>
+                                            <div class="absolute right-4 bottom-4 w-14 h-14 rounded-full border border-black/15"></div>
+                                            <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 rounded-full border border-black/15 bg-white"></div>
+                                            <div class="absolute right-5 bottom-5 w-10 h-10 bg-[#F1DD67] border border-black"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="bg-white border border-gray-200 rounded-xl p-6 flex flex-col gap-5">
+                                    <div class="flex items-center justify-between gap-4">
+                                        <div>
+                                            <h4 class="text-lg font-medium text-black">Frame</h4>
+                                            <p class="text-xs text-gray-500 mt-1">Structured margins and strong alignment.</p>
+                                        </div>
+                                        <span class="text-[10px] font-mono uppercase tracking-[0.18em] text-gray-400">margin-led</span>
+                                    </div>
+                                    <div class="aspect-[4/5] border border-gray-200 rounded-xl bg-[#F7F7F4] p-5">
+                                        <div class="w-full h-full border-2 border-black relative p-5 flex flex-col justify-between overflow-hidden">
+                                            <div class="absolute inset-0 grid-bg opacity-70"></div>
+                                            <div class="absolute top-4 left-4 w-8 h-8 border-t border-l border-black/20"></div>
+                                            <div class="absolute bottom-4 right-4 w-8 h-8 border-b border-r border-black/20"></div>
+                                            <div class="relative flex justify-between items-start">
+                                                <span class="text-[10px] font-mono uppercase tracking-[0.18em] text-gray-400">Frame</span>
+                                                <div class="w-9 h-9 rounded-full border border-black/20 flex items-center justify-center">
+                                                    <div class="w-2 h-2 rounded-full bg-black"></div>
+                                                </div>
+                                            </div>
+                                            <div class="relative space-y-4 max-w-[14ch]">
+                                                <h5 class="text-[32px] leading-[0.98] tracking-tight text-black">Use margin as structure.</h5>
+                                                <div class="w-16 h-1 bg-black"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="social-composition-rules" class="scroll-mt-24 space-y-6">
+                        <div class="grid xl:grid-cols-[1.1fr_0.9fr] gap-8">
+                            <div class="bg-gray-50 border border-gray-200 rounded-2xl p-10">
+                                <h3 class="text-lg font-medium text-black mb-6">Composition Rules</h3>
+                                <div class="grid md:grid-cols-2 gap-4">
+                                    <div class="bg-white border border-gray-200 rounded-xl p-6">
+                                        <span class="text-[10px] font-mono uppercase tracking-[0.18em] text-gray-400 block mb-3">Focal
+                                            Point</span>
+                                        <p class="text-sm text-gray-600 leading-relaxed">Every graphic should have one
+                                            thing that reads first: a headline, a lens form, or one color block.</p>
+                                    </div>
+                                    <div class="bg-white border border-gray-200 rounded-xl p-6">
+                                        <span class="text-[10px] font-mono uppercase tracking-[0.18em] text-gray-400 block mb-3">Alignment</span>
+                                        <p class="text-sm text-gray-600 leading-relaxed">Use visible left, center, or
+                                            grid alignment. Avoid scattered or floating placements.</p>
+                                    </div>
+                                    <div class="bg-white border border-gray-200 rounded-xl p-6">
+                                        <span class="text-[10px] font-mono uppercase tracking-[0.18em] text-gray-400 block mb-3">Negative
+                                            Space</span>
+                                        <p class="text-sm text-gray-600 leading-relaxed">Leave quiet zones around the
+                                            focal content so the composition feels deliberate and readable.</p>
+                                    </div>
+                                    <div class="bg-white border border-gray-200 rounded-xl p-6">
+                                        <span class="text-[10px] font-mono uppercase tracking-[0.18em] text-gray-400 block mb-3">Hierarchy</span>
+                                        <p class="text-sm text-gray-600 leading-relaxed">Use scale and contrast before
+                                            adding more parts. Structure should do more work than decoration.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="bg-gray-50 border border-gray-200 rounded-2xl p-10">
+                                <h3 class="text-lg font-medium text-black mb-6">Correction Logic</h3>
+                                <div class="space-y-4">
+                                    <div class="bg-white border border-gray-200 rounded-xl p-6">
+                                        <span class="text-[10px] font-mono uppercase tracking-[0.18em] text-gray-400 block mb-3">If
+                                            Weak</span>
+                                        <p class="text-sm text-gray-600 leading-relaxed">Simplify. Remove secondary
+                                            elements and strengthen one anchor.</p>
+                                    </div>
+                                    <div class="bg-white border border-gray-200 rounded-xl p-6">
+                                        <span class="text-[10px] font-mono uppercase tracking-[0.18em] text-gray-400 block mb-3">If
+                                            Crowded</span>
+                                        <p class="text-sm text-gray-600 leading-relaxed">Delete elements. Keep the
+                                            strongest line, block, and message only.</p>
+                                    </div>
+                                    <div class="bg-white border border-gray-200 rounded-xl p-6">
+                                        <span class="text-[10px] font-mono uppercase tracking-[0.18em] text-gray-400 block mb-3">If
+                                            Empty</span>
+                                        <p class="text-sm text-gray-600 leading-relaxed">Add structure, not decoration.
+                                            Use a frame, grid, ring, or color plane that already belongs to the
+                                            system.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="social-content-examples" class="scroll-mt-24 space-y-6">
+                        <div class="bg-gray-50 border border-gray-200 rounded-2xl p-10">
+                            <div class="flex items-end justify-between gap-6 border-b border-gray-200 pb-6 mb-8">
+                                <div>
+                                    <h3 class="text-lg font-medium text-black">Content Examples</h3>
+                                    <p class="text-sm text-gray-500 mt-2 max-w-2xl">Use abstract content examples to
+                                        show how approved elements combine inside real social outputs without
+                                        introducing platform-specific styling.</p>
+                                </div>
+                            </div>
+
+                            <div class="grid lg:grid-cols-3 gap-6">
+                                <div class="bg-white border border-gray-200 rounded-xl p-6 space-y-5">
+                                    <span class="text-[10px] font-mono uppercase tracking-[0.18em] text-gray-400">Editorial
+                                        Hero / 4:5</span>
+                                    <div class="aspect-[4/5] border border-black rounded-xl bg-black relative overflow-hidden p-6 flex flex-col justify-between">
+                                        <div class="absolute inset-0 opacity-15 grid-bg"
+                                            style="background-image: linear-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px); background-size: 34px 34px;">
+                                        </div>
+                                        <div class="relative flex justify-between items-start">
+                                            <span class="text-[10px] font-mono uppercase tracking-[0.18em] text-white/45">Signal</span>
+                                            <div class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center">
+                                                <div class="w-5 h-5 rounded-full border border-white/20 flex items-center justify-center">
+                                                    <div class="w-2 h-2 rounded-full bg-white"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="relative space-y-4 max-w-[14ch]">
+                                            <h4 class="text-[38px] leading-[0.98] tracking-tight text-white">Evidence needs a clear signal.</h4>
+                                            <div class="inline-block bg-[#F1DD67] text-black px-3 py-2 text-[10px] font-mono uppercase tracking-[0.18em]">One
+                                                focus only</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="bg-white border border-gray-200 rounded-xl p-6 space-y-5">
+                                    <span class="text-[10px] font-mono uppercase tracking-[0.18em] text-gray-400">Structured
+                                        Split / 1:1</span>
+                                    <div class="aspect-square border border-black rounded-xl overflow-hidden grid grid-cols-[1fr_1fr]">
+                                        <div class="bg-[#F7F7F4] p-5 flex flex-col justify-between border-r border-gray-200">
+                                            <span class="text-[10px] font-mono uppercase tracking-[0.18em] text-gray-400">Copy</span>
+                                            <div class="space-y-3 max-w-[12ch]">
+                                                <h4 class="text-[28px] leading-[1.02] tracking-tight text-black">Keep insight and structure distinct.</h4>
+                                            </div>
+                                        </div>
+                                        <div class="bg-white relative overflow-hidden">
+                                            <div class="absolute inset-0 grid-bg opacity-80"></div>
+                                            <div class="absolute inset-6 border border-black/15"></div>
+                                            <div class="absolute top-4 left-4 w-8 h-8 border-t border-l border-black/20"></div>
+                                            <div class="absolute bottom-4 right-4 w-8 h-8 border-b border-r border-black/20"></div>
+                                            <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-[#F1DD67] border border-black"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="bg-white border border-gray-200 rounded-xl p-6 space-y-5">
+                                    <span class="text-[10px] font-mono uppercase tracking-[0.18em] text-gray-400">Framed
+                                        Statement / 9:16</span>
+                                    <div class="aspect-[9/16] border border-gray-200 rounded-xl bg-[#F7F7F4] p-5">
+                                        <div class="w-full h-full border-2 border-black relative p-5 flex flex-col justify-between overflow-hidden">
+                                            <div class="absolute inset-0 grid-bg opacity-70"></div>
+                                            <div class="absolute top-4 left-4 w-8 h-8 border-t border-l border-black/20"></div>
+                                            <div class="absolute bottom-4 right-4 w-8 h-8 border-b border-r border-black/20"></div>
+                                            <div class="relative flex justify-between items-start">
+                                                <span class="text-[10px] font-mono uppercase tracking-[0.18em] text-gray-400">Frame</span>
+                                                <div class="w-8 h-8 rounded-full border border-black/20 flex items-center justify-center">
+                                                    <div class="w-2 h-2 rounded-full bg-black"></div>
+                                                </div>
+                                            </div>
+                                            <div class="relative space-y-4 max-w-[12ch]">
+                                                <h4 class="text-[32px] leading-[0.98] tracking-tight text-black">Structure should carry the read.</h4>
+                                                <div class="w-16 h-1 bg-black"></div>
+                                            </div>
+                                            <div class="relative text-[10px] font-mono uppercase tracking-[0.18em] text-gray-500">Use
+                                                approved elements only</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
 
             <!-- ==========================================
                  7. BANNER LAYOUT
             =========================================== -->
-            <section id="banner" class="scroll-mt-24">
+                    <section id="banner" class="scroll-mt-24">
                 <div class="border-b border-gray-200 pb-4 mb-8">
-                    <h2 class="text-3xl font-medium tracking-tight">8. Banner Systems (2:1 / 3:1)</h2>
+                    <h3 class="text-2xl font-medium tracking-tight">Banner Systems (2:1 / 3:1)</h3>
                 </div>
 
                 <h3 class="text-sm font-semibold mb-6">LinkedIn Cover & Web Heros</h3>
@@ -1254,9 +1617,9 @@
             <!-- ==========================================
                  8. IMAGE STYLE & CONTEXT
             =========================================== -->
-            <section id="image" class="scroll-mt-24">
+                    <section id="image" class="scroll-mt-24">
                 <div class="border-b border-gray-200 pb-4 mb-8">
-                    <h2 class="text-3xl font-medium tracking-tight">9. Image Style Definition</h2>
+                    <h3 class="text-2xl font-medium tracking-tight">Image Style Definition</h3>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -1321,9 +1684,9 @@
             <!-- ==========================================
                  9. COPY TONE EXAMPLES
             =========================================== -->
-            <section id="copy" class="scroll-mt-24 pb-32">
+                    <section id="copy" class="scroll-mt-24 pb-32">
                 <div class="border-b border-gray-200 pb-4 mb-8">
-                    <h2 class="text-3xl font-medium tracking-tight">10. Copy Tone Application</h2>
+                    <h3 class="text-2xl font-medium tracking-tight">Copy Tone Application</h3>
                 </div>
 
                 <div class="bg-gray-50 border border-gray-200 rounded-2xl p-10 flex flex-col gap-10">
@@ -1399,6 +1762,9 @@
                             </div>
                         </div>
                     </div>
+
+                </div>
+            </section>
 
                 </div>
             </section>
