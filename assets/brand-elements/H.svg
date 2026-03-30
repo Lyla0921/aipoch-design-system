@@ -1,0 +1,18 @@
+<svg width="140" height="140" viewBox="0 0 140 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="140" height="140" fill="#F7F7F4"/>
+<g opacity="0.7" stroke="#BDB9AF" stroke-width="0.6">
+<path d="M0 28H140"/>
+<path d="M28 0V140"/>
+<path d="M0 56H140"/>
+<path d="M56 0V140"/>
+<path d="M0 84H140"/>
+<path d="M84 0V140"/>
+<path d="M0 112H140"/>
+<path d="M112 0V140"/>
+</g>
+<g stroke="#1A1A1A" stroke-width="1.15">
+<path d="M28 12V44H12"/>
+<path d="M112 96V128H128"/>
+<path d="M56 44H84"/>
+</g>
+</svg>
