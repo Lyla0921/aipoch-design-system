@@ -115,6 +115,10 @@
             <div>
                 <h3 class="text-[10px] font-semibold uppercase tracking-widest text-gray-400 mb-2 px-2">Foundation</h3>
                 <ul class="space-y-0.5 text-sm">
+                    <li><a href="#global-rules"
+                            class="block px-2 py-1.5 text-gray-600 hover:bg-gray-100 rounded-md transition-colors font-medium">Global
+                            Rules</a>
+                    </li>
                     <li><a href="#logo"
                             class="block px-2 py-1.5 text-gray-600 hover:bg-gray-100 rounded-md transition-colors font-medium">Logo</a>
                     </li>
@@ -196,6 +200,49 @@
                     live HTML components.
                 </p>
             </div>
+
+            <section id="global-rules" class="scroll-mt-24">
+                <div class="border-b border-gray-200 pb-4 mb-8">
+                    <h2 class="text-3xl font-medium tracking-tight">0. Global Rules</h2>
+                </div>
+
+                <div class="bg-gray-50 border border-gray-200 rounded-2xl p-10">
+                    <div class="grid lg:grid-cols-2 xl:grid-cols-4 gap-4">
+                        <div class="bg-white border border-gray-200 rounded-xl p-6">
+                            <span class="text-[10px] font-mono uppercase tracking-[0.18em] text-gray-400 block mb-3">Mockups</span>
+                            <ul class="space-y-2 text-sm text-gray-600 leading-relaxed">
+                                <li>Mockups must be present in every template that defines a device visual.</li>
+                                <li>Mockups must keep the original aspect ratio at all times.</li>
+                                <li>Mockups must never be stretched, squashed, or distorted.</li>
+                            </ul>
+                        </div>
+                        <div class="bg-white border border-gray-200 rounded-xl p-6">
+                            <span class="text-[10px] font-mono uppercase tracking-[0.18em] text-gray-400 block mb-3">Typography</span>
+                            <ul class="space-y-2 text-sm text-gray-600 leading-relaxed">
+                                <li>Titles must use one emphasis only.</li>
+                                <li>Emphasis must use Inter Italic from the same font family.</li>
+                                <li>Titles must not combine italic, bold, or color as separate emphasis methods.</li>
+                            </ul>
+                        </div>
+                        <div class="bg-white border border-gray-200 rounded-xl p-6">
+                            <span class="text-[10px] font-mono uppercase tracking-[0.18em] text-gray-400 block mb-3">Layout</span>
+                            <ul class="space-y-2 text-sm text-gray-600 leading-relaxed">
+                                <li>Extra frames, nested outlines, and duplicate containers are not allowed.</li>
+                                <li>Placeholder text and debug text must not appear in output.</li>
+                                <li>Templates must use only the approved structure defined in the system.</li>
+                            </ul>
+                        </div>
+                        <div class="bg-white border border-gray-200 rounded-xl p-6">
+                            <span class="text-[10px] font-mono uppercase tracking-[0.18em] text-gray-400 block mb-3">Consistency</span>
+                            <ul class="space-y-2 text-sm text-gray-600 leading-relaxed">
+                                <li>The left preview must match the right-side specification exactly.</li>
+                                <li>Every rendered element must be defined by the written rule set.</li>
+                                <li>Elements not defined in the specification must not appear in the preview.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
             <!-- ==========================================
                  1. LOGO
@@ -318,8 +365,9 @@
                                 </div>
                             </div>
                             <p class="text-xs text-gray-500 leading-relaxed mt-6">In this diagram, the logo is rendered
-                                at `32px` tall, so each clear-space margin is also `32px`. In constrained UI, this may
-                                reduce to `0.5x` only when necessary. The clear space always scales with the logo size.</p>
+                                at `32px` tall, so each clear-space margin is also `32px`. In constrained UI, clear
+                                space must reduce to `0.5x` only when necessary. The clear space always scales with the
+                                logo size.</p>
                         </div>
 
                         <div class="bg-gray-50 border border-gray-200 rounded-2xl p-10">
@@ -437,7 +485,7 @@
                                     class="font-mono text-[10px] bg-white border border-gray-200 px-2 py-1 rounded text-gray-500">Inter</code>
                             </div>
                         </div>
-                        <h2 class="text-4xl font-light tracking-tight text-black leading-[1.2]">Technical modules should
+                        <h2 class="text-4xl font-light tracking-tight text-black leading-[1.2]">Technical modules must
                             feel calm, precise, and legible.</h2>
                     </div>
 
@@ -461,25 +509,22 @@
                                 Accent</span>
                             <div class="flex items-center gap-2">
                                 <code
-                                    class="font-mono text-[10px] bg-white border border-gray-200 px-2 py-1 rounded text-gray-500">keyword accent / social headlines</code>
+                                    class="font-mono text-[10px] bg-white border border-gray-200 px-2 py-1 rounded text-gray-500">one italic keyword / titles only</code>
                                 <code
-                                    class="font-mono text-[10px] bg-white border border-gray-200 px-2 py-1 rounded text-gray-500">Georgia Italic</code>
+                                    class="font-mono text-[10px] bg-white border border-gray-200 px-2 py-1 rounded text-gray-500">Inter Italic</code>
                             </div>
                         </div>
                         <div class="space-y-4">
                             <h3 class="text-4xl font-light tracking-tight text-black leading-[1.15]">Portfolio <span
-                                    class="italic" style="font-family: Georgia, 'Times New Roman', serif;">Signals</span></h3>
+                                    class="italic">Signals</span></h3>
                             <div class="grid gap-2 text-sm leading-[1.65] text-gray-600 max-w-2xl">
-                                <p>Use a serif italic keyword inside large social headlines to create contrast between
-                                    the core statement and the emphasized term.</p>
-                                <p>Apply the serif italic treatment to one keyword only, paired with regular Inter text
-                                    in the same title. Do not set the full sentence in serif or italic.</p>
-                                <p>This pattern is used in social templates such as Portfolio <span class="italic"
-                                        style="font-family: Georgia, 'Times New Roman', serif;">Signals</span>,
-                                    Accelerate <span class="italic"
-                                        style="font-family: Georgia, 'Times New Roman', serif;">Insight</span>, and
-                                    Product <span class="italic"
-                                        style="font-family: Georgia, 'Times New Roman', serif;">Focus</span>.</p>
+                                <p>Use italic for one keyword only inside website hero titles and social media
+                                    headlines.</p>
+                                <p>Italic emphasis must use Inter Italic from the same font family.</p>
+                                <p>Titles must not combine italic, bold, or color as separate emphasis methods.
+                                    Portfolio <span class="italic">Signals</span>, Accelerate <span
+                                        class="italic">Insight</span>, and Product <span
+                                        class="italic">Focus</span> follow the same rule.</p>
                             </div>
                         </div>
                     </div>
@@ -503,8 +548,8 @@
                             <div class="grid gap-2 text-sm leading-[1.65] text-gray-600 max-w-2xl">
                                 <p>Use small uppercase Inter markers for social brand identifiers placed in the top
                                     corners of templates.</p>
-                                <p>Keep them compact, restrained, and secondary to the main headline. This style is for
-                                    brand and handle metadata only, not for body copy or calls to action.</p>
+                                <p>Brand markers must stay compact and secondary to the main headline. This style is
+                                    for brand and handle metadata only.</p>
                             </div>
                         </div>
                     </div>
@@ -867,7 +912,7 @@
                                     </div>
                                 </div>
                                 <p class="text-xs text-gray-500 leading-relaxed mt-4">Use yellow as a short interaction
-                                    signal. Active states should strengthen borders before increasing fill density.</p>
+                                    signal. Active states must strengthen borders before increasing fill density.</p>
                             </div>
 
                             <div class="bg-white border border-gray-200 rounded-xl p-6">
@@ -879,7 +924,7 @@
                                         on large fills.</p>
                                     <p>Keep semantic colors reserved for status, validation, and compact signals rather
                                         than decorative emphasis.</p>
-                                    <p>Favor black, white, and grayscale for structure. The system should feel clinical,
+                                    <p>Favor black, white, and grayscale for structure. The system must stay clinical,
                                         minimal, and calm.</p>
                                 </div>
                             </div>
@@ -1216,10 +1261,10 @@
                         <div class="grid xl:grid-cols-[0.92fr_1.08fr] gap-8">
                             <div class="bg-gray-50 border border-gray-200 rounded-2xl p-10">
                                 <h3 class="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-4">Overview</h3>
-                                <p class="text-sm text-gray-500 leading-relaxed max-w-2xl">Social media is a flexible
-                                    output system, not a single fixed template. Use approved brand elements, approved
-                                    background language, and one clear layout logic per asset so every post remains
-                                    consistent with the AIPOCH visual system.</p>
+                                <p class="text-sm text-gray-500 leading-relaxed max-w-2xl">Social media is a
+                                    rule-based output system, not a single fixed template. Each asset must use
+                                    approved brand elements, approved background language, and one clear layout
+                                    logic.</p>
                             </div>
                             <div class="bg-gray-50 border border-gray-200 rounded-2xl p-10">
                                 <h3 class="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-6">System
@@ -1227,14 +1272,13 @@
                                 <div class="grid md:grid-cols-2 gap-4">
                                     <div class="bg-white border border-gray-200 rounded-xl p-5">
                                         <span class="text-sm font-medium text-black block mb-2">Layout Variation</span>
-                                        <p class="text-xs leading-relaxed text-gray-500">Social graphics may use
-                                            multiple layout variations. Choose one layout type per asset and keep it
-                                            consistent.</p>
+                                        <p class="text-xs leading-relaxed text-gray-500">Social graphics must use one
+                                            approved layout variation per asset. Layout types must not be mixed.</p>
                                     </div>
                                     <div class="bg-white border border-gray-200 rounded-xl p-5">
                                         <span class="text-sm font-medium text-black block mb-2">Brand Presence</span>
-                                        <p class="text-xs leading-relaxed text-gray-500">Every asset should clearly
-                                            demonstrate core brand elements and approved background usage.</p>
+                                        <p class="text-xs leading-relaxed text-gray-500">Every asset must demonstrate
+                                            core brand elements and approved background usage.</p>
                                     </div>
                                     <div class="bg-white border border-gray-200 rounded-xl p-5">
                                         <span class="text-sm font-medium text-black block mb-2">Element Constraint</span>
@@ -1257,9 +1301,9 @@
                             <div class="flex items-end justify-between gap-6 border-b border-gray-200 pb-6 mb-8">
                                 <div>
                                     <h3 class="text-lg font-medium text-black">Brand Elements</h3>
-                                    <p class="text-sm text-gray-500 mt-2 max-w-2xl">Social graphics should use the same
+                                    <p class="text-sm text-gray-500 mt-2 max-w-2xl">Social graphics must use the same
                                         elemental vocabulary already established in the system: circular marks, framed
-                                        structure, nodes, line grids, and decisive highlight blocks.</p>
+                                        structure, line grids, and decisive highlight blocks.</p>
                                 </div>
                             </div>
 
@@ -1341,9 +1385,10 @@
                                     <div class="bg-white border border-gray-200 rounded-xl p-6">
                                         <span class="text-[10px] font-mono uppercase tracking-[0.18em] text-gray-400 block mb-3">Usage
                                             Rule</span>
-                                        <p class="text-sm text-gray-600 leading-relaxed">Backgrounds should support the
-                                            main message, not overpower it. Use opacity only within the approved
-                                            palette. Avoid decorative treatments that sit outside the system.</p>
+                                        <p class="text-sm text-gray-600 leading-relaxed">Backgrounds must support the
+                                            main message and must not overpower it. Use opacity only within the
+                                            approved palette. Decorative treatments outside the system are not
+                                            allowed.</p>
                                     </div>
                                     <div class="bg-white border border-gray-200 rounded-xl p-6">
                                         <span class="text-[10px] font-mono uppercase tracking-[0.18em] text-gray-400 block mb-3">Hard
@@ -1416,7 +1461,7 @@
                                 <div>
                                     <h3 class="text-lg font-medium text-black">Layout Options</h3>
                                     <p class="text-sm text-gray-500 mt-2 max-w-2xl">Use one layout logic per graphic.
-                                        Do not combine multiple layout types in the same composition.</p>
+                                        Multiple layout types must not appear in the same composition.</p>
                                 </div>
                             </div>
 
@@ -1494,7 +1539,7 @@
                                             <div class="w-8 h-8"></div>
                                         </div>
                                         <div class="relative space-y-4 max-w-[12ch]">
-                                            <h4 class="text-[32px] leading-[0.98] tracking-tight text-black">Structure should carry the read.</h4>
+                                            <h4 class="text-[32px] leading-[0.98] tracking-tight text-black">Structure must carry the read.</h4>
                                             <div class="w-16 h-1 bg-black"></div>
                                         </div>
                                         <div class="relative text-[10px] font-mono uppercase tracking-[0.18em] text-gray-500">Use
@@ -1513,7 +1558,7 @@
                                     <div class="bg-white border border-gray-200 rounded-xl p-6">
                                         <span class="text-[10px] font-mono uppercase tracking-[0.18em] text-gray-400 block mb-3">Focal
                                             Point</span>
-                                        <p class="text-sm text-gray-600 leading-relaxed">Every graphic should have one
+                                        <p class="text-sm text-gray-600 leading-relaxed">Every graphic must have one
                                             thing that reads first: a headline, a lens form, or one color block.</p>
                                     </div>
                                     <div class="bg-white border border-gray-200 rounded-xl p-6">
@@ -1530,7 +1575,7 @@
                                     <div class="bg-white border border-gray-200 rounded-xl p-6">
                                         <span class="text-[10px] font-mono uppercase tracking-[0.18em] text-gray-400 block mb-3">Hierarchy</span>
                                         <p class="text-sm text-gray-600 leading-relaxed">Use scale and contrast before
-                                            adding more parts. Structure should do more work than decoration.</p>
+                                            adding more parts. Structure must do more work than decoration.</p>
                                     </div>
                                 </div>
                             </div>
@@ -1633,7 +1678,7 @@
                                             <div class="w-8 h-8"></div>
                                         </div>
                                         <div class="relative space-y-4 max-w-[12ch]">
-                                            <h4 class="text-[32px] leading-[0.98] tracking-tight text-black">Structure should carry the read.</h4>
+                                            <h4 class="text-[32px] leading-[0.98] tracking-tight text-black">Structure must carry the read.</h4>
                                             <div class="w-16 h-1 bg-black"></div>
                                         </div>
                                         <div class="relative text-[10px] font-mono uppercase tracking-[0.18em] text-gray-500">Use
@@ -1646,10 +1691,10 @@
                                 <div class="flex items-end justify-between gap-6">
                                     <div>
                                         <h4 class="text-base font-medium text-black">Template System</h4>
-                                        <p class="text-sm text-gray-500 mt-2 max-w-3xl">Treat each reference as a fixed
-                                            template type. The previews below are newly generated from approved brand
-                                            elements and layout rules; the notes define how to rebuild the same
-                                            composition logic with new content inside the system.</p>
+                                        <p class="text-sm text-gray-500 mt-2 max-w-3xl">Treat each template as a fixed
+                                            system pattern. The previews below use approved brand elements and layout
+                                            rules only; the notes define how to rebuild the same composition logic with
+                                            new content.</p>
                                     </div>
                                     <span class="text-[10px] font-mono uppercase tracking-[0.18em] text-gray-400">3 reusable social templates</span>
                                 </div>
@@ -1660,7 +1705,7 @@
                                             <div>
                                                 <span class="text-[10px] font-mono uppercase tracking-[0.18em] text-gray-400">Template 1</span>
                                                 <h5 class="text-lg font-medium text-black mt-2">Dark Background / Portfolio Intro</h5>
-                                                <p class="text-sm text-gray-500 mt-2 max-w-2xl">Lead template for portfolio,
+                                                <p class="text-sm text-gray-500 mt-2 max-w-2xl">Use only for portfolio,
                                                     category-intro, or opening social slides. Text leads; the device mockup
                                                     supports.</p>
                                             </div>
@@ -1688,7 +1733,7 @@
                                                 <div class="relative pt-8 space-y-4 max-w-[15ch]">
                                                     <h6 class="text-[40px] leading-[0.95] tracking-tight text-white">
                                                         Portfolio
-                                                        <span class="italic text-[#F1DD67]" style="font-family: Georgia, 'Times New Roman', serif;">Signals</span>
+                                                        <span class="italic">Signals</span>
                                                     </h6>
                                                     <div class="text-[11px] font-mono uppercase tracking-[0.24em] text-[#F1DD67]/80">www.aipoch.com</div>
                                                 </div>
@@ -1708,28 +1753,32 @@
                                             <div class="grid md:grid-cols-2 gap-4">
                                                 <div class="border border-gray-200 rounded-xl p-4 space-y-2 bg-[#F7F7F4]">
                                                     <span class="text-[10px] font-mono uppercase tracking-[0.18em] text-gray-400">Composition Structure</span>
-                                                    <p class="text-sm text-gray-600 leading-relaxed">Full-width pure black
-                                                        field, top-left brand, top-right handle, center-left headline,
-                                                        supporting URL below, device mockup anchored at the bottom.</p>
+                                                    <p class="text-sm text-gray-600 leading-relaxed">Use a pure black
+                                                        field with top-left brand, top-right handle, center-left headline,
+                                                        supporting URL below, and a device mockup anchored at the bottom.</p>
                                                 </div>
                                                 <div class="border border-gray-200 rounded-xl p-4 space-y-2 bg-[#F7F7F4]">
                                                     <span class="text-[10px] font-mono uppercase tracking-[0.18em] text-gray-400">Elements Breakdown</span>
-                                                    <p class="text-sm text-gray-600 leading-relaxed">Branding, handle,
-                                                        2-tone headline, supporting URL, laptop mockup, pure black background,
-                                                        and subtle radial/grid overlays built from approved brand elements.</p>
+                                                    <p class="text-sm text-gray-600 leading-relaxed">Use branding, handle,
+                                                        one-keyword italic headline, supporting URL, laptop mockup, pure black
+                                                        background, and radial/grid overlays built from approved brand elements.</p>
                                                 </div>
                                                 <div class="border border-gray-200 rounded-xl p-4 space-y-2 bg-[#F7F7F4]">
                                                     <span class="text-[10px] font-mono uppercase tracking-[0.18em] text-gray-400">Layout Rules</span>
-                                                    <p class="text-sm text-gray-600 leading-relaxed">Headline is the primary
-                                                        read. Keep it left-weighted. Mockup stays lower and wider than the text
-                                                        block. Support text sits between headline and device.</p>
+                                                    <p class="text-sm text-gray-600 leading-relaxed">Headline must be the
+                                                        primary read. The title block must stay left-weighted. The mockup must
+                                                        stay lower and wider than the text block. Support text must sit between
+                                                        headline and device.</p>
                                                 </div>
                                                 <div class="border border-gray-200 rounded-xl p-4 space-y-2 bg-[#F7F7F4]">
                                                     <span class="text-[10px] font-mono uppercase tracking-[0.18em] text-gray-400">Constraints</span>
-                                                    <p class="text-sm text-gray-600 leading-relaxed">No visible frame around
-                                                        the mockup. Use a pure black background with controlled radial/grid
-                                                        overlays only. Align the background to approved radial/grid origin. Do
-                                                        not add extra borders or off-tone fills.</p>
+                                                    <ul class="space-y-2 text-sm text-gray-600 leading-relaxed">
+                                                        <li>Background must be pure black.</li>
+                                                        <li>Background pattern must render correctly with no artifacts or broken visuals.</li>
+                                                        <li>Title must use one italic keyword only.</li>
+                                                        <li>Random symbols and debug elements must not appear.</li>
+                                                        <li>Mockup must not be distorted.</li>
+                                                    </ul>
                                                 </div>
                                             </div>
                                         </div>
@@ -1740,9 +1789,9 @@
                                             <div>
                                                 <span class="text-[10px] font-mono uppercase tracking-[0.18em] text-gray-400">Template 2</span>
                                                 <h5 class="text-lg font-medium text-black mt-2">Framed Device Showcase</h5>
-                                                <p class="text-sm text-gray-500 mt-2 max-w-2xl">Use for headline-led product
-                                                    showcase slides. The headline pulls focus; the device sits inside one clear,
-                                                    single frame.</p>
+                                                <p class="text-sm text-gray-500 mt-2 max-w-2xl">Use only for headline-led
+                                                    product showcase slides. The headline pulls focus; the device sits inside
+                                                    one clear, single frame.</p>
                                             </div>
                                             <span class="text-[10px] font-mono uppercase tracking-[0.18em] text-gray-400">single hard frame</span>
                                         </div>
@@ -1769,7 +1818,7 @@
                                                 <div class="relative pt-9 text-center">
                                                     <h6 class="text-[42px] leading-none tracking-tight text-black">
                                                         Accelerate
-                                                        <span class="italic text-[#111111]" style="font-family: Georgia, 'Times New Roman', serif;">Insight</span>
+                                                        <span class="italic">Insight</span>
                                                     </h6>
                                                 </div>
                                                 <div class="relative mt-10 flex-1">
@@ -1788,28 +1837,31 @@
                                             <div class="grid md:grid-cols-2 gap-4">
                                                 <div class="border border-gray-200 rounded-xl p-4 space-y-2 bg-[#F7F7F4]">
                                                     <span class="text-[10px] font-mono uppercase tracking-[0.18em] text-gray-400">Composition Structure</span>
-                                                    <p class="text-sm text-gray-600 leading-relaxed">Light field, top-corner
-                                                        brand markers, centered 2-tone headline, framed device showcase in the
-                                                        center, subtle brand graphic behind.</p>
+                                                    <p class="text-sm text-gray-600 leading-relaxed">Use a light field with
+                                                        top-corner brand markers, centered headline, framed device showcase in
+                                                        the center, and one restrained brand graphic behind.</p>
                                                 </div>
                                                 <div class="border border-gray-200 rounded-xl p-4 space-y-2 bg-[#F7F7F4]">
                                                     <span class="text-[10px] font-mono uppercase tracking-[0.18em] text-gray-400">Elements Breakdown</span>
-                                                    <p class="text-sm text-gray-600 leading-relaxed">Branding, handle,
-                                                        mixed-type headline, laptop mockup, one hard frame boundary, approved
-                                                        grid/radial background element.</p>
+                                                    <p class="text-sm text-gray-600 leading-relaxed">Use branding, handle,
+                                                        one-keyword italic headline, laptop mockup, one hard frame boundary,
+                                                        and one approved grid/radial background element.</p>
                                                 </div>
                                                 <div class="border border-gray-200 rounded-xl p-4 space-y-2 bg-[#F7F7F4]">
                                                     <span class="text-[10px] font-mono uppercase tracking-[0.18em] text-gray-400">Layout Rules</span>
-                                                    <p class="text-sm text-gray-600 leading-relaxed">Center the composition
-                                                        vertically. Keep the headline above the mockup. Preserve a single,
-                                                        unbroken frame around the device area and let the headline carry the
-                                                        full attention.</p>
+                                                    <p class="text-sm text-gray-600 leading-relaxed">Composition must stay
+                                                        vertically centered. The headline must stay above the mockup. A single,
+                                                        unbroken frame must wrap the device area.</p>
                                                 </div>
                                                 <div class="border border-gray-200 rounded-xl p-4 space-y-2 bg-[#F7F7F4]">
                                                     <span class="text-[10px] font-mono uppercase tracking-[0.18em] text-gray-400">Constraints</span>
-                                                    <p class="text-sm text-gray-600 leading-relaxed">Exactly one hard frame.
-                                                        No duplicate outlines. Background graphics remain subtle and aligned to
-                                                        grid origin. Do not move the laptop outside the framed visual zone.</p>
+                                                    <ul class="space-y-2 text-sm text-gray-600 leading-relaxed">
+                                                        <li>Mockup is required and must always be visible.</li>
+                                                        <li>Only one frame is allowed. Duplicate and nested frames are not allowed.</li>
+                                                        <li>Mockup must keep the original aspect ratio with no distortion.</li>
+                                                        <li>Title must use one italic keyword only.</li>
+                                                        <li>Extra text and placeholder text must not appear.</li>
+                                                    </ul>
                                                 </div>
                                             </div>
                                         </div>
@@ -1820,9 +1872,9 @@
                                             <div>
                                                 <span class="text-[10px] font-mono uppercase tracking-[0.18em] text-gray-400">Template 3</span>
                                                 <h5 class="text-lg font-medium text-black mt-2">Soft UI / Product Promotion</h5>
-                                                <p class="text-sm text-gray-500 mt-2 max-w-2xl">Use for softer, product-led
-                                                    promotion where the mockup sits inside a rounded container block and the CTA
-                                                    acts as the interaction layer.</p>
+                                                <p class="text-sm text-gray-500 mt-2 max-w-2xl">Use only for softer,
+                                                    product-led promotion where the mockup sits inside a rounded container
+                                                    block and the CTA acts as the interaction layer.</p>
                                             </div>
                                             <span class="text-[10px] font-mono uppercase tracking-[0.18em] text-gray-400">soft container / no visible border</span>
                                         </div>
@@ -1849,7 +1901,7 @@
                                                 <div class="relative pt-9 pl-3 max-w-[14ch]">
                                                     <h6 class="relative z-10 text-[40px] leading-[0.95] tracking-tight text-black">
                                                         Product
-                                                        <span class="relative inline-block italic text-[#111111]" style="font-family: Georgia, 'Times New Roman', serif;">
+                                                        <span class="relative inline-block italic">
                                                             <span class="absolute inset-x-[-0.08em] inset-y-[0.14em] bg-[#F1DD67] -z-10"></span>
                                                             Focus
                                                         </span>
@@ -1880,32 +1932,36 @@
                                             <div class="grid md:grid-cols-2 gap-4">
                                                 <div class="border border-gray-200 rounded-xl p-4 space-y-2 bg-[#F7F7F4]">
                                                     <span class="text-[10px] font-mono uppercase tracking-[0.18em] text-gray-400">Composition Structure</span>
-                                                    <p class="text-sm text-gray-600 leading-relaxed">Light neutral field with
-                                                        grid overlay, top-corner brand markers, left-aligned mixed-type headline,
-                                                        large rounded mockup container, centered CTA below, and a yellow brand
-                                                        highlight directly behind the headline.</p>
+                                                    <p class="text-sm text-gray-600 leading-relaxed">Use a light neutral field
+                                                        with grid overlay, top-corner brand markers, left-aligned headline,
+                                                        large rounded mockup container, centered CTA below, and a yellow
+                                                        highlight behind Focus only.</p>
                                                 </div>
                                                 <div class="border border-gray-200 rounded-xl p-4 space-y-2 bg-[#F7F7F4]">
                                                     <span class="text-[10px] font-mono uppercase tracking-[0.18em] text-gray-400">Elements Breakdown</span>
-                                                    <p class="text-sm text-gray-600 leading-relaxed">Branding, handle,
-                                                        mixed-style headline, product mockup inside a rounded container, CTA
-                                                        button, grid origin structure, approved radial background pattern, and a
-                                                        yellow brand block as headline highlight anchor.</p>
+                                                    <p class="text-sm text-gray-600 leading-relaxed">Use branding, handle,
+                                                        one-keyword italic headline, product mockup inside a rounded container,
+                                                        CTA button, grid origin structure, approved radial background pattern,
+                                                        and one yellow highlight block behind Focus.</p>
                                                 </div>
                                                 <div class="border border-gray-200 rounded-xl p-4 space-y-2 bg-[#F7F7F4]">
                                                     <span class="text-[10px] font-mono uppercase tracking-[0.18em] text-gray-400">Layout Rules</span>
-                                                    <p class="text-sm text-gray-600 leading-relaxed">Keep the headline in the
-                                                        upper-left read zone. The mockup container should be the primary visual
-                                                        focus and use the same scale/proportion logic as the Framed Device
-                                                        Showcase. The CTA sits below as a separate interaction band, not inside
-                                                        the frame.</p>
+                                                    <p class="text-sm text-gray-600 leading-relaxed">The headline must stay in
+                                                        the upper-left read zone. The mockup container must be the primary
+                                                        visual focus and must use the same scale and proportion logic as the
+                                                        Framed Device Showcase. The CTA must sit below as a separate
+                                                        interaction band.</p>
                                                 </div>
                                                 <div class="border border-gray-200 rounded-xl p-4 space-y-2 bg-[#F7F7F4]">
                                                     <span class="text-[10px] font-mono uppercase tracking-[0.18em] text-gray-400">Constraints</span>
-                                                    <p class="text-sm text-gray-600 leading-relaxed">Use a soft container, not
-                                                        a hard border. No duplicate frame logic. Keep the yellow brand anchor
-                                                        directly behind the headline, and align all background patterns to grid
-                                                        origin. Do not introduce new decorative containers.</p>
+                                                    <ul class="space-y-2 text-sm text-gray-600 leading-relaxed">
+                                                        <li>Mockup is required and must be the primary visual focus.</li>
+                                                        <li>Mockup scale must match Framed Device Showcase ratio.</li>
+                                                        <li>Yellow highlight applies only to the word Focus.</li>
+                                                        <li>Yellow block must have no border radius.</li>
+                                                        <li>Only one highlight element is allowed.</li>
+                                                        <li>Extra text and placeholder content must not appear.</li>
+                                                    </ul>
                                                 </div>
                                             </div>
                                         </div>
@@ -2002,7 +2058,7 @@
                                         class="border border-black bg-[#F1DD67] px-4 py-2 text-xs font-semibold uppercase tracking-widest text-black">Copied</span>
                                 </div>
                                 <p class="text-xs text-gray-500 leading-relaxed">Use short operational verbs and compact
-                                    confirmations. The interface should sound exact, not promotional.</p>
+                                    confirmations. The interface must sound exact, not promotional.</p>
                             </div>
                             <div class="bg-white border border-gray-200 rounded-xl p-6 flex flex-col gap-3">
                                 <div class="flex items-center justify-between gap-4">
@@ -2025,17 +2081,17 @@
                         <div class="grid md:grid-cols-3 gap-4">
                             <div class="bg-white border border-gray-200 rounded-xl p-5">
                                 <h4 class="text-sm font-medium text-black mb-2">Keep it operational</h4>
-                                <p class="text-xs text-gray-500 leading-relaxed">Microcopy should support the action in
-                                    front of the user, not narrate the entire workflow.</p>
+                                <p class="text-xs text-gray-500 leading-relaxed">Microcopy must support the action in
+                                    front of the user and must not narrate the entire workflow.</p>
                             </div>
                             <div class="bg-white border border-gray-200 rounded-xl p-5">
                                 <h4 class="text-sm font-medium text-black mb-2">Keep it short</h4>
-                                <p class="text-xs text-gray-500 leading-relaxed">Labels work best at one to three words.
-                                    Helper text should usually fit in one sentence.</p>
+                                <p class="text-xs text-gray-500 leading-relaxed">Labels must stay at one to three words.
+                                    Helper text must usually fit in one sentence.</p>
                             </div>
                             <div class="bg-white border border-gray-200 rounded-xl p-5">
                                 <h4 class="text-sm font-medium text-black mb-2">Keep it factual</h4>
-                                <p class="text-xs text-gray-500 leading-relaxed">Success and warning states should read
+                                <p class="text-xs text-gray-500 leading-relaxed">Success and warning states must read
                                     as factual system feedback rather than marketing language.</p>
                             </div>
                         </div>
