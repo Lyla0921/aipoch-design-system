@@ -7,11 +7,17 @@
     <title>AIPOCH Visual Design System</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
         :root {
             --font-sans: 'Inter', sans-serif;
             --font-mono: 'Roboto Mono', monospace;
+            --font-accent: 'Tinos', serif;
+            --color-accent-orange: #ea580c;
+            --color-primary-highlight: #f1dd67;
+            --color-canvas: #ffffff;
+            --color-surface: #f7f7f4;
+            --color-line: #e7e5de;
         }
 
         body {
@@ -24,6 +30,12 @@
 
         .font-mono {
             font-family: var(--font-mono);
+        }
+
+        .font-accent-italic {
+            font-family: var(--font-accent);
+            font-style: italic;
+            font-synthesis: none;
         }
 
         .grid-bg {
@@ -220,8 +232,8 @@
                             <span class="text-[10px] font-mono uppercase tracking-[0.18em] text-gray-400 block mb-3">Typography</span>
                             <ul class="space-y-2 text-sm text-gray-600 leading-relaxed">
                                 <li>Titles must use one emphasis only.</li>
-                                <li>Emphasis must use Inter Italic from the same font family.</li>
-                                <li>Titles must not combine italic, bold, or color as separate emphasis methods.</li>
+                                <li>Emphasis must use Tinos Italic.</li>
+                                <li>Approved brand accent colors may apply to the italic keyword only when the template defines that treatment.</li>
                             </ul>
                         </div>
                         <div class="bg-white border border-gray-200 rounded-xl p-6">
@@ -511,20 +523,22 @@
                                 <code
                                     class="font-mono text-[10px] bg-white border border-gray-200 px-2 py-1 rounded text-gray-500">one italic keyword / titles only</code>
                                 <code
-                                    class="font-mono text-[10px] bg-white border border-gray-200 px-2 py-1 rounded text-gray-500">Inter Italic</code>
+                                    class="font-mono text-[10px] bg-white border border-gray-200 px-2 py-1 rounded text-gray-500">Tinos Italic</code>
                             </div>
                         </div>
                         <div class="space-y-4">
                             <h3 class="text-4xl font-light tracking-tight text-black leading-[1.15]">Portfolio <span
-                                    class="italic">Signals</span></h3>
+                                    class="font-accent-italic">Signals</span></h3>
                             <div class="grid gap-2 text-sm leading-[1.65] text-gray-600 max-w-2xl">
                                 <p>Use italic for one keyword only inside website hero titles and social media
                                     headlines.</p>
-                                <p>Italic emphasis must use Inter Italic from the same font family.</p>
-                                <p>Titles must not combine italic, bold, or color as separate emphasis methods.
-                                    Portfolio <span class="italic">Signals</span>, Accelerate <span
-                                        class="italic">Insight</span>, and Product <span
-                                        class="italic">Focus</span> follow the same rule.</p>
+                                <p>Italic emphasis must use Tinos Italic and must not rely on browser-generated
+                                    italic.</p>
+                                <p>Approved brand accent colors may apply to the italic keyword only when the
+                                    template defines that treatment. Portfolio <span class="font-accent-italic"
+                                        style="color: var(--color-accent-orange);">Signals</span>, Accelerate <span
+                                        class="font-accent-italic" style="color: var(--color-accent-orange);">Insight</span>, and Product <span
+                                        class="font-accent-italic">Focus</span> follow the same rule.</p>
                             </div>
                         </div>
                     </div>
@@ -619,14 +633,14 @@
                             class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 border-b border-gray-200 pb-8 mb-8">
                             <div>
                                 <h3 class="text-lg font-medium text-black">Brand Palette</h3>
-                                <p class="text-sm text-gray-500 max-w-2xl mt-2">Extracted from the live AIPOCH homepage:
-                                    monochrome-first surfaces, editorial black typography, and a restrained warm yellow
-                                    highlight.</p>
+                                <p class="text-sm text-gray-500 max-w-2xl mt-2">Extracted from the live AIPOCH website:
+                                    monochrome-first surfaces, editorial black typography, a restrained warm yellow
+                                    highlight, and the action orange used on the Agent Skills CTA.</p>
                             </div>
                             <span class="hidden lg:block w-[48px] h-[22px]" aria-hidden="true"></span>
                         </div>
 
-                        <div class="grid lg:grid-cols-3 gap-6">
+                        <div class="grid lg:grid-cols-4 gap-6">
                             <div class="rounded-xl border border-gray-200 overflow-hidden bg-white">
                                 <div class="h-32 bg-[#F1DD67]"></div>
                                 <div class="p-5 border-t border-gray-200">
@@ -648,6 +662,19 @@
                                     </div>
                                     <p class="text-xs text-gray-500 leading-relaxed">Default color for headlines,
                                         high-priority text, strong borders, and primary controls.</p>
+                                </div>
+                            </div>
+
+                            <div class="rounded-xl border border-gray-200 overflow-hidden bg-white">
+                                <div class="h-32" style="background-color: var(--color-accent-orange);"></div>
+                                <div class="p-5 border-t border-gray-200">
+                                    <div class="flex items-center justify-between mb-2">
+                                        <h4 class="text-sm font-medium text-black">Accent Orange</h4>
+                                        <span class="text-[10px] font-mono text-gray-500">#EA580C</span>
+                                    </div>
+                                    <p class="text-xs text-gray-500 leading-relaxed">Use for the highlighted italic
+                                        keyword in Framed Device Showcase and other approved high-contrast callout
+                                        accents tied to the system.</p>
                                 </div>
                             </div>
 
@@ -1510,11 +1537,13 @@
                                                 <p class="text-xs text-gray-500 leading-relaxed">Let one side hold structure and the other hold content.</p>
                                             </div>
                                         </div>
-                                        <div class="bg-white relative overflow-hidden">
-                                            <img src="./assets/background-compositions/aipoch-background-01.png" alt="Approved split visual"
-                                                class="absolute inset-0 w-full h-full object-cover" />
-                                            <div class="absolute inset-0 bg-white/8"></div>
-                                            <div class="absolute left-4 bottom-4 bg-white/92 border border-gray-200 px-2 py-1 text-[8px] font-mono uppercase tracking-[0.16em] text-gray-500">approved
+                                        <div class="relative overflow-hidden" style="background-color: var(--color-surface);">
+                                            <div class="absolute inset-0 z-0" style="background-color: var(--color-surface);"></div>
+                                            <div class="absolute inset-0 z-10 overflow-hidden" style="background-color: var(--color-surface);">
+                                                <img src="./assets/background-compositions/aipoch-background-01.png" alt="Approved split visual"
+                                                    class="absolute inset-0 w-full h-full object-cover" />
+                                            </div>
+                                            <div class="absolute left-4 bottom-4 z-20 bg-white border border-gray-200 px-2 py-1 text-[8px] font-mono uppercase tracking-[0.16em] text-gray-500">approved
                                                 visual</div>
                                         </div>
                                     </div>
@@ -1733,7 +1762,7 @@
                                                 <div class="relative pt-8 space-y-4 max-w-[15ch]">
                                                     <h6 class="text-[40px] leading-[0.95] tracking-tight text-white">
                                                         Portfolio
-                                                        <span class="italic">Signals</span>
+                                                        <span class="font-accent-italic" style="color: var(--color-primary-highlight);">Signals</span>
                                                     </h6>
                                                     <div class="text-[11px] font-mono uppercase tracking-[0.24em] text-[#F1DD67]/80">www.aipoch.com</div>
                                                 </div>
@@ -1760,8 +1789,9 @@
                                                 <div class="border border-gray-200 rounded-xl p-4 space-y-2 bg-[#F7F7F4]">
                                                     <span class="text-[10px] font-mono uppercase tracking-[0.18em] text-gray-400">Elements Breakdown</span>
                                                     <p class="text-sm text-gray-600 leading-relaxed">Use branding, handle,
-                                                        one-keyword italic headline, supporting URL, laptop mockup, pure black
-                                                        background, and radial/grid overlays built from approved brand elements.</p>
+                                                        one-keyword italic headline with `#F1DD67`, supporting URL, laptop
+                                                        mockup, pure black background, and radial/grid overlays built from
+                                                        approved brand elements.</p>
                                                 </div>
                                                 <div class="border border-gray-200 rounded-xl p-4 space-y-2 bg-[#F7F7F4]">
                                                     <span class="text-[10px] font-mono uppercase tracking-[0.18em] text-gray-400">Layout Rules</span>
@@ -1776,6 +1806,7 @@
                                                         <li>Background must be pure black.</li>
                                                         <li>Background pattern must render correctly with no artifacts or broken visuals.</li>
                                                         <li>Title must use one italic keyword only.</li>
+                                                        <li>The italic keyword must use `#F1DD67`.</li>
                                                         <li>Random symbols and debug elements must not appear.</li>
                                                         <li>Mockup must not be distorted.</li>
                                                     </ul>
@@ -1818,7 +1849,7 @@
                                                 <div class="relative pt-9 text-center">
                                                     <h6 class="text-[42px] leading-none tracking-tight text-black">
                                                         Accelerate
-                                                        <span class="italic">Insight</span>
+                                                        <span class="font-accent-italic" style="color: var(--color-accent-orange);">Insight</span>
                                                     </h6>
                                                 </div>
                                                 <div class="relative mt-10 flex-1">
@@ -1844,8 +1875,9 @@
                                                 <div class="border border-gray-200 rounded-xl p-4 space-y-2 bg-[#F7F7F4]">
                                                     <span class="text-[10px] font-mono uppercase tracking-[0.18em] text-gray-400">Elements Breakdown</span>
                                                     <p class="text-sm text-gray-600 leading-relaxed">Use branding, handle,
-                                                        one-keyword italic headline, laptop mockup, one hard frame boundary,
-                                                        and one approved grid/radial background element.</p>
+                                                        one-keyword italic headline with approved accent color, laptop
+                                                        mockup, one hard frame boundary, and one approved grid/radial
+                                                        background element.</p>
                                                 </div>
                                                 <div class="border border-gray-200 rounded-xl p-4 space-y-2 bg-[#F7F7F4]">
                                                     <span class="text-[10px] font-mono uppercase tracking-[0.18em] text-gray-400">Layout Rules</span>
@@ -1860,6 +1892,7 @@
                                                         <li>Only one frame is allowed. Duplicate and nested frames are not allowed.</li>
                                                         <li>Mockup must keep the original aspect ratio with no distortion.</li>
                                                         <li>Title must use one italic keyword only.</li>
+                                                        <li>The italic keyword must use the approved brand accent color.</li>
                                                         <li>Extra text and placeholder text must not appear.</li>
                                                     </ul>
                                                 </div>
@@ -1901,7 +1934,7 @@
                                                 <div class="relative pt-9 pl-3 max-w-[14ch]">
                                                     <h6 class="relative z-10 text-[40px] leading-[0.95] tracking-tight text-black">
                                                         Product
-                                                        <span class="relative inline-block italic">
+                                                        <span class="relative inline-block font-accent-italic">
                                                             <span class="absolute inset-x-[-0.08em] inset-y-[0.14em] bg-[#F1DD67] -z-10"></span>
                                                             Focus
                                                         </span>
