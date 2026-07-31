@@ -3,6 +3,9 @@
   "private": true,
   "version": "1.0.0",
   "scripts": {
-    "build": "./scripts/build-static.sh"
+    "build": "./scripts/build-static.sh",
+    "validate:skill": "python3 skills/aipoch-presentation/scripts/validate_skill.py",
+    "validate:starter": "node skills/aipoch-presentation/scripts/validate_deck.mjs skills/aipoch-presentation/assets/starter/index.html",
+    "validate:tokens": "node scripts/check-presentation-tokens.mjs"
   }
 }

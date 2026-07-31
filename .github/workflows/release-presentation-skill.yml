@@ -1,0 +1,27 @@
+name: Release Presentation Skill
+
+on:
+  push:
+    tags:
+      - "presentation-v*"
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate skill
+        run: python3 skills/aipoch-presentation/scripts/validate_skill.py
+      - name: Check Design System token synchronization
+        run: node scripts/check-presentation-tokens.mjs
+      - name: Package skill
+        run: |
+          cd skills
+          zip -r "../aipoch-presentation-${GITHUB_REF_NAME}.zip" aipoch-presentation
+      - name: Publish GitHub release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh release create "$GITHUB_REF_NAME" "aipoch-presentation-${GITHUB_REF_NAME}.zip" --generate-notes

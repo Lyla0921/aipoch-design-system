@@ -1,0 +1,7 @@
+interface:
+  display_name: "AIPOCH Presentation"
+  short_description: "Create on-brand AIPOCH presentation decks"
+  icon_small: "./assets/aipoch-mark.svg"
+  icon_large: "./assets/aipoch-logo-primary.svg"
+  brand_color: "#F1DD67"
+  default_prompt: "Use $aipoch-presentation to create an on-brand AIPOCH presentation from my content."
