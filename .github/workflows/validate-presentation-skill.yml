@@ -1,0 +1,33 @@
+name: Validate Presentation Skill
+
+on:
+  pull_request:
+    paths:
+      - "skills/aipoch-presentation/**"
+      - ".github/workflows/validate-presentation-skill.yml"
+      - "package.json"
+  push:
+    branches:
+      - main
+    paths:
+      - "skills/aipoch-presentation/**"
+      - ".github/workflows/validate-presentation-skill.yml"
+      - "package.json"
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Validate skill structure
+        run: python3 skills/aipoch-presentation/scripts/validate_skill.py
+      - name: Check Design System token synchronization
+        run: node scripts/check-presentation-tokens.mjs
+      - name: Validate starter deck
+        run: node skills/aipoch-presentation/scripts/validate_deck.mjs skills/aipoch-presentation/assets/starter/index.html
