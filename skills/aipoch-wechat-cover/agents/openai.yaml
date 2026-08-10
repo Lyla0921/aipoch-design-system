@@ -1,0 +1,7 @@
+interface:
+  display_name: "AIPOCH WeChat Cover"
+  short_description: "Generate AIPOCH WeChat cover images"
+  icon_small: "./assets/aipoch-mark.svg"
+  icon_large: "./assets/aipoch-logo-primary.svg"
+  brand_color: "#F1DD67"
+  default_prompt: "Use $aipoch-wechat-cover to create a 900×383 AIPOCH WeChat article cover."
