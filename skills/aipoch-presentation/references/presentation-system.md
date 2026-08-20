@@ -47,6 +47,10 @@ Content slides use:
 
 Keep these elements aligned and identical across the deck.
 
+For a co-branded event, replace the single-logo header with the lockup defined in `collaboration-workshops.md`. The partner logo is part of the persistent header, not a discretionary decoration, and must not disappear on interior slides.
+
+When a technical grid is used, align the header rule to a grid row so the two lines read as one. Panels placed over the grid must use an opaque fill; the grid must never show through foreground frames, cards, diagrams, portraits, or summary illustrations.
+
 ## Page Archetypes
 
 ### Cover
@@ -100,6 +104,8 @@ Keep these elements aligned and identical across the deck.
 
 - Use supplied names, roles, and relationships exactly.
 - Use equal avatar treatment and spacing.
+- Normalize portraits by optical head size, eye line, and headroom, not by image-box dimensions alone.
+- Keep the top of every head visible and match shoulder exposure across comparable portraits.
 - Do not infer leadership or reporting relationships.
 - Long descriptions should use a clean row list or a focused carousel, never tiny cards.
 
@@ -113,6 +119,7 @@ Keep these elements aligned and identical across the deck.
 
 - Cards: maximum `8px` radius unless the official component requires otherwise.
 - Do not place cards inside cards.
+- For flat-geometric or collaboration-workshop slides, use square opaque panels with no border and no shadow.
 - Use yellow dots for compact evidence lists.
 - Use labels for categories, not decoration.
 - Use a familiar icon instead of a rounded text button when the action is symbolic.
@@ -123,4 +130,6 @@ Keep these elements aligned and identical across the deck.
 - Use `object-fit: contain` when the complete product or document must be visible.
 - Use `object-fit: cover` only when cropping is intentional and safe.
 - Remove accidental white borders, shadows, and black backgrounds from supplied product captures.
+- Match any retained raster matte to the slide canvas exactly so the asset does not appear as a separate rectangular layer.
+- For a cover hero, extend the image treatment to the intended edge or crop/fill the available area; do not leave an accidental strip at the bottom or expose a mismatched image background.
 - Do not upscale low-resolution images beyond legibility.

@@ -14,6 +14,7 @@ required = [
     "references/brand-foundations.md",
     "references/presentation-system.md",
     "references/content-rules.md",
+    "references/collaboration-workshops.md",
     "references/motion-and-delivery.md",
     "references/tokens.json",
     "assets/aipoch-mark.svg",
@@ -57,6 +58,15 @@ try:
         errors.append("Presentation height token must be 1080.")
     if tokens.get("color", {}).get("highlight") != "#F1DD67":
         errors.append("Highlight token must match the Design System.")
+    collaboration = tokens.get("variants", {}).get("collaborationWorkshop", {})
+    if collaboration.get("headerRuleY") != tokens.get("presentation", {}).get("headerHeight"):
+        errors.append("Collaboration header rule must align to the base header height.")
+    if collaboration.get("panelRadius") != 0:
+        errors.append("Collaboration workshop panels must use square corners.")
+    if collaboration.get("panelBorder") != "none":
+        errors.append("Collaboration workshop panels must not use borders.")
+    if collaboration.get("panelShadow") != "none":
+        errors.append("Collaboration workshop panels must not use shadows.")
 except (OSError, json.JSONDecodeError) as error:
     errors.append(f"Invalid tokens.json: {error}")
 

@@ -31,6 +31,15 @@ Use this order:
 
 Do not remove meaningful content solely to make a layout fit.
 
+Use phrase-aware line breaks. Do not leave one Chinese character, one short semantic fragment, or one isolated English word on a new line when a nearby break can preserve the phrase. Fix the container width and explicit break positions before reducing type size.
+
+## Required Cover Content
+
+- Treat the supplied title, subtitle, speaker or role, and date as required content-area elements when provided.
+- A header, footer, page number, or decorative label does not count as a substitute for required cover copy.
+- Verify cover completeness against the content inventory before delivery.
+- Preserve case exactly in mixed-language titles and product names, including forms such as `AI`, `Open Science`, and sentence-case English taglines.
+
 ## Bilingual Text
 
 - Keep established product names in their official language.
