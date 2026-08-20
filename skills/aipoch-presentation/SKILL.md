@@ -23,6 +23,7 @@ Never let an old deck override current user copy or official brand tokens.
 - Read `references/brand-foundations.md` for every deck.
 - Read `references/presentation-system.md` before choosing layouts or components.
 - Read `references/content-rules.md` before editing supplied copy.
+- Read `references/collaboration-workshops.md` when the deck is co-branded, co-hosted, an external workshop, or includes a partner logo.
 - Read `references/motion-and-delivery.md` when the output includes motion, HTML, PDF, video, packaging, or Windows delivery.
 - Use `references/tokens.json` as the machine-readable token source.
 
@@ -37,6 +38,7 @@ Confirm or infer:
 - aspect ratio, defaulting to 16:9;
 - whether animation is required;
 - whether the deck must run offline or on Windows;
+- whether the deck is AIPOCH-only or co-branded, and which official partner logo asset is authoritative;
 - supplied copy and assets that must remain unchanged.
 
 When HTML motion is requested, start from `assets/starter/`. For PPTX, recreate the same system with native editable shapes and text. Do not rasterize complete slides unless the user explicitly requests a static deck.
@@ -63,6 +65,8 @@ Avoid decorative card grids, nested cards, duplicated outlines, generic marketin
 ### 4. Apply Brand Foundations
 
 Use official tokens and bundled logos. Preserve logo proportions and clear space. Keep the visual hierarchy quiet, technical, and precise.
+
+For a co-branded deck, activate the collaboration variant in `references/collaboration-workshops.md`. Keep AIPOCH and partner marks optically balanced in one stable header lockup. Never infer a partner, reconstruct its logo, or apply collaboration rules to an AIPOCH-only deck.
 
 For Chinese decks, use the documented cross-platform fallback stack. Do not depend on an unbundled local font for critical layout.
 
@@ -120,6 +124,7 @@ For HTML delivery:
 - Use one dominant message per slide.
 - Keep body text at or above the documented minimum.
 - Preserve image aspect ratios.
+- Keep partner logos proportional, unaltered, and optically balanced with the AIPOCH logo.
 - Use arrows only when they express direction or causality.
 - Keep page numbers sequential after slide deletion or insertion.
 - Never claim validation or packaging succeeded without running the checks.

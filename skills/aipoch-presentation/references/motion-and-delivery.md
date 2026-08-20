@@ -12,6 +12,15 @@ Motion must explain:
 
 Avoid continuous decorative motion, excessive easing, and animations that make labels drift away from their corresponding visual.
 
+## Semantic Motion Patterns
+
+- Keep the main cover image stable. Animate secondary pixel fragments, analysis frames, or scanning accents only when they reinforce the visual concept.
+- For a process, draw the real connector or move one signal dot continuously along its path. Do not fake progress with disconnected jumps between modules.
+- Use dashed connectors for transfer or ongoing flow only when that meaning is intentional. Keep moving signals outside unrelated cards and hide them cleanly during reset gaps.
+- Keep text static and fully readable while a surrounding ring or ray system rotates. Put the text in a separate, same-size centered layer and rotate geometry around `transform-origin: 50% 50%`.
+- Icon reveals may use clipping or masking, but the settled state must show the complete icon without cropped strokes or missing parts.
+- A strike-through animation should cross the intended label itself; avoid arbitrary diagonal slashes across the whole module.
+
 ## Timing
 
 - Standard reveal: `400–700ms`
