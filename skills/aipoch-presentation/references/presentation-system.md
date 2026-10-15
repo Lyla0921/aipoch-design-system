@@ -113,7 +113,7 @@ When a technical grid is used, align the header rule to a grid row so the two li
 
 - Use one final statement only.
 - Keep the title, accent rule, and closing copy grouped.
-- Remove unrelated calls to action or summary copy.
+- Remove unrelated calls to action or summary copy. For an event with requested registration, community, or feedback actions, use the event-closing recipe in `layout-recipes.md`; keep each supplied QR code paired with its own action label.
 
 ## Component Rules
 
@@ -133,3 +133,7 @@ When a technical grid is used, align the header rule to a grid row so the two li
 - Match any retained raster matte to the slide canvas exactly so the asset does not appear as a separate rectangular layer.
 - For a cover hero, extend the image treatment to the intended edge or crop/fill the available area; do not leave an accidental strip at the bottom or expose a mismatched image background.
 - Do not upscale low-resolution images beyond legibility.
+
+## Concrete Layout Recipes
+
+See `layout-recipes.md` for composition, content capacity, and selection guidance derived from the mid-year report and research workshop. The executable examples in `../assets/layout-gallery/index.html` supplement the four-slide starter without replacing its basic brand structure.

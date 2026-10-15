@@ -60,6 +60,8 @@ Do not invent missing names, figures, dates, claims, product capabilities, quota
 
 Use the archetypes in `references/presentation-system.md`. Prefer one clear composition per slide. Reuse established page headers, footers, metric blocks, process arrows, labels, and media treatments.
 
+For concrete report or workshop layouts, read `references/layout-recipes.md`. Adapt the matching `data-layout` section in `assets/layout-gallery/index.html` when useful; the examples do not prescribe a fixed deck sequence.
+
 Avoid decorative card grids, nested cards, duplicated outlines, generic marketing heroes, and visual elements that are not defined by the brand system.
 
 ### 4. Apply Brand Foundations
