@@ -11,6 +11,7 @@ TARGET_ASSETS_DIR="$DIST_DIR/assets"
 rm -rf "$DIST_DIR"
 mkdir -p "$DIST_DIR"
 cp "$SOURCE_HTML" "$TARGET_HTML"
+cp "$ROOT_DIR/fonts.css" "$DIST_DIR/fonts.css"
 if [ -d "$SOURCE_ASSETS_DIR" ]; then
     mkdir -p "$TARGET_ASSETS_DIR"
     cp -R "$SOURCE_ASSETS_DIR"/. "$TARGET_ASSETS_DIR"/

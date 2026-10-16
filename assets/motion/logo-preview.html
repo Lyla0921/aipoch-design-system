@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; img-src 'self'; connect-src 'none'; form-action 'none'">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OpenScience Loading Motion</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #050505;
+      --text: #f7f7f2;
+      --muted: #8f918b;
+      --line: rgba(255, 255, 255, 0.09);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      background: var(--bg);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+    }
+
+    .stage {
+      width: min(92vw, 760px);
+      min-height: min(88vh, 720px);
+      display: grid;
+      grid-template-rows: 1fr auto;
+      align-items: center;
+      justify-items: center;
+      gap: 28px;
+      padding: 40px 20px;
+    }
+
+    .loader-shell {
+      position: relative;
+      width: clamp(160px, 24vw, 240px);
+      aspect-ratio: 1;
+      display: grid;
+      place-items: center;
+      isolation: isolate;
+    }
+
+    canvas {
+      position: absolute;
+      inset: -50%;
+      width: 200%;
+      height: 200%;
+      z-index: 1;
+    }
+
+    .logo {
+      display: none;
+    }
+
+    .caption {
+      width: min(100%, 560px);
+      display: grid;
+      gap: 12px;
+      justify-items: center;
+      text-align: center;
+    }
+
+    .caption h1 {
+      margin: 0;
+      font-size: 15px;
+      font-weight: 520;
+      letter-spacing: 0;
+      color: rgba(247, 247, 242, 0.92);
+    }
+
+    .caption p {
+      margin: 0;
+      max-width: 420px;
+      font-size: 13px;
+      line-height: 1.6;
+      color: var(--muted);
+    }
+
+    .controls {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    button {
+      appearance: none;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.045);
+      color: rgba(247, 247, 242, 0.88);
+      height: 34px;
+      padding: 0 12px;
+      font: inherit;
+      font-size: 12px;
+      cursor: pointer;
+    }
+
+    button[aria-pressed="true"] {
+      background: rgba(255, 255, 255, 0.14);
+      border-color: rgba(255, 255, 255, 0.22);
+      color: var(--text);
+    }
+
+    @media (max-width: 520px) {
+      .stage {
+        min-height: 100vh;
+        padding: 28px 16px;
+      }
+
+      .caption p {
+        font-size: 12px;
+      }
+    }
+  .stage{width:100%;min-height:520px;padding:32px 16px;overflow:hidden}.loader-shell{width:200px}.caption p{display:none}button{border-radius:0}@media(max-width:520px){.stage{min-height:520px}.loader-shell{width:160px}}
+</style>
+</head>
+<body>
+  <main class="stage">
+    <section class="loader-shell" aria-label="OpenScience loading animation">
+      <canvas id="particleCanvas" width="960" height="960"></canvas>
+      <img class="logo" src="./openscience-logo.svg" alt="">
+    </section>
+
+    <section class="caption">
+      <h1>OpenScience loading / thinking loop</h1>
+      <p>透明组件，无背景无发光。所有粒子都来自 logo 本身，扩散后再回聚为 OpenScience logo。</p>
+      <div class="controls" aria-label="Preview controls">
+        <button type="button" data-speed="calm">Calm</button>
+        <button type="button" data-speed="default" aria-pressed="true">Default</button>
+        <button type="button" data-speed="quick">Quick</button>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const canvas = document.querySelector("#particleCanvas");
+    const ctx = canvas.getContext("2d");
+    const shell = document.querySelector(".loader-shell");
+    const buttons = [...document.querySelectorAll("button[data-speed]")];
+
+    const settings = {
+      calm: { duration: 6200, spread: 0.9 },
+      default: { duration: 4800, spread: 1 },
+      quick: { duration: 3600, spread: 1.06 }
+    };
+
+    let active = settings.default;
+    let dpr = Math.min(window.devicePixelRatio || 1, 2);
+    let w = 960;
+    let h = 960;
+    let particles = [];
+    const LOGO_DOTS = [{"x":-0.012924,"y":0.472892,"radius":0.007784},{"x":0.131586,"y":0.466715,"radius":0.012465},{"x":-0.16191,"y":0.448989,"radius":0.012465},{"x":0.062366,"y":0.432197,"radius":0.01001},{"x":-0.071564,"y":0.427665,"radius":0.010452},{"x":0.26355,"y":0.406139,"radius":0.007964},{"x":0.192444,"y":0.394296,"radius":0.010934},{"x":-0.198676,"y":0.381144,"radius":0.009742},{"x":-0.035226,"y":0.371028,"radius":0.009845},{"x":-0.294712,"y":0.372418,"radius":0.007964},{"x":0.093762,"y":0.363983,"radius":0.010916},{"x":-0.159346,"y":0.333163,"radius":0.008288},{"x":0.304653,"y":0.31767,"radius":0.011835},{"x":0.21201,"y":0.312884,"radius":0.011323},{"x":0.379275,"y":0.305679,"radius":0.012465},{"x":0.03661,"y":0.31467,"radius":0.006839},{"x":-0.302793,"y":0.297186,"radius":0.01174},{"x":-0.06186,"y":0.308778,"radius":0.005888},{"x":0.130926,"y":0.289632,"radius":0.006601},{"x":-0.152828,"y":0.272535,"radius":0.005886},{"x":-0.389103,"y":0.259271,"radius":0.012465},{"x":-0.263001,"y":0.254961,"radius":0.007069},{"x":0.08035,"y":0.240144,"radius":0.005697},{"x":0.214012,"y":0.236114,"radius":0.007386},{"x":0.301842,"y":0.223886,"radius":0.007543},{"x":0.38527,"y":0.209823,"radius":0.009834},{"x":-0.226909,"y":0.209488,"radius":0.007331},{"x":-0.379551,"y":0.184014,"radius":0.010332},{"x":-0.163488,"y":0.185753,"radius":0.005194},{"x":0.450166,"y":0.175169,"radius":0.007964},{"x":0.277134,"y":0.159357,"radius":0.00851},{"x":-0.332208,"y":0.145845,"radius":0.007841},{"x":-0.280971,"y":0.125806,"radius":0.005886},{"x":-0.453117,"y":0.120612,"radius":0.007964},{"x":0.361206,"y":0.107731,"radius":0.008965},{"x":0.431057,"y":0.08131,"radius":0.009861},{"x":0.311279,"y":0.066881,"radius":0.006979},{"x":-0.416624,"y":0.052698,"radius":0.010546},{"x":0.247861,"y":0.053097,"radius":0.005194},{"x":0.486554,"y":0.027388,"radius":0.012467},{"x":-0.304731,"y":0.029684,"radius":0.00677},{"x":-0.358303,"y":0.018986,"radius":0.010834},{"x":0.379703,"y":-0.021576,"radius":0.012119},{"x":-0.463213,"y":-0.029978,"radius":0.012465},{"x":0.316038,"y":-0.032274,"radius":0.005925},{"x":0.434801,"y":-0.055291,"radius":0.009139},{"x":-0.238767,"y":-0.05569,"radius":0.005252},{"x":-0.298784,"y":-0.069468,"radius":0.006924},{"x":-0.413682,"y":-0.0839,"radius":0.009003},{"x":-0.347098,"y":-0.110321,"radius":0.006579},{"x":0.467602,"y":-0.123205,"radius":0.007964},{"x":0.292335,"y":-0.128399,"radius":0.006867},{"x":0.345213,"y":-0.148438,"radius":0.006579},{"x":-0.263741,"y":-0.16195,"radius":0.006306},{"x":-0.43568,"y":-0.177762,"radius":0.007964},{"x":0.398485,"y":-0.186604,"radius":0.010116},{"x":0.172523,"y":-0.188343,"radius":0.005194},{"x":-0.365454,"y":-0.212416,"radius":0.011512},{"x":0.240177,"y":-0.21208,"radius":0.00736},{"x":-0.284853,"y":-0.226479,"radius":0.010929},{"x":-0.202139,"y":-0.238706,"radius":0.005886},{"x":-0.070817,"y":-0.242737,"radius":0.005194},{"x":0.412444,"y":-0.261862,"radius":0.012465},{"x":0.277432,"y":-0.257553,"radius":0.008802},{"x":0.163226,"y":-0.275125,"radius":0.005886},{"x":0.323191,"y":-0.299778,"radius":0.010197},{"x":-0.119564,"y":-0.292222,"radius":0.006152},{"x":-0.355934,"y":-0.308269,"radius":0.012465},{"x":-0.192941,"y":-0.315476,"radius":0.009262},{"x":0.073337,"y":-0.311369,"radius":0.006979},{"x":-0.283451,"y":-0.320261,"radius":0.010921},{"x":-0.024542,"y":-0.317261,"radius":0.006629},{"x":0.176721,"y":-0.335756,"radius":0.010578},{"x":-0.072535,"y":-0.366576,"radius":0.011863},{"x":0.054493,"y":-0.37362,"radius":0.010942},{"x":0.309199,"y":-0.375011,"radius":0.007964},{"x":0.217238,"y":-0.383735,"radius":0.010331},{"x":-0.172561,"y":-0.396888,"radius":0.010479},{"x":-0.249061,"y":-0.408731,"radius":0.007964},{"x":0.091052,"y":-0.430256,"radius":0.01056},{"x":-0.042089,"y":-0.434789,"radius":0.011807},{"x":0.185251,"y":-0.45158,"radius":0.012465},{"x":-0.108245,"y":-0.469307,"radius":0.012465},{"x":0.035458,"y":-0.484072,"radius":0.007964}];
+    let logoDots = LOGO_DOTS;
+
+    const rand = (min, max) => min + Math.random() * (max - min);
+    const clamp = (value, min, max) => Math.max(min, Math.min(max, value));
+    const easeInOut = (t) => t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+    const easeOut = (t) => 1 - Math.pow(1 - t, 3);
+    const rotate3D = (x, y, z, yaw, pitch) => {
+      const cosY = Math.cos(yaw);
+      const sinY = Math.sin(yaw);
+      const cosP = Math.cos(pitch);
+      const sinP = Math.sin(pitch);
+      const x1 = x * cosY - z * sinY;
+      const z1 = x * sinY + z * cosY;
+      return {
+        x: x1,
+        y: y * cosP - z1 * sinP,
+        z: y * sinP + z1 * cosP
+      };
+    };
+
+    function resize() {
+      const rect = canvas.getBoundingClientRect();
+      dpr = Math.min(window.devicePixelRatio || 1, 2);
+      canvas.width = Math.round(rect.width * dpr);
+      canvas.height = Math.round(rect.height * dpr);
+      w = canvas.width;
+      h = canvas.height;
+      createParticles();
+    }
+
+    function pointInDot(dot, index) {
+      const angle = index * 2.399963 + rand(-0.18, 0.18);
+      const radius = Math.sqrt(rand(0, 1)) * dot.radius;
+      return {
+        x: dot.x + Math.cos(angle) * radius,
+        y: dot.y + Math.sin(angle) * radius
+      };
+    }
+
+    function makeParticle(index) {
+      const dot = logoDots.length
+        ? logoDots[index % logoDots.length]
+        : { x: 0, y: 0, radius: 0.18 };
+      const point = pointInDot(dot, index);
+      const logoSize = Math.min(w, h) * 0.42;
+      const centerX = w / 2;
+      const centerY = h / 2;
+      const tx = centerX + point.x * logoSize;
+      const ty = centerY + point.y * logoSize;
+      const sphereRadius = Math.min(w, h) * rand(0.24, 0.36) * active.spread;
+      const longitude = index * 2.399963 + rand(-0.18, 0.18);
+      const latitude = Math.asin(rand(-0.92, 0.92));
+      const volume = Math.pow(rand(0.58, 1), 0.38);
+      const sourceRadius = sphereRadius * volume;
+      const source3D = {
+        x: Math.cos(latitude) * Math.cos(longitude) * sourceRadius,
+        y: Math.sin(latitude) * sourceRadius * 0.92,
+        z: Math.cos(latitude) * Math.sin(longitude) * sourceRadius
+      };
+      const depthSeed = source3D.z / sphereRadius;
+
+      return {
+        tx,
+        ty,
+        source3D,
+        r: rand(0.68, 1.28) * dpr,
+        phase: rand(0, Math.PI * 2),
+        delay: rand(-0.035, 0.05),
+        alpha: rand(0.5, 1),
+        spin: rand(-1, 1),
+        depthSeed
+      };
+    }
+
+    function createParticles() {
+      const perDot = 18;
+      const count = logoDots.length ? logoDots.length * perDot : 1512;
+      particles = Array.from({ length: count }, (_, index) => makeParticle(index));
+    }
+
+    function phaseAt(time) {
+      const loop = (time % active.duration) / active.duration;
+      if (loop < 0.42) {
+        return { mode: "gather", t: easeInOut(loop / 0.42) };
+      }
+      if (loop < 0.58) {
+        return { mode: "hold", t: 1 };
+      }
+      if (loop < 0.86) {
+        return { mode: "release", t: 1 - easeInOut((loop - 0.58) / 0.28) };
+      }
+      return { mode: "field", t: easeOut((loop - 0.86) / 0.14) * 0.02 };
+    }
+
+    function drawResolvedLogo(strength) {
+      if (strength <= 0) return;
+
+      const logoSize = Math.min(w, h) * 0.42;
+      const centerX = w / 2;
+      const centerY = h / 2;
+      const rotation = motionTime * 0.00028;
+      const breath = 1 + Math.sin(motionTime * 0.0026) * 0.018;
+      ctx.fillStyle = `rgba(255, 255, 255, ${0.94 * strength})`;
+
+      for (const dot of logoDots) {
+        const dotX = dot.x * logoSize * breath;
+        const dotY = dot.y * logoSize * breath;
+        const x = centerX + dotX * Math.cos(rotation) - dotY * Math.sin(rotation);
+        const y = centerY + dotX * Math.sin(rotation) + dotY * Math.cos(rotation);
+        ctx.beginPath();
+        ctx.arc(
+          x,
+          y,
+          Math.max(0.8 * dpr, dot.radius * logoSize * 0.9 * breath),
+          0,
+          Math.PI * 2
+        );
+        ctx.fill();
+      }
+    }
+
+    let motionTime = 0;
+    function draw(time) {
+      motionTime = time;
+      const { mode, t } = phaseAt(time);
+      ctx.clearRect(0, 0, w, h);
+      ctx.globalCompositeOperation = "source-over";
+      const resolvedLogoStrength = mode === "hold" ? 1 : clamp((t - 0.94) / 0.06, 0, 1);
+      const particleFade = 1 - resolvedLogoStrength;
+
+      for (const p of particles) {
+        const localT = clamp(t + p.delay, 0, 1);
+        const travel = Math.sin(localT * Math.PI);
+        const settle = Math.pow(localT, 3);
+        const micro = (1 - settle) * 0.82 * dpr;
+        const yaw = time * 0.00034 + p.phase * 0.03;
+        const pitch = Math.sin(time * 0.00022 + p.phase) * 0.16;
+        const cx = w / 2;
+        const cy = h / 2;
+        const rotated = rotate3D(p.source3D.x, p.source3D.y, p.source3D.z, yaw, pitch);
+        const perspective = 1 + rotated.z / (Math.min(w, h) * 1.6);
+        const depth = clamp((rotated.z / (Math.min(w, h) * 0.36) + 1) / 2, 0, 1);
+        const sx = cx + rotated.x * perspective;
+        const sy = cy + rotated.y * perspective;
+        const curveX = Math.cos(p.phase + time * 0.0011) * travel * (1 - settle) * 8 * dpr;
+        const curveY = Math.sin(p.phase + time * 0.0013) * travel * (1 - settle) * 5.5 * dpr;
+        const x = sx + (p.tx - sx) * localT + curveX + Math.cos(p.phase + time * 0.0022) * micro;
+        const y = sy + (p.ty - sy) * localT + curveY + Math.sin(p.phase + time * 0.002) * micro;
+        const depthScale = 0.68 + depth * 0.74;
+        const radius = p.r * depthScale * (0.84 + localT * 0.1);
+        const opacity = (0.22 + depth * 0.56 + localT * 0.16) * p.alpha * particleFade;
+        if (opacity < 0.01) continue;
+
+        ctx.fillStyle = `rgba(255, 255, 255, ${opacity})`;
+        ctx.beginPath();
+        ctx.arc(x, y, radius, 0, Math.PI * 2);
+        ctx.fill();
+      }
+
+      drawResolvedLogo(resolvedLogoStrength);
+
+      ctx.globalCompositeOperation = "source-over";
+
+    }
+
+    buttons.forEach((button) => {
+      button.addEventListener("click", () => {
+        buttons.forEach((item) => item.setAttribute("aria-pressed", String(item === button)));
+        active = settings[button.dataset.speed];
+        createParticles();
+      });
+    });
+    window.addEventListener("resize", resize, { passive: true });
+    resize();
+    let requestedPlaying = false, playing = false, frame = 0, elapsed = active.duration * .5, last = null;
+    function tick(now) {
+      if (!playing || document.hidden) return;
+      if (last !== null) elapsed += now - last;
+      last = now; draw(elapsed); frame = requestAnimationFrame(tick);
+    }
+    window.setMotionPlaying = value => {
+      requestedPlaying = Boolean(value);
+      playing = requestedPlaying && !document.hidden;
+      if (playing) resize();
+      cancelAnimationFrame(frame); last = null;
+      if (playing) frame = requestAnimationFrame(tick);
+    };
+    document.addEventListener('visibilitychange', () => window.setMotionPlaying(requestedPlaying));
+    window.addEventListener('resize', () => draw(elapsed), {passive:true});
+    draw(elapsed);
+  window.parent.postMessage({type:'aipoch-motion-ready'},location.origin);</script>
+</body>
+</html>
