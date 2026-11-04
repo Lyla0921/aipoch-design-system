@@ -1,6 +1,6 @@
 # AIPOCH Visual Design System
 
-This repository contains the AIPOCH visual design system, approved brand assets, static documentation site, and the AIPOCH Presentation Skill.
+This repository contains the AIPOCH visual design system, approved brand assets, static documentation site, and reusable AIPOCH skills.
 
 ## Design System Site
 
@@ -42,6 +42,12 @@ Install the `skills/aipoch-presentation` folder through a GitHub-compatible Skil
 ```text
 $CODEX_HOME/skills/aipoch-presentation
 ```
+
+## AIPOCH Illustration & Motion Skill
+
+[skills/aipoch-motion](skills/aipoch-motion/SKILL.md) turns concepts into standalone AIPOCH illustrations, then animates the approved artwork. It includes portable SVG references, brand tokens, an offline HTML example, and consistent autoplay, hover inspection, saved-playhead resume and reduced-motion rules.
+
+Install the complete `skills/aipoch-motion` folder through a compatible Skill installer, or copy it to `$CODEX_HOME/skills/aipoch-motion`. Start with [the visual examples](skills/aipoch-motion/references/examples.md). Static artwork is reviewed before animation; examples remain editable and work without the workshop PPT.
 
 ## Validation
 
