@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="760" viewBox="0 0 1100 760" role="img" aria-labelledby="title desc">
+<title id="title">从研究问题到实验方案</title><desc id="desc">展开的三折实验方案。问题通过细胞与处理因素图示表达，中间分为对照与处理两组，右侧记录两组数据并比较差异。所有结果仅作图示。</desc>
+<style>text{font-family:Arial,"PingFang SC","Microsoft YaHei",sans-serif;fill:#504c42}.edge{fill:none;stroke:#292a23;stroke-width:1.25;stroke-linejoin:round;stroke-linecap:round;vector-effect:non-scaling-stroke}.mark{fill:none;stroke:#aaa08e;stroke-width:1.2;stroke-linecap:round;stroke-linejoin:round}.small{font-size:14px}.heading{font-size:21px;font-weight:500}.quiet{fill:#7e786c}</style>
+<g id="annotation"><text x="105" y="105" font-size="28" font-weight="600" style="fill:#292a23">从研究问题到实验方案</text><text x="105" y="136" font-size="17" class="quiet">提出问题 · 设置对照 · 比较结果</text></g>
+<polygon points="76.00,547.60 348.60,625.90 348.60,628.90 76.00,550.60" fill="#e7e5de" stroke="#aaa08e" stroke-width="1"/>
+<polygon points="348.60,625.90 621.20,547.60 621.20,550.60 348.60,628.90" fill="#e7e5de" stroke="#aaa08e" stroke-width="1"/>
+<polygon points="621.20,547.60 893.80,625.90 893.80,628.90 621.20,550.60" fill="#e7e5de" stroke="#aaa08e" stroke-width="1"/>
+<g id="question">
+<polygon points="108.00,234.00 380.60,312.30 348.60,625.90 76.00,547.60" fill="#F8F6F1"/>
+<g transform="matrix(0.94 0.27 -0.1 0.98 108 234)">
+<text x="26" y="39" class="heading">提出问题</text><text x="264" y="38" text-anchor="end" class="small quiet">01</text>
+<g id="cell" transform="translate(100 151)"><path d="M-48-8C-44-42-11-56 18-44C47-34 56-7 42 20C28 49-8 54-33 32C-48 20-55 9-48-8Z" fill="#e7e3da" stroke="#8d8779" stroke-width="1.15"/><path d="M-19-4C-14-23 10-26 23-10C39 8 11 29-7 20C-18 15-23 7-19-4Z" fill="#c8c0af"/><circle cx="-29" cy="14" r="4" fill="#b2aa98"/><circle cx="24" cy="-24" r="3" fill="#b2aa98"/><circle cx="24" cy="23" r="4" fill="#b2aa98"/></g>
+<g id="factor" transform="translate(220 110)" stroke="#827b6d" stroke-width="1.3" fill="#f4f1ec"><path d="M0-19L17-9V10L0 20L-17 10V-9Z"/><path d="M17 10L31 18M0-19V-31M-17 10L-30 18"/><circle cx="31" cy="18" r="4"/><circle cx="0" cy="-31" r="4"/></g>
+<path d="M205 151L163 163M168.63 157.23L163 163L170.83 164.92" class="mark"/>
+<text x="145" y="237" text-anchor="middle" font-size="17">处理会改变细胞生长吗？</text>
+<path d="M56 265H234M78 278H212" class="mark"/>
+</g></g>
+<g id="groups">
+<polygon points="380.60,312.30 653.20,234.00 621.20,547.60 348.60,625.90" fill="#F4F1EC"/>
+<g transform="matrix(0.94 -0.27 -0.1 0.98 380.59999999999997 312.3)">
+<text x="26" y="39" class="heading">设置对照</text><text x="264" y="38" text-anchor="end" class="small quiet">02</text>
+<path d="M145 70V91M74 91H216M74 91V111M216 91V111" class="mark"/>
+<g id="control"><path d="M55 121V187Q55 206 74 206Q93 206 93 187V121" fill="#f8f6f1" stroke="#827b6d" stroke-width="1.3"/><path d="M59 165H89V187Q89 202 74 202Q59 202 59 187Z" fill="#d4cebf"/><rect x="51" y="113" width="46" height="10" rx="3" fill="#e7e5de" stroke="#827b6d" stroke-width="1.2"/><path d="M61 135H67M61 148H67" class="mark"/><text x="74" y="239" text-anchor="middle" font-size="17">对照组</text></g>
+<g id="treatment"><path d="M197 121V187Q197 206 216 206Q235 206 235 187V121" fill="#f8f6f1" stroke="#827b6d" stroke-width="1.3"/><path d="M201 165H231V187Q231 202 216 202Q201 202 201 187Z" fill="#f1dd67"/><rect x="193" y="113" width="46" height="10" rx="3" fill="#e7e5de" stroke="#827b6d" stroke-width="1.2"/><path d="M203 135H209M203 148H209" class="mark"/><text x="216" y="239" text-anchor="middle" font-size="17">处理组</text></g>
+<text x="145" y="281" text-anchor="middle" class="small quiet">同一条件，仅改变处理因素</text>
+</g></g>
+<g id="comparison">
+<polygon points="653.20,234.00 925.80,312.30 893.80,625.90 621.20,547.60" fill="#F8F6F1"/>
+<g transform="matrix(0.94 0.27 -0.1 0.98 653.1999999999999 234.0)">
+<text x="26" y="39" class="heading">比较结果</text><text x="264" y="38" text-anchor="end" class="small quiet">03</text>
+<g id="result-plot"><path d="M47 90V218H250" class="mark"/><path d="M42 113H47M42 151H47M42 189H47" class="mark"/>
+<g fill="#b4ab97"><circle cx="99" cy="167" r="4"/><circle cx="111" cy="154" r="4"/><circle cx="120" cy="175" r="4"/><circle cx="106" cy="186" r="4"/><circle cx="120" cy="160" r="4"/></g>
+<g fill="#c1a349"><circle cx="185" cy="125" r="4"/><circle cx="195" cy="144" r="4"/><circle cx="206" cy="131" r="4"/><circle cx="188" cy="155" r="4"/><circle cx="208" cy="149" r="4"/></g>
+<path d="M93 170H126M183 140H212" stroke="#716956" stroke-width="1.2"/>
+<path d="M110 102V89H197V102" class="mark"/><text x="153" y="78" text-anchor="middle" class="small">差异？</text>
+<text x="110" y="242" text-anchor="middle" font-size="16">对照</text><text x="197" y="242" text-anchor="middle" font-size="16">处理</text></g>
+<text x="145" y="281" text-anchor="middle" class="small quiet">记录数据，再判断是否支持假设</text>
+</g></g>
+<path d="M108.00 234.00L380.60 312.30L653.20 234.00L925.80 312.30L893.80 625.90L621.20 547.60L348.60 625.90L76.00 547.60Z" class="edge"/>
+<path d="M380.59999999999997 312.3L348.59999999999997 625.9000000000001" stroke="#aaa08e" stroke-width="1.1" fill="none"/>
+<path d="M653.1999999999999 234.0L621.1999999999999 547.6" stroke="#aaa08e" stroke-width="1.1" fill="none"/>
+<text x="925" y="691" text-anchor="end" font-size="13" class="quiet">实验设计示意 · 非实测结果</text></svg>

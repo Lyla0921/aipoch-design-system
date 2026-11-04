@@ -17,4 +17,8 @@ if [ -d "$SOURCE_ASSETS_DIR" ]; then
     cp -R "$SOURCE_ASSETS_DIR"/. "$TARGET_ASSETS_DIR"/
 fi
 
+# Publish the same reviewed skill files used by the repository; avoid duplicate assets.
+mkdir -p "$DIST_DIR/skills"
+cp -R "$ROOT_DIR/skills/aipoch-motion" "$DIST_DIR/skills/aipoch-motion"
+
 printf 'Built %s\n' "$TARGET_HTML"
