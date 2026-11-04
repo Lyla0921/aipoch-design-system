@@ -1,0 +1,93 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>AIPOCH · 实验方案动效测试</title><style>html,body{margin:0;background:#F4F1EC;width:100%;height:100%;overflow:hidden}body{display:grid;place-items:center}svg{display:block;width:min(100vw,calc(100vh * 1100 / 760));height:auto;max-height:100vh}#fixed-hit-areas polygon:focus-visible{stroke:#b99939;stroke-width:1.5;outline:none}svg text{user-select:none}</style></head><body><svg xmlns="http://www.w3.org/2000/svg" width="1100" height="760" viewBox="0 0 1100 760" role="group" aria-labelledby="title desc">
+<title id="title">从研究问题到实验方案</title><desc id="desc">展开的三折实验方案。问题通过细胞与处理因素图示表达，中间分为对照与处理两组，右侧记录两组数据并比较差异。所有结果仅作图示。</desc>
+<style>text{font-family:Arial,"PingFang SC","Microsoft YaHei",sans-serif;fill:#504c42}.edge{fill:none;stroke:#292a23;stroke-width:1.25;stroke-linejoin:round;stroke-linecap:round;vector-effect:non-scaling-stroke}.mark{fill:none;stroke:#aaa08e;stroke-width:1.2;stroke-linecap:round;stroke-linejoin:round}.small{font-size:14px}.heading{font-size:21px;font-weight:500}.quiet{fill:#7e786c}</style>
+<g id="annotation"><text x="105" y="105" font-size="28" font-weight="600" style="fill:#292a23">从研究问题到实验方案</text><text x="105" y="136" font-size="17" class="quiet">提出问题 · 设置对照 · 比较结果</text></g>
+<polygon points="76.00,547.60 348.60,625.90 348.60,628.90 76.00,550.60" fill="#e7e5de" stroke="#aaa08e" stroke-width="1"/>
+<polygon points="348.60,625.90 621.20,547.60 621.20,550.60 348.60,628.90" fill="#e7e5de" stroke="#aaa08e" stroke-width="1"/>
+<polygon points="621.20,547.60 893.80,625.90 893.80,628.90 621.20,550.60" fill="#e7e5de" stroke="#aaa08e" stroke-width="1"/>
+<g id="question">
+<polygon points="108.00,234.00 380.60,312.30 348.60,625.90 76.00,547.60" fill="#F8F6F1"/>
+<g transform="matrix(0.94 0.27 -0.1 0.98 108 234)">
+<text x="26" y="39" class="heading">提出问题</text><text x="264" y="38" text-anchor="end" class="small quiet">01</text>
+<g id="cell" transform="translate(100 151)"><path d="M-48-8C-44-42-11-56 18-44C47-34 56-7 42 20C28 49-8 54-33 32C-48 20-55 9-48-8Z" fill="#e7e3da" stroke="#8d8779" stroke-width="1.15"/><path d="M-19-4C-14-23 10-26 23-10C39 8 11 29-7 20C-18 15-23 7-19-4Z" fill="#c8c0af"/><circle cx="-29" cy="14" r="4" fill="#b2aa98"/><circle cx="24" cy="-24" r="3" fill="#b2aa98"/><circle cx="24" cy="23" r="4" fill="#b2aa98"/></g>
+<g id="factor" transform="translate(220 110)" stroke="#827b6d" stroke-width="1.3" fill="#f4f1ec"><path d="M0-19L17-9V10L0 20L-17 10V-9Z"/><path d="M17 10L31 18M0-19V-31M-17 10L-30 18"/><circle cx="31" cy="18" r="4"/><circle cx="0" cy="-31" r="4"/></g>
+<path id="factor-arrow" d="M205 151L163 163M168.63 156.5L163 163L170.83 164.19" class="mark"/>
+<text x="145" y="237" text-anchor="middle" font-size="17">处理会改变细胞生长吗？</text>
+<path d="M56 265H234M78 278H212" class="mark"/>
+</g></g>
+<g id="groups">
+<polygon points="380.60,312.30 653.20,234.00 621.20,547.60 348.60,625.90" fill="#F4F1EC"/>
+<g transform="matrix(0.94 -0.27 -0.1 0.98 380.59999999999997 312.3)">
+<text x="26" y="39" class="heading">设置对照</text><text x="264" y="38" text-anchor="end" class="small quiet">02</text>
+<path d="M145 70V91M74 91H216M74 91V111M216 91V111" class="mark"/>
+<g id="control"><path d="M55 121V187Q55 206 74 206Q93 206 93 187V121" fill="#f8f6f1" stroke="#827b6d" stroke-width="1.3"/><path d="M59 165H89V187Q89 202 74 202Q59 202 59 187Z" fill="#d4cebf"/><rect x="51" y="113" width="46" height="10" rx="3" fill="#e7e5de" stroke="#827b6d" stroke-width="1.2"/><path d="M61 135H67M61 148H67" class="mark"/><text x="74" y="239" text-anchor="middle" font-size="17">对照组</text></g>
+<g id="treatment"><path d="M197 121V187Q197 206 216 206Q235 206 235 187V121" fill="#f8f6f1" stroke="#827b6d" stroke-width="1.3"/><path d="M201 165H231V187Q231 202 216 202Q201 202 201 187Z" fill="#f1dd67"/><rect x="193" y="113" width="46" height="10" rx="3" fill="#e7e5de" stroke="#827b6d" stroke-width="1.2"/><path d="M203 135H209M203 148H209" class="mark"/><text x="216" y="239" text-anchor="middle" font-size="17">处理组</text></g>
+<text x="145" y="281" text-anchor="middle" class="small quiet">同一条件，仅改变处理因素</text>
+</g></g>
+<g id="comparison">
+<polygon points="653.20,234.00 925.80,312.30 893.80,625.90 621.20,547.60" fill="#F8F6F1"/>
+<g transform="matrix(0.94 0.27 -0.1 0.98 653.1999999999999 234.0)">
+<text x="26" y="39" class="heading">比较结果</text><text x="264" y="38" text-anchor="end" class="small quiet">03</text>
+<g id="result-plot"><path d="M47 90V218H250" class="mark"/><path d="M42 113H47M42 151H47M42 189H47" class="mark"/>
+<g fill="#b4ab97"><circle cx="99" cy="167" r="4"/><circle cx="111" cy="154" r="4"/><circle cx="120" cy="175" r="4"/><circle cx="106" cy="186" r="4"/><circle cx="120" cy="160" r="4"/></g>
+<g fill="#c1a349"><circle cx="185" cy="125" r="4"/><circle cx="195" cy="144" r="4"/><circle cx="206" cy="131" r="4"/><circle cx="188" cy="155" r="4"/><circle cx="208" cy="149" r="4"/></g>
+<path d="M93 170H126M183 140H212" stroke="#716956" stroke-width="1.2"/>
+<path d="M110 102V89H197V102" class="mark"/><text x="153" y="78" text-anchor="middle" class="small">差异？</text>
+<text x="110" y="242" text-anchor="middle" font-size="16">对照</text><text x="197" y="242" text-anchor="middle" font-size="16">处理</text></g>
+<text x="145" y="281" text-anchor="middle" class="small quiet">记录数据，再判断是否支持假设</text>
+</g></g>
+<path d="M108.00 234.00L380.60 312.30L653.20 234.00L925.80 312.30L893.80 625.90L621.20 547.60L348.60 625.90L76.00 547.60Z" class="edge"/>
+<path d="M380.59999999999997 312.3L348.59999999999997 625.9000000000001" stroke="#aaa08e" stroke-width="1.1" fill="none"/>
+<path d="M653.1999999999999 234.0L621.1999999999999 547.6" stroke="#aaa08e" stroke-width="1.1" fill="none"/>
+<text x="925" y="691" text-anchor="end" font-size="13" class="quiet">实验设计示意 · 非实测结果</text></svg><script>
+const svg=document.querySelector('svg'),NS='http://www.w3.org/2000/svg',q=s=>svg.querySelector(s),qa=s=>[...svg.querySelectorAll(s)];
+const clamp=v=>Math.min(1,Math.max(0,v)),smooth=v=>{v=clamp(v);return v*v*(3-2*v)},ramp=(t,a,b)=>smooth((t-a)/(b-a));
+const spring=v=>v<=0?0:v>=1?1:1-Math.exp(-7*v)*(Math.cos(10*v)+.7*Math.sin(10*v));
+const wrap=(el,id)=>{const g=document.createElementNS(NS,'g');g.id=id;el.before(g);g.append(el);return g};
+const factor=wrap(q('#factor'),'factor-motion'),cell=wrap(q('#cell'),'cell-motion');
+const branch=q('#groups > g > path'),branchTrace=branch.cloneNode(true);branchTrace.id='branch-trace';branchTrace.style.stroke='#c3a147';branchTrace.style.strokeWidth='1.7';branch.after(branchTrace);
+const tubeParts=['control','treatment'].map(id=>{const el=q('#'+id),g=document.createElementNS(NS,'g');g.id=id+'-motion';el.prepend(g);[...el.children].filter(e=>e!==g&&e.tagName!=='text').forEach(e=>g.append(e));return {g,cap:g.querySelector('rect'),liquid:g.querySelectorAll('path')[1]}});
+const dots=qa('#result-plot circle').map(el=>({el,y:+el.getAttribute('cy')}));
+const means=q('#result-plot > path[stroke]');
+const topLine=q('#annotation text:nth-child(2)');topLine.textContent='先提出问题，再设置对照，最后比较结果。';topLine.setAttribute('font-size','16');
+const noteGroups=[];
+const notes=['先明确问题：处理是否改变细胞生长？','保持其余条件一致，分成对照组与处理组。','把两组观测值放在一起，比较差异。','从问题、对照到数据，形成一份实验方案。'];
+notes.forEach((s,i)=>{const e=topLine.cloneNode(true);e.textContent=s;e.style.opacity='0';e.setAttribute('aria-hidden','true');topLine.after(e);noteGroups.push(e)});topLine.remove();
+const hitLayer=document.createElementNS(NS,'g');hitLayer.id='fixed-hit-areas';hitLayer.setAttribute('tabindex','-1');svg.append(hitLayer);
+const hits=['question','groups','comparison'].map((id,i)=>{const e=q('#'+id+' > polygon').cloneNode(true);e.removeAttribute('id');e.setAttribute('fill','transparent');e.setAttribute('stroke','none');e.setAttribute('tabindex','0');e.setAttribute('role','button');e.setAttribute('aria-label',notes[i]);e.setAttribute('data-index',i);e.style.cursor='default';hitLayer.append(e);return e});
+const D=15.6;let time=0,mode='auto',selected=-1,shown=true,hidden=document.hidden,last=performance.now(),transition=null,manualPause=false,hasEntered=false;
+const media=matchMedia('(prefers-reduced-motion: reduce)');let reduced=media.matches;
+const zeros=()=>({fx:0,fy:0,scale:1,split:0,lift:0,cap:0,fill:1,branch:0,dots:Array(10).fill(0),notes:[0,0,0,1]});
+function pose(t){const p=zeros();const beat=ramp(t,.35,.85)*(1-ramp(t,3.35,4));p.fx=-22*beat;p.fy=8*beat;p.scale=1+.035*beat*Math.sin(Math.PI*ramp(t,.8,2.5));
+ const group=ramp(t,4.2,4.65)*(1-ramp(t,7.4,8.1));p.split=7*group;p.lift=-4*group;p.cap=-8*ramp(t,4.65,5.05)*(1-ramp(t,6.4,7));p.fill=1-.32*group*(1-ramp(t,5.15,6.35));p.branch=t>=4.35&&t<=6.8?(t-4.35)/2.45:0;
+ const reset=ramp(t,8.05,8.65),hold=1-ramp(t,13.8,15.2);
+ p.dots=dots.map((d,i)=>{const rise=spring(clamp((t-8.75-i*.13)/.85));return (218-d.y)*reset*(1-rise)*hold});
+ const stage=t<4?0:t<8.1?1:t<12.8?2:3;
+ p.notes=[0,0,0,0];p.notes[stage]=1;
+ // Blended captions remain anchored at a single line, no spatial motion.
+ for(const [boundary,from,to] of [[3.8,0,1],[7.9,1,2],[12.6,2,3],[15.2,3,0]])if(t>=boundary&&t<boundary+.4){const a=ramp(t,boundary,boundary+.4);p.notes=[0,0,0,0];p.notes[from]=1-a;p.notes[to]=a;}
+ return p;
+}
+function inspect(i){const p=zeros();p.notes=[0,0,0,0];p.notes[i]=1;if(i===0){p.fx=-22;p.fy=8;p.scale=1.025}if(i===1){p.split=7;p.lift=-4;p.cap=-8}return p}
+function mix(a,b,v){const p={};for(const k in a)p[k]=Array.isArray(a[k])?a[k].map((x,i)=>x+(b[k][i]-x)*v):a[k]+(b[k]-a[k])*v;return p}
+let current=pose(0);
+function render(p){const sx=205+p.fx,sy=151+p.fy,ex=163,ey=163,len=Math.hypot(ex-sx,ey-sy),ux=(ex-sx)/len,uy=(ey-sy)/len;const hx=ex-ux*7,hy=ey-uy*7;q('#factor-arrow').setAttribute('d',`M${sx} ${sy}L${ex} ${ey}M${hx-uy*4} ${hy+ux*4}L${ex} ${ey}L${hx+uy*4} ${hy-ux*4}`);factor.setAttribute('transform',`translate(${p.fx} ${p.fy})`);cell.setAttribute('transform',`translate(100 151) scale(${p.scale}) translate(-100 -151)`);
+ tubeParts.forEach((v,i)=>{v.g.setAttribute('transform',`translate(${(i?1:-1)*p.split} ${p.lift})`);v.cap.setAttribute('transform',`translate(0 ${i?p.cap:p.cap*.5})`);v.liquid.setAttribute('transform',`translate(0 202) scale(1 ${p.fill}) translate(0 -202)`)});
+ const x1=74-p.split,x2=216+p.split;const branchD=`M145 70V91M${x1} 91H${x2}M${x1} 91V${111+p.lift+p.cap*.5}M${x2} 91V${111+p.lift+p.cap}`;branch.setAttribute('d',branchD);branchTrace.setAttribute('d',branchD);branchTrace.style.strokeDasharray='20 250';branchTrace.style.strokeDashoffset=String(20-p.branch*220);branchTrace.style.opacity=p.branch>0&&p.branch<1?'1':'0';
+ dots.forEach((d,i)=>d.el.setAttribute('cy',d.y+p.dots[i]));
+ const c=p.dots.slice(0,5).reduce((a,b)=>a+b,0)/5,t=p.dots.slice(5).reduce((a,b)=>a+b,0)/5;means.setAttribute('d',`M93 ${170+c}H126M183 ${140+t}H212`);
+ const strongest=Math.max(...p.notes),active=p.notes.indexOf(strongest);noteGroups.forEach((e,i)=>e.style.opacity=i===active?Math.max(0,2*strongest-1):0);svg.dataset.mode=mode;svg.dataset.step=String(selected);}
+function target(i){if(i===selected&&mode==='inspect')return;selected=i;const to=reduced?{...zeros(),notes:inspect(i).notes}:inspect(i);transition={from:current,to,elapsed:0,returning:false};mode='inspect';if(reduced){current=to;transition=null;render(current)}}
+function release(){if(mode!=='inspect')return;selected=-1;transition={from:current,to:reduced?zeros():pose(time),elapsed:0,returning:true};mode='return';if(reduced){mode='auto';transition=null;current=zeros();render(current)}}
+hits.forEach((e,i)=>{e.addEventListener('pointerenter',()=>target(i));e.addEventListener('focus',()=>target(i));e.addEventListener('keydown',ev=>{if(ev.key==='Enter'||ev.key===' '){ev.preventDefault();ev.stopPropagation();target(i)}if(ev.key==='Escape'){e.blur();release()}})});
+hitLayer.addEventListener('pointerleave',()=>{if(!hits.includes(document.activeElement))release()});hitLayer.addEventListener('focusout',e=>{if(!hitLayer.contains(e.relatedTarget))release()});
+svg.addEventListener('pointermove',e=>{if(!hitLayer.contains(e.target)&&!hits.includes(document.activeElement))release()});
+function frame(now){let dt=Math.min(.05,(now-last)/1000);last=now;if(shown&&!hidden&&!manualPause&&!reduced){if(transition){transition.elapsed+=dt;current=mix(transition.from,transition.to,smooth(transition.elapsed/.3));if(transition.elapsed>=.3){current=transition.to;const returning=transition.returning;transition=null;if(returning)mode='auto'}}else if(mode==='auto'){time=(time+dt)%D;current=pose(time)}render(current)}requestAnimationFrame(frame)}
+function visibility(isVisible){if(!isVisible){shown=false;return}if(!shown||!hasEntered){hasEntered=true;time=0;selected=-1;mode='auto';transition=null;current=reduced?zeros():pose(0);render(current)}shown=true;last=performance.now()}
+new IntersectionObserver(entries=>visibility(entries[0].isIntersecting),{threshold:.15}).observe(svg);
+document.addEventListener('visibilitychange',()=>{hidden=document.hidden;last=performance.now()});media.addEventListener('change',e=>{reduced=e.matches;transition=null;if(selected>=0){mode='inspect';current=reduced?{...zeros(),notes:inspect(selected).notes}:inspect(selected)}else{mode='auto';current=reduced?zeros():pose(time)}render(current)});
+
+// Deterministic inspection hooks for the local regression test; no UI controls.
+window.__motionTest={seek(t){time=((t%D)+D)%D;transition=null;mode='auto';selected=-1;current=pose(time);render(current)},pause(v){manualPause=v},state(){return {time,mode,selected,shown,hidden,reduced,transition:!!transition,pose:JSON.parse(JSON.stringify(current))}},visibility,pose,inspect};
+render(current);requestAnimationFrame(frame);
+</script></body></html>
