@@ -1,0 +1,4 @@
+interface:
+  display_name: "AIPOCH Illustration & Motion"
+  short_description: "Create AIPOCH illustrations, then animate approved artwork"
+  default_prompt: "Use $aipoch-motion to draw an AIPOCH illustration from my concept, show the static preview for approval, then add autoplay and hover inspection."
