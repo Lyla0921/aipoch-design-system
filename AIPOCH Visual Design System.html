@@ -445,6 +445,62 @@ html::-webkit-scrollbar,html::-webkit-scrollbar-track,html::-webkit-scrollbar-co
 #illustration-motion .im-note{font-size:12px;line-height:1.7;color:#6b6b66;margin:18px 0 0}
 #illustration-motion a:focus-visible{outline:2px solid #111;outline-offset:4px}
 @media(max-width:600px){#illustration-motion .im-preview-meta{flex-direction:column;gap:10px}#illustration-motion .im-references{grid-template-columns:1fr;gap:24px}#illustration-motion .skill-resource-specs{align-items:flex-start;gap:12px}#illustration-motion .skill-resource-specs>span:last-child{text-align:right}}
+</style><style id="illustration-system-basic-elements">
+#illustration-system #is-brand-concept{margin-top:64px}
+#illustration-system .is-elements.is-brand-elements{grid-template-columns:repeat(2,minmax(0,1fr))}
+#illustration-system .is-brand-elements .is-art,#illustration-system .is-brand-elements .is-art img{aspect-ratio:1600/1373}
+#illustration-system .is-brand-elements .is-description{max-width:43ch;min-height:44px}
+#is-element-dialog.is-wide-art .is-preview-panel img{max-width:100%;max-height:100%;aspect-ratio:1600/1373}
+@media(max-width:640px){#illustration-system .is-elements.is-brand-elements{grid-template-columns:1fr}#illustration-system .is-brand-elements .is-description{min-height:0}#illustration-system #is-brand-concept{margin-top:48px}}
+
+#illustration-system .is-heading{margin:38px 0 22px}
+#illustration-system .is-heading h3{margin:0;font:400 25px/32px Georgia,serif;color:#111}
+#illustration-system .is-elements{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px;align-items:start}
+#illustration-system .is-element{min-width:0;margin:0}
+#illustration-system .is-art{position:relative;display:block;width:100%;aspect-ratio:1;padding:0;border:0;background:#F2F2F0;cursor:zoom-in;overflow:hidden;text-align:left}
+#illustration-system .is-art img{display:block;width:100%;height:auto;aspect-ratio:1;object-fit:contain;transition:transform 220ms cubic-bezier(.2,.8,.2,1)}
+#illustration-system .is-expand{position:absolute;top:14px;right:14px;width:28px;height:28px;display:grid;place-items:center;color:#61615C;opacity:0;transform:translateY(3px);transition:opacity 180ms,transform 180ms;font:400 19px/1 Inter,sans-serif;background:rgba(242,242,240,.9)}
+#illustration-system .is-art:hover img,#illustration-system .is-art:focus-visible img{transform:translateY(-3px)}
+#illustration-system .is-art:hover .is-expand,#illustration-system .is-art:focus-visible .is-expand{opacity:1;transform:none}
+#illustration-system .is-name{margin:22px 0 9px;font:400 25px/32px Georgia,serif;color:#111}
+#illustration-system .is-description{margin:0;min-height:66px;max-width:32ch;font:400 14px/22px Inter,sans-serif;color:#61615C}
+#illustration-system .is-actions{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:15px;font:400 12px/20px Inter,sans-serif}
+#illustration-system .is-actions nav{display:flex;gap:18px}
+#illustration-system .is-actions a,#illustration-system .is-code-trigger{display:inline-flex;align-items:center;min-height:44px;color:#111;text-decoration:none;background:none;border:0;padding:0;cursor:pointer;font:inherit;white-space:nowrap}
+#illustration-system .is-code-trigger{gap:8px}
+#illustration-system .is-code-trigger span{font:400 13px/1 monospace;color:#61615C}
+#illustration-system .is-actions a:hover,#illustration-system .is-code-trigger:hover{text-decoration:underline;text-underline-offset:5px}
+#illustration-system a:focus-visible,#illustration-system button:focus-visible{outline:2px solid #111;outline-offset:4px}
+#is-element-dialog{width:min(920px,calc(100vw - 48px));max-width:none;height:min(790px,calc(100dvh - 64px));max-height:none;padding:0;border:1px solid #D8D7D0;background:#F7F7F5;color:#111;overflow:hidden;margin:auto}
+#is-element-dialog::backdrop{background:rgba(17,17,17,.36);backdrop-filter:blur(3px)}
+#is-element-dialog[open]{display:flex;flex-direction:column;animation:is-dialog-enter 180ms ease-out}
+#is-element-dialog .is-dialog-header{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:22px 28px 12px;flex-shrink:0}
+#is-element-dialog h3{font:400 28px/36px Georgia,serif;margin:0}
+#is-element-dialog .is-close{width:40px;height:40px;border:0;background:none;font:400 27px/1 Arial,sans-serif;cursor:pointer;color:#61615C}
+#is-element-dialog .is-dialog-tools{display:flex;justify-content:space-between;align-items:center;padding:0 28px;gap:16px;border-bottom:1px solid #E7E5DE;flex-shrink:0}
+#is-element-dialog [role=tablist]{display:flex;gap:28px}
+#is-element-dialog [role=tab]{position:relative;border:0;background:none;padding:13px 0;min-height:44px;font:400 13px/20px Inter,sans-serif;color:#61615C;cursor:pointer}
+#is-element-dialog [role=tab][aria-selected=true]{color:#111}
+#is-element-dialog [role=tab][aria-selected=true]::after{content:'';position:absolute;bottom:-1px;left:0;right:0;height:2px;background:#111}
+#is-element-dialog .is-copy{margin-left:auto;border:0;background:none;padding:10px 0;font:400 12px/20px Inter,sans-serif;cursor:pointer;color:#111;min-height:44px}
+#is-element-dialog .is-dialog-body{position:relative;flex:1;min-height:0;overflow:hidden}
+#is-element-dialog [role=tabpanel]{height:100%;min-height:0}
+#is-element-dialog [role=tabpanel][hidden],#is-element-dialog [hidden]{display:none!important}
+#is-element-dialog .is-preview-panel{display:flex;justify-content:center;align-items:center;background:#F2F2F0}
+#is-element-dialog .is-preview-panel img{display:block;height:100%;width:100%;max-height:560px;max-width:560px;object-fit:contain}
+#is-element-dialog .is-code-panel{overflow:auto;background:#F2F2F0;padding:24px 28px}
+#is-element-dialog .is-code-panel pre{padding:0;margin:0;font:400 12px/21px 'Roboto Mono',monospace;color:#30302D;tab-size:2;white-space:pre}
+#is-element-dialog .is-code-panel code{font:inherit;border:0;padding:0;background:none}
+#is-element-dialog .is-dialog-footer{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:16px 28px;flex-shrink:0;border-top:1px solid #E7E5DE;font:400 12px/20px Inter,sans-serif}
+#is-element-dialog .is-dialog-footer>span{color:#61615C}
+#is-element-dialog .is-dialog-footer nav{display:flex;gap:24px}
+#is-element-dialog .is-dialog-footer a{color:#111;min-height:36px;display:inline-flex;align-items:center;text-decoration:underline;text-underline-offset:4px}
+#is-element-dialog button:focus-visible,#is-element-dialog a:focus-visible,#is-element-dialog [role=tabpanel]:focus-visible{outline:2px solid #111;outline-offset:3px}
+@keyframes is-dialog-enter{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@media(hover:none){#illustration-system .is-expand{opacity:1;transform:none}}
+@media(max-width:1050px) and (min-width:768px){#illustration-system .is-elements{gap:20px}#illustration-system .is-actions{flex-wrap:wrap;gap:0 12px}#illustration-system .is-description{min-height:88px}}
+@media(max-width:640px){#illustration-system .is-elements{grid-template-columns:1fr;gap:42px}#illustration-system .is-element{max-width:420px;width:100%;justify-self:center}#illustration-system .is-heading{margin-top:28px}#illustration-system .is-description{min-height:0;max-width:36ch}#illustration-system .is-name{margin-top:20px}#illustration-system .is-actions{margin-top:8px}#is-element-dialog{width:calc(100vw - 24px);height:calc(100dvh - 32px)}#is-element-dialog .is-dialog-header{padding:16px 18px 6px}#is-element-dialog .is-dialog-tools{padding:0 18px}#is-element-dialog .is-code-panel{padding:20px 18px}#is-element-dialog .is-dialog-footer{padding:12px 18px;align-items:flex-start;flex-direction:column;gap:4px}#is-element-dialog .is-dialog-footer nav{width:100%;justify-content:space-between}}
+@media(prefers-reduced-motion:reduce){#illustration-system .is-art img,#illustration-system .is-expand{transition:none;transform:none!important}#is-element-dialog[open]{animation:none}}
 </style></head>
 
 <body class="min-h-screen bg-white text-gray-900 flex">
@@ -460,6 +516,7 @@ html::-webkit-scrollbar,html::-webkit-scrollbar-track,html::-webkit-scrollbar-co
         </div>
 
         <nav class="flex-1 overflow-y-auto px-4 py-8" aria-label="Design system pages"><ul class="space-y-0.5 text-sm"><li><a href="#design-intro" class="block px-2 py-1.5 text-gray-600 hover:bg-gray-100 font-medium">Home</a></li><li><a href="#naming" class="block px-2 py-1.5 text-gray-600 hover:bg-gray-100 font-medium">Naming &amp; Concept</a></li><li><a href="#logo" class="block px-2 py-1.5 text-gray-600 hover:bg-gray-100 font-medium">Logo</a></li><li><a href="#typography" class="block px-2 py-1.5 text-gray-600 hover:bg-gray-100 font-medium">Typography</a></li><li><a href="#colors" class="block px-2 py-1.5 text-gray-600 hover:bg-gray-100 font-medium">Color System</a></li><li><a href="#icons" data-section-status="in-progress" aria-label="Icon System — In progress" class="block px-2 py-1.5 text-gray-600 hover:bg-gray-100 font-medium">Icon System</a></li><li><a href="#components" data-section-status="in-progress" aria-label="Buttons & UI Components — In progress" class="block px-2 py-1.5 text-gray-600 hover:bg-gray-100 font-medium">Buttons & UI Components</a></li><li><a href="#motion" class="block px-2 py-1.5 text-gray-600 hover:bg-gray-100 font-medium">Motion</a></li>
+<li><a href="#illustration-system" class="block px-2 py-1.5 text-gray-600 hover:bg-gray-100 font-medium">Illustration System</a></li>
 <li><a href="#illustration-motion" class="block px-2 py-1.5 text-gray-600 hover:bg-gray-100 font-medium">Illustration &amp; Motion Skill</a></li><li><a href="#social-media" class="block px-2 py-1.5 text-gray-600 hover:bg-gray-100 font-medium">Social Media Assets</a></li><li><a href="#slides" class="block px-2 py-1.5 text-gray-600 hover:bg-gray-100 font-medium">Slides</a></li><li><a href="#social" class="block px-2 py-1.5 text-gray-600 hover:bg-gray-100 font-medium">Brand Applications</a></li></ul></nav>
     </aside>
 
@@ -952,6 +1009,46 @@ html::-webkit-scrollbar,html::-webkit-scrollbar-track,html::-webkit-scrollbar-co
   title=&quot;OpenScience thinking indicators&quot;
   style=&quot;width:100%;height:440px;border:0&quot;
 &gt;&lt;/iframe&gt;</code></pre><div class="motion-toolbar"><button type="button" data-copy-code>Copy code</button><span class="copy-status" role="status" aria-live="polite"></span></div></details></section><div class="motion-toolbar" style="margin-top:40px"><a class="package-link" href="./assets/motion/OpenScience-loading-delivery.zip" download="OpenScience-loading-delivery.zip">Download package</a></div><p class="motion-note">Includes current HTML sources and the original logo SVG. Files marked “previous” are earlier GIF/WebM references.</p></section>
+<section id="illustration-system" class="scroll-mt-24">
+<header class="module-page-header"><h2 class="module-page-title">Illustration System</h2><p class="module-page-intro">From basic forms to brand architecture. One square-halftone language.</p></header>
+<div class="is-heading"><h3>Basic elements</h3></div>
+<div class="is-elements" aria-label="AIPOCH basic illustration elements">
+<article class="is-element" aria-labelledby="is-name-cube">
+<button class="is-art" type="button" data-is-element="cube" data-is-view="preview" aria-label="View Cube illustration" aria-haspopup="dialog"><img src="assets/illustration/basic-elements/cube.svg" width="400" height="400" alt="Cube rendered in square halftone" decoding="sync"><span class="is-expand" aria-hidden="true">↗</span></button>
+<h4 class="is-name" id="is-name-cube">Cube</h4><p class="is-description">Flat faces echo the square grid and establish the system’s structure.</p>
+<div class="is-actions"><button type="button" class="is-code-trigger" data-is-element="cube" data-is-view="code" aria-label="View Cube code" aria-haspopup="dialog"><span aria-hidden="true">&lt;/&gt;</span>View code</button><nav aria-label="Download Cube resources"><a href="assets/illustration/basic-elements/cube.svg" download="aipoch-cube.svg" aria-label="Download Cube SVG">SVG ↓</a><a href="assets/illustration/basic-elements/cube-source.zip" download="aipoch-cube-source.zip" aria-label="Download Cube source">Source ↓</a></nav></div>
+</article>
+<article class="is-element" aria-labelledby="is-name-sphere">
+<button class="is-art" type="button" data-is-element="sphere" data-is-view="preview" aria-label="View Sphere illustration" aria-haspopup="dialog"><img src="assets/illustration/basic-elements/sphere.svg" width="400" height="400" alt="Sphere rendered in square halftone" decoding="sync"><span class="is-expand" aria-hidden="true">↗</span></button>
+<h4 class="is-name" id="is-name-sphere">Sphere</h4><p class="is-description">A continuous curve brings the AIPOCH mark’s circular geometry into volume.</p>
+<div class="is-actions"><button type="button" class="is-code-trigger" data-is-element="sphere" data-is-view="code" aria-label="View Sphere code" aria-haspopup="dialog"><span aria-hidden="true">&lt;/&gt;</span>View code</button><nav aria-label="Download Sphere resources"><a href="assets/illustration/basic-elements/sphere.svg" download="aipoch-sphere.svg" aria-label="Download Sphere SVG">SVG ↓</a><a href="assets/illustration/basic-elements/sphere-source.zip" download="aipoch-sphere-source.zip" aria-label="Download Sphere source">Source ↓</a></nav></div>
+</article>
+<article class="is-element" aria-labelledby="is-name-cylinder">
+<button class="is-art" type="button" data-is-element="cylinder" data-is-view="preview" aria-label="View Cylinder illustration" aria-haspopup="dialog"><img src="assets/illustration/basic-elements/cylinder.svg" width="400" height="400" alt="Cylinder rendered in square halftone" decoding="sync"><span class="is-expand" aria-hidden="true">↗</span></button>
+<h4 class="is-name" id="is-name-cylinder">Cylinder</h4><p class="is-description">Flat ends meet a curved surface, connecting the other two forms.</p>
+<div class="is-actions"><button type="button" class="is-code-trigger" data-is-element="cylinder" data-is-view="code" aria-label="View Cylinder code" aria-haspopup="dialog"><span aria-hidden="true">&lt;/&gt;</span>View code</button><nav aria-label="Download Cylinder resources"><a href="assets/illustration/basic-elements/cylinder.svg" download="aipoch-cylinder.svg" aria-label="Download Cylinder SVG">SVG ↓</a><a href="assets/illustration/basic-elements/cylinder-source.zip" download="aipoch-cylinder-source.zip" aria-label="Download Cylinder source">Source ↓</a></nav></div>
+</article>
+</div>
+<div id="is-brand-concept" class="is-heading"><h3>Brand concept</h3></div>
+<div class="is-elements is-brand-elements" aria-label="AIPOCH brand concept illustrations">
+<article class="is-element" aria-labelledby="is-name-brand-concept-8px">
+<button class="is-art" type="button" data-is-element="brand-concept-8px" data-is-view="preview" aria-label="View Fine grid · 8px illustration" aria-haspopup="dialog"><img src="assets/illustration/brand-concept/brand-concept-8px.svg" width="1600" height="1373" alt="AIPOCH brand architecture in 8px square halftone" loading="lazy" decoding="async"><span class="is-expand" aria-hidden="true">↗</span></button>
+<h4 class="is-name" id="is-name-brand-concept-8px">Fine grid · 8px</h4><p class="is-description">A finer grid preserves architectural detail and subtle changes in tone.</p>
+<div class="is-actions"><button type="button" class="is-code-trigger" data-is-element="brand-concept-8px" data-is-view="code" aria-label="View Fine grid · 8px HTML code" aria-haspopup="dialog"><span aria-hidden="true">&lt;/&gt;</span>View code</button><nav aria-label="Download Fine grid · 8px resources"><a href="assets/illustration/brand-concept/brand-concept-8px.svg" download="aipoch-brand-concept-8px.svg">SVG ↓</a><a href="assets/illustration/brand-concept/brand-concept-8px-source.zip" download="aipoch-brand-concept-8px-source.zip">Source ↓</a></nav></div>
+</article>
+<article class="is-element" aria-labelledby="is-name-brand-concept-12px">
+<button class="is-art" type="button" data-is-element="brand-concept-12px" data-is-view="preview" aria-label="View Coarse grid · 12px illustration" aria-haspopup="dialog"><img src="assets/illustration/brand-concept/brand-concept-12px.svg" width="1600" height="1373" alt="AIPOCH brand architecture in 12px square halftone" loading="lazy" decoding="async"><span class="is-expand" aria-hidden="true">↗</span></button>
+<h4 class="is-name" id="is-name-brand-concept-12px">Coarse grid · 12px</h4><p class="is-description">Larger marks give the same architecture a stronger graphic rhythm.</p>
+<div class="is-actions"><button type="button" class="is-code-trigger" data-is-element="brand-concept-12px" data-is-view="code" aria-label="View Coarse grid · 12px HTML code" aria-haspopup="dialog"><span aria-hidden="true">&lt;/&gt;</span>View code</button><nav aria-label="Download Coarse grid · 12px resources"><a href="assets/illustration/brand-concept/brand-concept-12px.svg" download="aipoch-brand-concept-12px.svg">SVG ↓</a><a href="assets/illustration/brand-concept/brand-concept-12px-source.zip" download="aipoch-brand-concept-12px-source.zip">Source ↓</a></nav></div>
+</article>
+</div>
+<dialog id="is-element-dialog" aria-labelledby="is-dialog-title">
+<div class="is-dialog-header"><h3 id="is-dialog-title">Cube</h3><button type="button" class="is-close" aria-label="Close element viewer">×</button></div>
+<div class="is-dialog-tools"><div role="tablist" aria-label="Element view"><button type="button" role="tab" id="is-preview-tab" aria-selected="true" aria-controls="is-preview-panel" data-is-tab="preview">Preview</button><button type="button" role="tab" id="is-code-tab" aria-selected="false" aria-controls="is-code-panel" tabindex="-1" data-is-tab="code">Code</button></div><button type="button" class="is-copy" hidden>Copy code</button><span class="sr-only" id="is-copy-status" role="status" aria-live="polite"></span></div>
+<div class="is-dialog-body"><div role="tabpanel" id="is-preview-panel" aria-labelledby="is-preview-tab" class="is-preview-panel"><img width="400" height="400" alt=""></div><div role="tabpanel" id="is-code-panel" aria-labelledby="is-code-tab" class="is-code-panel" tabindex="0" hidden><pre><code></code></pre></div></div>
+<div class="is-dialog-footer"><span>React source &amp; offline preview</span><nav aria-label="Download selected element"><a class="is-modal-svg" download>Download SVG ↓</a><a class="is-modal-source" download>Download source ↓</a></nav></div>
+</dialog>
+</section>
 <section id="illustration-motion" class="scroll-mt-24">
 <header class="module-page-header"><h2 class="module-page-title">Illustration &amp; Motion Skill</h2><p class="module-page-intro">Turn a concept into an AIPOCH illustration. Review the artwork, then bring it to life.</p></header>
 <section class="skill-resource" aria-labelledby="aipoch-motion-skill-title">
@@ -1578,6 +1675,7 @@ document.addEventListener('docs:viewchange',sync);document.addEventListener('vis
 (()=>{
 // Keep newest dates first. Only mark an entry Published after confirmed production deployment.
 const releases=[
+ {"date": "2026-11-05", "status": "Published", "title": "Illustration System", "items": ["Added Cube, Sphere and Cylinder as individual square-halftone illustration resources with concise descriptions, enlarged previews, code views and separate downloads.", "Added the supplied 8px and 12px brand-concept illustrations without changing the SVG artwork; each includes an enlarged preview, HTML usage code and an independent resource package.", "Verified responsive layouts, offline asset loading and resource links."]},
  {date:'2026-10-16',status:'Unreleased',title:'Content entrance motion',items:['Restored whole-card entrance for all 14 Logo panels without waiting for image decoding; late images fade without additional translation. Added entrance coverage for content controls, preserving disabled opacity and revealing actions independently of image decoding. Added metadata and complete image entrance coverage, decoding images before their animation and replaying image entrances on section visits. Added a project footer with verified website, repository and version history links; renamed the header history entry to What’s new. Corrected entrance coverage to individual cards, with 850ms settling, a 16px rise and 70ms stagger capped at 210ms; preserved immediate resource interactions and reduced-motion behavior.','Resolved nested section anchors before entrance animation to avoid scroll jumps.']},
  {"date": "2026-10-15", "status": "Published", "title": "v3.1", "items": ["Added two complete HTML presentation cases: the 22-slide mid-year review and the nine-slide medical research workshop.", "Redesigned the HTML presentation skill resource with layout preview images, a three-step usage guide, and visible installation instructions. The expanded skill has been merged into main via PR #3; the resource link points to the official version.", "Added individual downloads and verified original pixel dimensions for all 18 social media images, while retaining full-set ZIP downloads.", "Expanded spacing between social collections and aligned the presentation preview links.", "Replaced fragmented entrance animations with a short page fade; fixed the invalid animation event handler and respected reduced-motion preferences.", "Added product and benchmark collections, bilingual campaign sets, and clearer download and pagination controls.", "Refined typography, logo documentation, naming and visual concept, and physical-material presentation; added scientific-expression stickers.", "Marked Icon System and Buttons & UI Components as in progress. These sections are not final specifications."]},
  {date:'2026-10-14',status:'Published',title:'v3',items:[
@@ -1619,6 +1717,45 @@ function sync(){const visible=!page.hidden&&intersecting;if(visible){if(!frame.h
 frame.addEventListener('load',()=>{if(frame.getAttribute('src')===frame.dataset.src)preview.dataset.ready='true'});
 new IntersectionObserver(entries=>{intersecting=entries[0].isIntersecting&&entries[0].intersectionRatio>=.1;sync()},{threshold:[0,.1]}).observe(preview);
 document.addEventListener('docs:viewchange',sync);
+})();
+</script>
+<script id="illustration-element-viewer">
+(()=>{
+const data={"cube": {"name": "Cube", "description": "Flat faces echo the square grid and establish the system’s structure.", "code": "import React from 'react';\nimport { DotField } from './components/illustration/DotField.jsx';\nimport { IlloCanvas } from './components/illustration/IlloCanvas.jsx';\nimport './tokens/illustration.css';\n\nexport default function Cube() {\n  return (\n    <IlloCanvas\n      width={400} height={400}\n      ground=\"var(--illo-ground)\"\n      gridCell={20} title=\"cube\"\n    >\n      <DotField\n        x={60} y={60}\n        width={280} height={280}\n        shape=\"cube\" mode=\"size\" dot=\"square\"\n        cell={8} levels={5} maxDot={0.86}\n        grain={0.12} seed={5} accent={0}\n      />\n    <\/IlloCanvas>\n  );\n}\n", "svg": "assets/illustration/basic-elements/cube.svg", "source": "assets/illustration/basic-elements/cube-source.zip"}, "sphere": {"name": "Sphere", "description": "A continuous curve brings the AIPOCH mark’s circular geometry into volume.", "code": "import React from 'react';\nimport { DotField } from './components/illustration/DotField.jsx';\nimport { IlloCanvas } from './components/illustration/IlloCanvas.jsx';\nimport './tokens/illustration.css';\n\nexport default function Sphere() {\n  return (\n    <IlloCanvas\n      width={400} height={400}\n      ground=\"var(--illo-ground)\"\n      gridCell={20} title=\"sphere\"\n    >\n      <DotField\n        x={60} y={60}\n        width={280} height={280}\n        shape=\"sphere\" mode=\"size\" dot=\"square\"\n        cell={8} levels={5} maxDot={0.86}\n        grain={0.12} seed={6} accent={3}\n      />\n    <\/IlloCanvas>\n  );\n}\n", "svg": "assets/illustration/basic-elements/sphere.svg", "source": "assets/illustration/basic-elements/sphere-source.zip"}, "cylinder": {"name": "Cylinder", "description": "Flat ends meet a curved surface, connecting the other two forms.", "code": "import React from 'react';\nimport { DotField } from './components/illustration/DotField.jsx';\nimport { IlloCanvas } from './components/illustration/IlloCanvas.jsx';\nimport './tokens/illustration.css';\n\nexport default function Cylinder() {\n  return (\n    <IlloCanvas\n      width={400} height={400}\n      ground=\"var(--illo-ground)\"\n      gridCell={20} title=\"cylinder\"\n    >\n      <DotField\n        x={60} y={60}\n        width={280} height={280}\n        shape=\"cylinder\" mode=\"size\" dot=\"square\"\n        cell={8} levels={5} maxDot={0.86}\n        grain={0.12} seed={7} accent={0}\n      />\n    <\/IlloCanvas>\n  );\n}\n", "svg": "assets/illustration/basic-elements/cylinder.svg", "source": "assets/illustration/basic-elements/cylinder-source.zip"}, "brand-concept-8px": {"name": "Fine grid · 8px", "description": "A finer grid preserves architectural detail and subtle changes in tone.", "code": "<img\n  src=\"assets/illustration/brand-concept/brand-concept-8px.svg\"\n  width=\"1600\"\n  height=\"1373\"\n  alt=\"AIPOCH brand architecture in 8px square halftone\"\n  style=\"display: block; width: 100%; height: auto;\"\n/>", "svg": "assets/illustration/brand-concept/brand-concept-8px.svg", "source": "assets/illustration/brand-concept/brand-concept-8px-source.zip", "width": 1600, "height": 1373, "footer": "HTML usage & original artwork", "wide": true}, "brand-concept-12px": {"name": "Coarse grid · 12px", "description": "Larger marks give the same architecture a stronger graphic rhythm.", "code": "<img\n  src=\"assets/illustration/brand-concept/brand-concept-12px.svg\"\n  width=\"1600\"\n  height=\"1373\"\n  alt=\"AIPOCH brand architecture in 12px square halftone\"\n  style=\"display: block; width: 100%; height: auto;\"\n/>", "svg": "assets/illustration/brand-concept/brand-concept-12px.svg", "source": "assets/illustration/brand-concept/brand-concept-12px-source.zip", "width": 1600, "height": 1373, "footer": "HTML usage & original artwork", "wide": true}};
+const section=document.getElementById('illustration-system');
+const dialog=document.getElementById('is-element-dialog');
+const tabs=[...dialog.querySelectorAll('[role="tab"]')];
+const copy=dialog.querySelector('.is-copy'),status=dialog.querySelector('#is-copy-status');
+let current='cube',opener,copyTimer,oldOverflow='';
+function setView(view,focus=false){
+ tabs.forEach(tab=>{const active=tab.dataset.isTab===view;tab.setAttribute('aria-selected',String(active));tab.tabIndex=active?0:-1;if(active&&focus)tab.focus();});
+ dialog.querySelector('#is-preview-panel').hidden=view!=='preview';
+ dialog.querySelector('#is-code-panel').hidden=view!=='code';
+ copy.hidden=view!=='code';copy.textContent='Copy code';status.textContent='';
+}
+section.querySelectorAll('[data-is-element]').forEach(button=>button.addEventListener('click',()=>{
+ current=button.dataset.isElement;opener=button;const item=data[current];
+ dialog.querySelector('#is-dialog-title').textContent=item.name;
+ dialog.classList.toggle('is-wide-art',Boolean(item.wide));
+ dialog.querySelector('.is-dialog-footer>span').textContent=item.footer||'React source & offline preview';
+ dialog.querySelector('.is-preview-panel img').width=item.width||400;dialog.querySelector('.is-preview-panel img').height=item.height||400;
+ const img=dialog.querySelector('.is-preview-panel img');img.src=item.svg;img.alt=item.name+' rendered in square halftone';
+ dialog.querySelector('.is-code-panel code').textContent=item.code;
+ const svg=dialog.querySelector('.is-modal-svg'),source=dialog.querySelector('.is-modal-source');
+ svg.href=item.svg;svg.download='aipoch-'+current+'.svg';source.href=item.source;source.download='aipoch-'+current+'-source.zip';
+ setView(button.dataset.isView);oldOverflow=document.body.style.overflow;document.body.style.overflow='hidden';dialog.showModal();
+ dialog.querySelector('[role="tab"][aria-selected="true"]').focus();dialog.querySelector('.is-code-panel').scrollTop=0;
+}));
+tabs.forEach((tab,index)=>{tab.addEventListener('click',()=>setView(tab.dataset.isTab));tab.addEventListener('keydown',event=>{let target;if(event.key==='ArrowRight'||event.key==='ArrowLeft')target=tabs[1-index];else if(event.key==='Home')target=tabs[0];else if(event.key==='End')target=tabs[1];if(target){event.preventDefault();setView(target.dataset.isTab,true);}});});
+dialog.querySelector('.is-close').addEventListener('click',()=>dialog.close());
+dialog.addEventListener('click',event=>{if(event.target!==dialog)return;const r=dialog.getBoundingClientRect();if(event.clientX<r.left||event.clientX>r.right||event.clientY<r.top||event.clientY>r.bottom)dialog.close();});
+dialog.addEventListener('close',()=>{document.body.style.overflow=oldOverflow;clearTimeout(copyTimer);opener?.focus({preventScroll:true});});
+copy.addEventListener('click',async()=>{
+ let ok=false;try{if(navigator.clipboard?.writeText){await navigator.clipboard.writeText(data[current].code);ok=true;}}catch(_){}
+ if(!ok){const area=document.createElement('textarea');area.value=data[current].code;area.style.cssText='position:fixed;left:0;top:0;width:1px;height:1px;opacity:0';dialog.append(area);area.focus();area.select();try{ok=document.execCommand('copy');}catch(_){}area.remove();copy.focus();}
+ if(ok){copy.textContent='Copied';status.textContent='Code copied';}else{const range=document.createRange();range.selectNodeContents(dialog.querySelector('.is-code-panel code'));const selection=window.getSelection();selection.removeAllRanges();selection.addRange(range);copy.textContent='Code selected';status.textContent='Copy unavailable. Code selected for manual copying.';}
+ clearTimeout(copyTimer);copyTimer=setTimeout(()=>copy.textContent='Copy code',1800);
+});
 })();
 </script>
 </body>
