@@ -1,0 +1,33 @@
+/* AIPOCH Illustration System v0.1 — monochrome (black / white / grey) with a yellow accent.
+   Two languages share one grid: DOT (halftone square dots / glyphs) and LINE (fine isometric technical line). */
+:root{
+/* Ground */
+--illo-ground:#F2F2F0;
+--illo-ground-warm:#F7F7F5;
+--illo-ground-white:#FFFFFF;
+--illo-ground-dark:#111111;
+/* Ink scale (5 steps) */
+--illo-ink-100:#111111;
+--illo-ink-80:#4A4A47;
+--illo-ink-60:#8A8A85;
+--illo-ink-40:#BDBDB8;
+--illo-ink-20:#DCDCD8;
+/* Grid dots on ground */
+--illo-grid:#CFCFCA;
+/* Accent — yellow is an accent only: ≤3% of marks, one node, one path */
+--illo-accent:#EDB732;
+--illo-accent-soft:#FBDD67;
+/* Line weights @1x */
+--illo-line-construct:0.75px;
+--illo-line-structure:1px;
+--illo-line-contour:1.25px;
+--illo-dash:2 3;/* @kind other */
+/* Dot grid */
+--illo-cell:8px;
+--illo-cell-fine:6px;
+--illo-cell-coarse:12px;
+/* Formats */
+--format-campaign-w:2048px;--format-campaign-h:1152px;
+--format-wechat-w:900px;--format-wechat-h:383px;
+--format-slide-w:1920px;--format-slide-h:1080px;
+}
