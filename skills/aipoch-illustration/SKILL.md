@@ -26,7 +26,7 @@ Read [the visual standard](references/visual-standard.md). Inspect all three PNG
 - [Sphere](assets/studies/sphere.png): continuous curvature and tonal transitions.
 - [Cylinder](assets/studies/cylinder.png): transitions between flat and curved surfaces.
 
-Matching SVGs are included in the same folder for exact geometry and implementation. Inspect [brand concept on light](assets/applications/brand-concept-light.png) for an applied illustration and [hackathon poster on dark](assets/applications/hackathon-poster-dark.png) for a restrained dark-background treatment. These examples guide rendering and contrast, not the required objects, layout, lettering, or topic of a new illustration. See [reference provenance](references/sources.md) when source details matter.
+Matching SVGs are included in the same folder for exact geometry and implementation. Inspect both light-background applications, [fine 8px](assets/applications/brand-concept-light.png) and [coarse 12px](assets/applications/brand-concept-light-12px.png), to compare grid density on the same 1600 × 1373 canvas and [hackathon poster on dark](assets/applications/hackathon-poster-dark.png) for a restrained dark-background treatment. These examples guide rendering and contrast, not the required objects, layout, lettering, or topic of a new illustration. See [reference provenance](references/sources.md) when source details matter.
 
 ## Compose and draw
 
@@ -34,7 +34,7 @@ Identify the message and a recognizable subject before applying halftone. Choose
 
 Apply the confirmed background mode and the common mark, tone, color, and composition rules in the visual standard. Let content determine the objects; let the system determine how they are drawn. Do not invent facts, research data, product features, or brand marks.
 
-Use the environment's image-generation tool for raster illustration, or SVG/vector tooling when editable geometry is requested. Pass the actual three form-study images and the relevant background application to a reference-capable image tool; filenames in a text prompt alone do not supply reference images. Keep the selected mode in the generation prompt. If the tool cannot accept reference images, state that limitation rather than claiming it inspected them. No particular provider or Figma connection is required; all references are bundled.
+Use the environment's image-generation tool for raster illustration, or SVG/vector tooling when editable geometry is requested. Pass the actual three form-study images and the relevant background application to a reference-capable image tool; filenames in a text prompt alone do not supply reference images. Keep the selected background mode and grid density in the generation prompt. Use both light application references to compare density; preserve an explicitly requested 8px or 12px treatment. If the tool cannot accept reference images, state that limitation rather than claiming it inspected them. No particular provider or Figma connection is required; all references are bundled.
 
 For standalone artwork, omit headline, official logo, poster dates, and decorative text unless requested. Preserve explicit user format, transparency, and content requirements. Deliver static artwork unless motion was requested.
 

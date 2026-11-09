@@ -3,7 +3,7 @@
 ## Shared rules
 
 - **Marks:** separated, axis-aligned square marks on a regular grid. Mark size, density, and restrained tonal variation form a continuous recognizable subject. Do not use uniform tiles as a substitute for tonal imagery.
-- **Tone:** begin with five mark-size steps and adjust for the output. The form studies use an 8px grid on a 400px canvas; this is a reference scale, not a mandatory grid for every destination. The existing light application includes 8px and 12px treatments. Judge detail and legibility at final size.
+- **Tone:** begin with five mark-size steps and adjust for the output. The form studies use an 8px grid on a 400px canvas; this is a reference scale, not a mandatory grid for every destination. The light application has two grid sizes on the same 1600 × 1373 canvas: 8px fine and 12px coarse. These are grid-density variants, not different canvas dimensions or illustration styles. Preserve the user’s chosen density; otherwise select for detail and intended viewing size. Judge detail and legibility at final size.
 - **Form:** perspective and depicted volume are allowed. Light, shadow, contour, and edges must read through the halftone treatment rather than gloss, bevels, or extruded pixels. Keep lighting coherent; the form studies use lighter upper/left-facing regions.
 - **Composition:** a clear subject or relationship, generous negative space, deliberate hierarchy. The message determines the composition. The grid is the rendering language, not a mandatory diagram layout.
 - **Accents:** optional gold #EDB732, sparingly applied to meaningful details. The form-study token convention limits gold to at most 3% of marks. All-neutral artwork is valid, including the dark poster.
