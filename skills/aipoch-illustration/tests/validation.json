@@ -1,0 +1,61 @@
+{
+  "skill": "aipoch-illustration",
+  "tests": [
+    {
+      "case": "Unspecified output mode with a dark reference",
+      "result": "pass",
+      "observed_response": "我会使用 $aipoch-illustration 来制作。这张插画要用浅色背景还是深色背景？",
+      "generation_started": false
+    },
+    {
+      "case": "Transparent output without intended host surface",
+      "result": "pass",
+      "observed_response": "这张插画要用浅色背景还是深色背景？交付文件仍会保持透明，这里确认的是网页承载它的底色。",
+      "generation_started": false
+    },
+    {
+      "case": "Explicit dark background, actual microscope illustration",
+      "result": "pass_after_grid_finalization",
+      "unnecessary_mode_question": false,
+      "initial_observation": "Recognizable microscope and sparse gold accent; continuous slide outline and irregular small marks fail the strict square-halftone treatment. Targeted correction requested.",
+      "render": {
+        "marks": 2138,
+        "result": "pass",
+        "dimensions": [
+          1536,
+          1024
+        ]
+      }
+    },
+    {
+      "case": "Explicit light background, actual microscope illustration",
+      "result": "pass_after_grid_finalization",
+      "unnecessary_mode_question": false,
+      "render": {
+        "marks": 2688,
+        "result": "pass",
+        "dimensions": [
+          1536,
+          1024
+        ]
+      }
+    }
+  ],
+  "regressions": {
+    "checks": 4,
+    "result": "pass",
+    "covers": [
+      "light/dark colors and one global square grid",
+      "blank-field suppression",
+      "transparent source and output",
+      "required mode and invalid parameters"
+    ]
+  },
+  "observed_limitations": [
+    "Native image generation alone approximated the grid, even after one correction per mode.",
+    "The SVG finalizer produces exact grid geometry but can simplify thin details; all output still needs visual review.",
+    "The SVG is editable as grid marks, not semantic illustration components."
+  ],
+  "output_method": "Native image generation with three shared form studies plus mode application reference; deterministic square-grid SVG finalization; SVG rendered to PNG.",
+  "reference_preview_fix": "Light application PNG re-rendered from full SVG to avoid OS thumbnail cropping."
+}
