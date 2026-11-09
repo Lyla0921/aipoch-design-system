@@ -1,0 +1,4 @@
+interface:
+  display_name: "AIPOCH Illustration"
+  short_description: "Unified halftone illustrations on light or dark"
+  default_prompt: "Use $aipoch-illustration to illustrate [SUBJECT] for [USE] at [SIZE]. Before drawing, ask me to choose a light or dark background unless I have already specified one."
